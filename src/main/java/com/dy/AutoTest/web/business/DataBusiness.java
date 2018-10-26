@@ -5,6 +5,7 @@ import static org.testng.Assert.assertTrue;
 import java.util.List;
 import java.util.Map;
 
+import com.dy.AutoTest.OperationPlatform.POJO.CooperatingAgentInfoBean;
 import com.dy.AutoTest.OperationPlatform.POJO.MerchantAuditBean;
 import com.dy.AutoTest.OperationPlatform.POJO.MerchantFeeRateBean;
 import com.dy.AutoTest.OperationPlatform.POJO.MerchantInfoBean;
@@ -150,6 +151,11 @@ public class DataBusiness {
 	
 	public void loadDataBeanList(String tableName) {
 		switch (tableName) {
+		
+		case "POP_Data_CooperatingAgencyInfo":
+			list=BaseUtil.toObject(testingDao.getDataList(tableName,CooperatingAgentInfoBean.class));
+			break;
+		
 		case "POP_Data_MerchantAudit":
 			list=BaseUtil.toObject(testingDao.getDataList(tableName,MerchantAuditBean.class));
 			break;
