@@ -10,13 +10,17 @@
   <test thread-count="5" name="MerchantInfoInsert(failed)">
     <parameter name="OperID" value="T00105"/>
     <classes>
-      <class name="com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest">
+      <class name="com.dy.AutoTest.OperationPlatform.TestCases.cooperatingagent.agentinfo.CooperatingAgentInfoPageTest">
         <methods>
-          <include name="testQuit"/>
+          <include name="beforeMethod"/>
           <include name="init"/>
-          <include name="releaseBrowser"/>
+          <include name="beforeClass"/>
+          <include name="testCooperatingAgencyInfo" invocation-numbers="0"/>
+          <include name="afterMethod"/>
+          <include name="BeforeTest"/>
+          <include name="AfterTest"/>
         </methods>
-      </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest -->
+      </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.cooperatingagent.agentinfo.CooperatingAgentInfoPageTest -->
     </classes>
   </test> <!-- MerchantInfoInsert(failed) -->
 </suite> <!-- Failed suite [SuiteOperationPlatform] -->
