@@ -32,7 +32,7 @@ public class Browser {
 	public void setWebDriver(BrowserCategory category) {
 		switch (category) {
 		case chrome:
-			System.setProperty("webdriver.chrome.driver", projectpath+"/tool/chromedriver_2.40_win32.exe");
+			System.setProperty("webdriver.chrome.driver", projectpath+"/tool/chromedriver_2.43_win32.exe");
 //			String userProfile = browserProfilePath.replace("/", "\\"); 
 			chromeOptions=new ChromeOptions();
 			chromeOptions.addArguments(Arrays.asList("--start-maximized"));

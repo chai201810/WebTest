@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="12.723">
+           time="12.164">
   <properties />
   
   
-            <testcase name="testMerchantAuditPass" time="12.723" classname="com.dy.AutoTest.OperationPlatform.TestCases.MerchantManagementOnLine.OnLineMechantInfo.MerchantAuditPageTest" />
+            <testcase name="testMerchantAuditPass" time="12.164" classname="com.dy.AutoTest.OperationPlatform.TestCases.MerchantManagementOnLine.OnLineMechantInfo.MerchantAuditPageTest" />
       
 </testsuite>
