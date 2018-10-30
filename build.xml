@@ -129,10 +129,12 @@
 		<echo message="${ant.project.name}: ${ant.file}" />
 		<javac debug="true" debuglevel="${debuglevel}" destdir="target/classes" includeantruntime="false" source="${source}" target="${target}">
 			<src path="src/main/java" />
+			<compilerarg line="-encoding UTF-8 "/>
 			<classpath refid="AutoTest.classpath" />
 		</javac>
 		<javac debug="true" debuglevel="${debuglevel}" destdir="target/test-classes" includeantruntime="false" source="${source}" target="${target}">
 			<src path="src/test/java" />
+			<compilerarg line="-encoding UTF-8 "/>
 			<classpath refid="AutoTest.classpath" />
 		</javac>
 	</target>
