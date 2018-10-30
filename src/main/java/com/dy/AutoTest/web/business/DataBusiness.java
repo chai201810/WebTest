@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.dy.AutoTest.OperationPlatform.POJO.CooperatingAgentInfoBean;
 import com.dy.AutoTest.OperationPlatform.POJO.CooperatingPaymentChannelBean;
+import com.dy.AutoTest.OperationPlatform.POJO.CooperatingServiceChannelBean;
 import com.dy.AutoTest.OperationPlatform.POJO.MerchantAuditBean;
 import com.dy.AutoTest.OperationPlatform.POJO.MerchantFeeRateBean;
 import com.dy.AutoTest.OperationPlatform.POJO.MerchantInfoBean;
@@ -160,6 +161,11 @@ public class DataBusiness {
 		case "POP_Data_CooperatingPaymentChannel":
 			list=BaseUtil.toObject(testingDao.getDataList(tableName,CooperatingPaymentChannelBean.class));
 			break;
+			
+		case "POP_Data_CooperatingServiceChannel":
+			list=BaseUtil.toObject(testingDao.getDataList(tableName,CooperatingServiceChannelBean.class));
+			break;
+		
 		
 		case "POP_Data_MerchantAudit":
 			list=BaseUtil.toObject(testingDao.getDataList(tableName,MerchantAuditBean.class));
