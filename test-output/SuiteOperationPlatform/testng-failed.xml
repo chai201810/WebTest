@@ -10,17 +10,59 @@
   <test thread-count="5" name="MerchantInfoInsert(failed)">
     <parameter name="OperID" value="T00105"/>
     <classes>
-      <class name="com.dy.AutoTest.OperationPlatform.TestCases.cooperatingagent.agentinfo.CooperatingServiceChannelPageTest">
+      <class name="com.dy.AutoTest.OperationPlatform.TestCases.MerchantManagementOnLine.OnLineMechantInfo.MerchantInfoInsertPageTest">
         <methods>
-          <include name="testCooperatingServiceChannel"/>
+          <include name="beforeMethod"/>
+          <include name="beforeClass"/>
+          <include name="afterMethod"/>
+          <include name="BeforeTest"/>
+          <include name="AfterTest"/>
+          <include name="init"/>
+          <include name="testMerchantInfoInsert" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.MerchantManagementOnLine.OnLineMechantInfo.MerchantInfoInsertPageTest -->
+      <class name="com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest">
+        <methods>
+          <include name="testQuit"/>
+          <include name="init"/>
+          <include name="releaseBrowser"/>
+        </methods>
+      </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest -->
+    </classes>
+  </test> <!-- MerchantInfoInsert(failed) -->
+  <test thread-count="5" name="MerchantAuditPass(failed)">
+    <parameter name="OperID" value="T00107"/>
+    <parameter name="AuditID" value="1"/>
+    <classes>
+      <class name="com.dy.AutoTest.OperationPlatform.TestCases.MerchantManagementOnLine.OnLineMechantInfo.MerchantAuditPageTest">
+        <methods>
+          <include name="testMerchantAuditPass" invocation-numbers="0"/>
+          <include name="beforeMethod"/>
+          <include name="beforeClass"/>
+          <include name="afterMethod"/>
+          <include name="BeforeTest"/>
+          <include name="init"/>
+          <include name="AfterTest"/>
+        </methods>
+      </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.MerchantManagementOnLine.OnLineMechantInfo.MerchantAuditPageTest -->
+      <class name="com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest">
+        <methods>
           <include name="beforeMethod"/>
           <include name="beforeClass"/>
           <include name="init"/>
+          <include name="testLogin" invocation-numbers="0"/>
           <include name="afterMethod"/>
           <include name="BeforeTest"/>
           <include name="AfterTest"/>
         </methods>
-      </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.cooperatingagent.agentinfo.CooperatingServiceChannelPageTest -->
+      </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest -->
+      <class name="com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest">
+        <methods>
+          <include name="testQuit"/>
+          <include name="init"/>
+          <include name="releaseBrowser"/>
+        </methods>
+      </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest -->
     </classes>
-  </test> <!-- MerchantInfoInsert(failed) -->
+  </test> <!-- MerchantAuditPass(failed) -->
 </suite> <!-- Failed suite [SuiteOperationPlatform] -->
