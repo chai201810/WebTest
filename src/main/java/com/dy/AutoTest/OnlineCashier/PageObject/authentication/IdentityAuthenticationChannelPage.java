@@ -9,14 +9,14 @@ public class IdentityAuthenticationChannelPage extends SuperPage {
 
 	public IdentityAuthenticationChannelPage(WebDriver driver) {
 		super(driver);
-		du.loadLocator("POP_Loc_IdentityAutherticationChannel");
+		du.loadLocator("POP_Loc_IdentityAuthenticationChannel");
 	}
 
 	@Override
 	public void setWaitTime(long waitTime) {
 		du=new DoPlus(driver);
 		du.waitTime=waitTime;
-		du.loadLocator("POP_Loc_IdentityAutherticationChannel");
+		du.loadLocator("POP_Loc_IdentityAuthenticationChannel");
 	}
 	
 	public void setFocusOnChannelCode() {
@@ -49,6 +49,10 @@ public class IdentityAuthenticationChannelPage extends SuperPage {
 	
 	public void queryOnChannelLevel(String value) {
 		du.whatSelect("ChannelLevel").selectByValue(value);
+	}
+	
+	public void clickQuery() {
+		du.what("QueryButton").click();
 	}
 	
 	public void selectFirstRecord() {

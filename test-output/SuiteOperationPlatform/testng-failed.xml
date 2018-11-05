@@ -10,17 +10,17 @@
   <test thread-count="5" name="MerchantInfoInsert(failed)">
     <parameter name="OperID" value="T00105"/>
     <classes>
-      <class name="com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationChannelPageTest">
+      <class name="com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationRoutePageTest">
         <methods>
-          <include name="init"/>
           <include name="beforeMethod"/>
           <include name="beforeClass"/>
-          <include name="testIdentityAuthenticationChannel" invocation-numbers="0"/>
+          <include name="init"/>
+          <include name="testIdentityAuthenticationRoute" invocation-numbers="0"/>
           <include name="afterMethod"/>
           <include name="BeforeTest"/>
           <include name="AfterTest"/>
         </methods>
-      </class> <!-- com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationChannelPageTest -->
+      </class> <!-- com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationRoutePageTest -->
     </classes>
   </test> <!-- MerchantInfoInsert(failed) -->
 </suite> <!-- Failed suite [SuiteOperationPlatform] -->

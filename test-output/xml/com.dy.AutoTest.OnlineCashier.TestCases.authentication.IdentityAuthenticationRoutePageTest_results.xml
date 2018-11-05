@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="5.463">
+           time="8.043">
   <properties />
   
   
-            <testcase name="testLogin" time="5.463" classname="com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest" />
+            <testcase name="testIdentityAuthenticationRoute" time="8.043" classname="com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationRoutePageTest" />
       
 </testsuite>

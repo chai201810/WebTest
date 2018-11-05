@@ -44,6 +44,8 @@ public class IdentityAuthenticationChannelPageTest extends SuperTest {
 		identityAuthenticationChannelPage.setFocusOnChannelLevel();
 		identityAuthenticationChannelPage.queryOnChannelLevel(identityAuthenticationChannelBean.getChannelLevel());
 		
+		identityAuthenticationChannelPage.clickQuery();
+		
 		wait.waitFor(1000);
 		
 		identityAuthenticationChannelPage.selectFirstRecord();
