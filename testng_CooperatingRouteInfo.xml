@@ -15,7 +15,7 @@
 				</methods>
 			</class>
 			<class
-				name="com.dy.AutoTest.OperationPlatform.TestCases.cooperatingagent.routeinfo.CooperatingRouteInfoPageTest">
+				name="com.dy.AutoTest.OnlineCashier.TestCases.cooperatingagent.routeinfo.CooperatingRouteInfoPageTest">
 				<methods>
 					<include name="testCooperatingRouteInfo" />
 				</methods>

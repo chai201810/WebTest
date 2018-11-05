@@ -1,4 +1,4 @@
-package com.dy.AutoTest.OperationPlatform.PageObject.cooperatingagent.agentinfo;
+package com.dy.AutoTest.OnlineCashier.PageObject.cooperatingagent.agentinfo;
 
 import org.openqa.selenium.WebDriver;
 

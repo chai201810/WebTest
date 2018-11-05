@@ -1,4 +1,4 @@
-package com.dy.AutoTest.OperationPlatform.POJO;
+package com.dy.AutoTest.OnlineCashier.POJO;
 
 import java.io.Serializable;
 

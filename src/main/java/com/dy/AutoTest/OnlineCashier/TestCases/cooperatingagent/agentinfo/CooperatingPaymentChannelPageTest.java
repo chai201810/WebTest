@@ -1,11 +1,11 @@
-package com.dy.AutoTest.OperationPlatform.TestCases.cooperatingagent.agentinfo;
+package com.dy.AutoTest.OnlineCashier.TestCases.cooperatingagent.agentinfo;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.dy.AutoTest.OperationPlatform.POJO.CooperatingPaymentChannelBean;
-import com.dy.AutoTest.OperationPlatform.PageObject.cooperatingagent.agentinfo.CooperatingPaymentChannelPage;
+import com.dy.AutoTest.OnlineCashier.POJO.CooperatingPaymentChannelBean;
+import com.dy.AutoTest.OnlineCashier.PageObject.cooperatingagent.agentinfo.CooperatingPaymentChannelPage;
 import com.dy.AutoTest.OperationPlatform.TestCases.SuperTest;
 import com.dy.AutoTest.web.business.DataBusiness;
 

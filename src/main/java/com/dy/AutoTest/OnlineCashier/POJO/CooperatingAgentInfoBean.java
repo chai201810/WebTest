@@ -1,13 +1,13 @@
-package com.dy.AutoTest.OperationPlatform.POJO;
+package com.dy.AutoTest.OnlineCashier.POJO;
 
 import java.io.Serializable;
 
-public class CooperatingServiceChannelBean implements Serializable {
+public class CooperatingAgentInfoBean implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 9191576487775773045L;
+	private static final long serialVersionUID = -1862458995135514766L;
 
 	private int ID;
 	private String Search;

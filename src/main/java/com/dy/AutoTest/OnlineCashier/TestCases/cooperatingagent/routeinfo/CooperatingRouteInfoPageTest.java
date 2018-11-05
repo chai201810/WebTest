@@ -1,11 +1,11 @@
-package com.dy.AutoTest.OperationPlatform.TestCases.cooperatingagent.routeinfo;
+package com.dy.AutoTest.OnlineCashier.TestCases.cooperatingagent.routeinfo;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.dy.AutoTest.OperationPlatform.POJO.CooperatingRouteInfoBean;
-import com.dy.AutoTest.OperationPlatform.PageObject.cooperatingagent.routeinfo.CooperatingRouteInfoPage;
+import com.dy.AutoTest.OnlineCashier.POJO.CooperatingRouteInfoBean;
+import com.dy.AutoTest.OnlineCashier.PageObject.cooperatingagent.routeinfo.CooperatingRouteInfoPage;
 import com.dy.AutoTest.OperationPlatform.TestCases.SuperTest;
 import com.dy.AutoTest.web.business.DataBusiness;
 

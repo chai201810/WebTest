@@ -5,10 +5,10 @@ import static org.testng.Assert.assertTrue;
 import java.util.List;
 import java.util.Map;
 
-import com.dy.AutoTest.OperationPlatform.POJO.CooperatingAgentInfoBean;
-import com.dy.AutoTest.OperationPlatform.POJO.CooperatingPaymentChannelBean;
-import com.dy.AutoTest.OperationPlatform.POJO.CooperatingRouteInfoBean;
-import com.dy.AutoTest.OperationPlatform.POJO.CooperatingServiceChannelBean;
+import com.dy.AutoTest.OnlineCashier.POJO.CooperatingAgentInfoBean;
+import com.dy.AutoTest.OnlineCashier.POJO.CooperatingPaymentChannelBean;
+import com.dy.AutoTest.OnlineCashier.POJO.CooperatingRouteInfoBean;
+import com.dy.AutoTest.OnlineCashier.POJO.CooperatingServiceChannelBean;
 import com.dy.AutoTest.OperationPlatform.POJO.MerchantAuditBean;
 import com.dy.AutoTest.OperationPlatform.POJO.MerchantFeeRateBean;
 import com.dy.AutoTest.OperationPlatform.POJO.MerchantInfoBean;

@@ -15,7 +15,7 @@
 				</methods>
 			</class>
 			<class
-				name="com.dy.AutoTest.OperationPlatform.TestCases.cooperatingagent.agentinfo.CooperatingServiceChannelPageTest">
+				name="com.dy.AutoTest.OnlineCashier.TestCases.cooperatingagent.agentinfo.CooperatingServiceChannelPageTest">
 				<methods>
 					<include name="testCooperatingServiceChannel" />
 				</methods>

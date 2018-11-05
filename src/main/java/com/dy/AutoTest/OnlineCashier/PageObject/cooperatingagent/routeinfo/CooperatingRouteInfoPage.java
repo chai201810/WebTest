@@ -1,4 +1,4 @@
-package com.dy.AutoTest.OperationPlatform.PageObject.cooperatingagent.routeinfo;
+package com.dy.AutoTest.OnlineCashier.PageObject.cooperatingagent.routeinfo;
 
 import org.openqa.selenium.WebDriver;
 
