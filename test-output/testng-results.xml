@@ -2,30 +2,79 @@
 <testng-results skipped="0" failed="0" ignored="4" total="7" passed="3">
   <reporter-output>
     <line>
-      <![CDATA[        2018-11-05 13:17:42): [Test]-"MerchantInfoInsert" is started]]>
+      <![CDATA[        2018-11-05 14:25:00): [Test]-"MerchantInfoInsert" is started]]>
     </line>
     <line>
-      <![CDATA[                2018-11-05 13:17:42: [Method]-"LoginPageTest.testLogin" is started]]>
+      <![CDATA[                2018-11-05 14:25:00: [Method]-"LoginPageTest.testLogin" is started]]>
     </line>
     <line>
-      <![CDATA[                2018-11-05 13:17:48: [Method]-"LoginPageTest.testLogin" is passed]]>
+      <![CDATA[                2018-11-05 14:25:06: [Method]-"LoginPageTest.testLogin" is passed]]>
     </line>
     <line>
-      <![CDATA[                2018-11-05 13:17:50: [Method]-"IdentityAuthenticationRoutePageTest.testIdentityAuthenticationRoute" is started]]>
+      <![CDATA[                2018-11-05 14:25:08: [Method]-"IdentityAuthenticationDetailsPageTest.testIdentityAuthenticationDetails" is started]]>
     </line>
     <line>
-      <![CDATA[                2018-11-05 13:17:58: [Method]-"IdentityAuthenticationRoutePageTest.testIdentityAuthenticationRoute" is passed]]>
+      <![CDATA[                2018-11-05 14:25:16: [Method]-"IdentityAuthenticationDetailsPageTest.testIdentityAuthenticationDetails" is passed]]>
     </line>
     <line>
-      <![CDATA[        2018-11-05 13:18:07): [Test]-"MerchantInfoInsert" is finished]]>
+      <![CDATA[        2018-11-05 14:25:24): [Test]-"MerchantInfoInsert" is finished]]>
     </line>
   </reporter-output>
-  <suite name="SuiteOperationPlatform" duration-ms="24325" started-at="2018-11-05T05:17:42Z" finished-at="2018-11-05T05:18:07Z">
+  <suite name="SuiteOperationPlatform" duration-ms="24798" started-at="2018-11-05T06:25:00Z" finished-at="2018-11-05T06:25:24Z">
     <groups>
     </groups>
-    <test name="MerchantInfoInsert" duration-ms="24325" started-at="2018-11-05T05:17:42Z" finished-at="2018-11-05T05:18:07Z">
+    <test name="MerchantInfoInsert" duration-ms="24798" started-at="2018-11-05T06:25:00Z" finished-at="2018-11-05T06:25:24Z">
+      <class name="com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationDetailsPageTest">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationDetailsPageTest@4278a03f]" name="beforeClass" is-config="true" duration-ms="1" started-at="2018-11-05T06:25:08Z" finished-at="2018-11-05T06:25:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="init()[pri:0, instance:com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationDetailsPageTest@4278a03f]" name="init" is-config="true" duration-ms="1" started-at="2018-11-05T06:25:08Z" finished-at="2018-11-05T06:25:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationDetailsPageTest@4278a03f]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-11-05T06:25:08Z" finished-at="2018-11-05T06:25:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationDetailsPageTest.testIdentityAuthenticationDetails(com.dy.AutoTest.OnlineCashier.POJO.IdentityAuthenticationDetailsBean)]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[                2018-11-05 14:25:08: [Method]-"IdentityAuthenticationDetailsPageTest.testIdentityAuthenticationDetails" is started]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="testIdentityAuthenticationDetails(com.dy.AutoTest.OnlineCashier.POJO.IdentityAuthenticationDetailsBean)[pri:0, instance:com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationDetailsPageTest@4278a03f]" name="testIdentityAuthenticationDetails" duration-ms="7660" started-at="2018-11-05T06:25:08Z" data-provider="identityAuthenticationDetails" finished-at="2018-11-05T06:25:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.dy.AutoTest.OnlineCashier.POJO.IdentityAuthenticationDetailsBean@37f21974]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIdentityAuthenticationDetails -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationDetailsPageTest@4278a03f]" name="afterMethod" is-config="true" duration-ms="2001" started-at="2018-11-05T06:25:16Z" finished-at="2018-11-05T06:25:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testIdentityAuthenticationDetails status=SUCCESS method=IdentityAuthenticationDetailsPageTest.testIdentityAuthenticationDetails(com.dy.AutoTest.OnlineCashier.POJO.IdentityAuthenticationDetailsBean)[pri:0, instance:com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationDetailsPageTest@4278a03f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[                2018-11-05 14:25:16: [Method]-"IdentityAuthenticationDetailsPageTest.testIdentityAuthenticationDetails" is passed]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationDetailsPageTest -->
       <class name="com.dy.AutoTest.web.actions.SingletonSet">
-        <test-method status="PASS" signature="init(java.lang.String, java.lang.String)[pri:0, instance:com.dy.AutoTest.web.actions.SingletonSet@2f177a4b]" name="init" is-config="true" duration-ms="3604" started-at="2018-11-05T05:17:39Z" finished-at="2018-11-05T05:17:42Z">
+        <test-method status="PASS" signature="init(java.lang.String, java.lang.String)[pri:0, instance:com.dy.AutoTest.web.actions.SingletonSet@29176cc1]" name="init" is-config="true" duration-ms="3333" started-at="2018-11-05T06:24:56Z" finished-at="2018-11-05T06:25:00Z">
           <params>
             <param index="0">
               <value>
@@ -41,35 +90,35 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="releaseBrowser()[pri:0, instance:com.dy.AutoTest.web.actions.SingletonSet@2f177a4b]" name="releaseBrowser" is-config="true" duration-ms="2736" started-at="2018-11-05T05:18:07Z" finished-at="2018-11-05T05:18:09Z">
+        <test-method status="PASS" signature="releaseBrowser()[pri:0, instance:com.dy.AutoTest.web.actions.SingletonSet@29176cc1]" name="releaseBrowser" is-config="true" duration-ms="2742" started-at="2018-11-05T06:25:24Z" finished-at="2018-11-05T06:25:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- releaseBrowser -->
       </class> <!-- com.dy.AutoTest.web.actions.SingletonSet -->
       <class name="com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest">
-        <test-method status="PASS" signature="BeforeTest(org.testng.ITestContext)[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest@4278a03f]" name="BeforeTest" is-config="true" duration-ms="3" started-at="2018-11-05T05:17:42Z" finished-at="2018-11-05T05:17:42Z">
+        <test-method status="PASS" signature="BeforeTest(org.testng.ITestContext)[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest@2f177a4b]" name="BeforeTest" is-config="true" duration-ms="1" started-at="2018-11-05T06:25:00Z" finished-at="2018-11-05T06:25:00Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@57a48985]]>
+                <![CDATA[org.testng.TestRunner@2ce45a7b]]>
               </value>
             </param>
           </params>
           <reporter-output>
             <line>
-              <![CDATA[        2018-11-05 13:17:42): [Test]-"MerchantInfoInsert" is started]]>
+              <![CDATA[        2018-11-05 14:25:00): [Test]-"MerchantInfoInsert" is started]]>
             </line>
           </reporter-output>
         </test-method> <!-- BeforeTest -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest@4278a03f]" name="beforeClass" is-config="true" duration-ms="0" started-at="2018-11-05T05:17:42Z" finished-at="2018-11-05T05:17:42Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest@2f177a4b]" name="beforeClass" is-config="true" duration-ms="0" started-at="2018-11-05T06:25:00Z" finished-at="2018-11-05T06:25:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="init()[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest@4278a03f]" name="init" is-config="true" duration-ms="4" started-at="2018-11-05T05:17:42Z" finished-at="2018-11-05T05:17:42Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest@2f177a4b]" name="init" is-config="true" duration-ms="5" started-at="2018-11-05T06:25:00Z" finished-at="2018-11-05T06:25:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest@4278a03f]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-11-05T05:17:42Z" finished-at="2018-11-05T05:17:42Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest@2f177a4b]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-11-05T06:25:00Z" finished-at="2018-11-05T06:25:00Z">
           <params>
             <param index="0">
               <value>
@@ -79,11 +128,11 @@
           </params>
           <reporter-output>
             <line>
-              <![CDATA[                2018-11-05 13:17:42: [Method]-"LoginPageTest.testLogin" is started]]>
+              <![CDATA[                2018-11-05 14:25:00: [Method]-"LoginPageTest.testLogin" is started]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="testLogin(java.lang.String)[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest@4278a03f]" name="testLogin" duration-ms="5463" started-at="2018-11-05T05:17:42Z" finished-at="2018-11-05T05:17:48Z">
+        <test-method status="PASS" signature="testLogin(java.lang.String)[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest@2f177a4b]" name="testLogin" duration-ms="6462" started-at="2018-11-05T06:25:00Z" finished-at="2018-11-05T06:25:06Z">
           <params>
             <param index="0">
               <value>
@@ -94,94 +143,45 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest@4278a03f]" name="afterMethod" is-config="true" duration-ms="2001" started-at="2018-11-05T05:17:48Z" finished-at="2018-11-05T05:17:50Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest@2f177a4b]" name="afterMethod" is-config="true" duration-ms="2001" started-at="2018-11-05T06:25:06Z" finished-at="2018-11-05T06:25:08Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testLogin status=SUCCESS method=LoginPageTest.testLogin(java.lang.String)[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest@4278a03f] output={null}]]]>
+                <![CDATA[[TestResult name=testLogin status=SUCCESS method=LoginPageTest.testLogin(java.lang.String)[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest@2f177a4b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
             <line>
-              <![CDATA[                2018-11-05 13:17:48: [Method]-"LoginPageTest.testLogin" is passed]]>
+              <![CDATA[                2018-11-05 14:25:06: [Method]-"LoginPageTest.testLogin" is passed]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="AfterTest(org.testng.ITestContext)[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest@4278a03f]" name="AfterTest" is-config="true" duration-ms="0" started-at="2018-11-05T05:18:07Z" finished-at="2018-11-05T05:18:07Z">
+        <test-method status="PASS" signature="AfterTest(org.testng.ITestContext)[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest@2f177a4b]" name="AfterTest" is-config="true" duration-ms="0" started-at="2018-11-05T06:25:24Z" finished-at="2018-11-05T06:25:24Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@57a48985]]>
+                <![CDATA[org.testng.TestRunner@2ce45a7b]]>
               </value>
             </param>
           </params>
           <reporter-output>
             <line>
-              <![CDATA[        2018-11-05 13:18:07): [Test]-"MerchantInfoInsert" is finished]]>
+              <![CDATA[        2018-11-05 14:25:24): [Test]-"MerchantInfoInsert" is finished]]>
             </line>
           </reporter-output>
         </test-method> <!-- AfterTest -->
       </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest -->
-      <class name="com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationRoutePageTest">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationRoutePageTest@147ed70f]" name="beforeClass" is-config="true" duration-ms="0" started-at="2018-11-05T05:17:50Z" finished-at="2018-11-05T05:17:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="init()[pri:0, instance:com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationRoutePageTest@147ed70f]" name="init" is-config="true" duration-ms="1" started-at="2018-11-05T05:17:50Z" finished-at="2018-11-05T05:17:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- init -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationRoutePageTest@147ed70f]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-11-05T05:17:50Z" finished-at="2018-11-05T05:17:50Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationRoutePageTest.testIdentityAuthenticationRoute(com.dy.AutoTest.OnlineCashier.POJO.IdentityAuthenticationRouteBean)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-            <line>
-              <![CDATA[                2018-11-05 13:17:50: [Method]-"IdentityAuthenticationRoutePageTest.testIdentityAuthenticationRoute" is started]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="testIdentityAuthenticationRoute(com.dy.AutoTest.OnlineCashier.POJO.IdentityAuthenticationRouteBean)[pri:0, instance:com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationRoutePageTest@147ed70f]" name="testIdentityAuthenticationRoute" duration-ms="8043" started-at="2018-11-05T05:17:50Z" data-provider="identityAuthenticationRoute" finished-at="2018-11-05T05:17:58Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[com.dy.AutoTest.OnlineCashier.POJO.IdentityAuthenticationRouteBean@5f4d427e]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testIdentityAuthenticationRoute -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationRoutePageTest@147ed70f]" name="afterMethod" is-config="true" duration-ms="2000" started-at="2018-11-05T05:17:58Z" finished-at="2018-11-05T05:18:00Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=testIdentityAuthenticationRoute status=SUCCESS method=IdentityAuthenticationRoutePageTest.testIdentityAuthenticationRoute(com.dy.AutoTest.OnlineCashier.POJO.IdentityAuthenticationRouteBean)[pri:0, instance:com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationRoutePageTest@147ed70f] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-            <line>
-              <![CDATA[                2018-11-05 13:17:58: [Method]-"IdentityAuthenticationRoutePageTest.testIdentityAuthenticationRoute" is passed]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- com.dy.AutoTest.OnlineCashier.TestCases.authentication.IdentityAuthenticationRoutePageTest -->
       <class name="com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest@61dd025]" name="init" is-config="true" duration-ms="2" started-at="2018-11-05T05:18:00Z" finished-at="2018-11-05T05:18:00Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest@147ed70f]" name="init" is-config="true" duration-ms="2" started-at="2018-11-05T06:25:18Z" finished-at="2018-11-05T06:25:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="testQuit()[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest@61dd025]" name="testQuit" duration-ms="5766" started-at="2018-11-05T05:18:00Z" finished-at="2018-11-05T05:18:06Z">
+        <test-method status="PASS" signature="testQuit()[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest@147ed70f]" name="testQuit" duration-ms="5626" started-at="2018-11-05T06:25:18Z" finished-at="2018-11-05T06:25:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testQuit -->
-        <test-method status="PASS" signature="releaseBrowser()[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest@61dd025]" name="releaseBrowser" is-config="true" duration-ms="1000" started-at="2018-11-05T05:18:06Z" finished-at="2018-11-05T05:18:07Z">
+        <test-method status="PASS" signature="releaseBrowser()[pri:0, instance:com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest@147ed70f]" name="releaseBrowser" is-config="true" duration-ms="1001" started-at="2018-11-05T06:25:23Z" finished-at="2018-11-05T06:25:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- releaseBrowser -->
