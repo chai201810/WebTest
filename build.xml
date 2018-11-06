@@ -139,7 +139,7 @@
 
 	<target name="triggerTestNG" depends="cleanall,build">
 		<testng outputdir="${testng.output.dir}" classpathref="AutoTest.classpath" delegateCommandSystemProperties="true">
-			<sysproperty key="file.encoding" value="UTF-8" />
+			<jvmarg value="-Dfile.encoding=UTF-8"/>
 			<xmlfileset dir="${base.dir}" includes="${testng.suite.file}" />
 		</testng>
 	</target>

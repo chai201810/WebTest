@@ -11,6 +11,7 @@ import com.dy.AutoTest.OnlineCashier.POJO.CooperatingRouteInfoBean;
 import com.dy.AutoTest.OnlineCashier.POJO.CooperatingServiceChannelBean;
 import com.dy.AutoTest.OnlineCashier.POJO.IdentityAuthenticationChannelBean;
 import com.dy.AutoTest.OnlineCashier.POJO.IdentityAuthenticationDetailsBean;
+import com.dy.AutoTest.OnlineCashier.POJO.IdentityAuthenticationQueryBean;
 import com.dy.AutoTest.OnlineCashier.POJO.IdentityAuthenticationRouteBean;
 import com.dy.AutoTest.OperationPlatform.POJO.MerchantAuditBean;
 import com.dy.AutoTest.OperationPlatform.POJO.MerchantFeeRateBean;
@@ -186,7 +187,10 @@ public class DataBusiness {
 			list=BaseUtil.toObject(testingDao.getDataList(tableName,IdentityAuthenticationDetailsBean.class));
 			break;
 			
-			
+		case "POP_Data_IdentityAuthenticationQuery":
+			list=BaseUtil.toObject(testingDao.getDataList(tableName,IdentityAuthenticationQueryBean.class));
+			break;
+		
 			
 		case "POP_Data_MerchantAudit":
 			list=BaseUtil.toObject(testingDao.getDataList(tableName,MerchantAuditBean.class));
