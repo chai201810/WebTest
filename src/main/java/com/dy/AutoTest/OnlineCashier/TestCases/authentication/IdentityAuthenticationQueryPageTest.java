@@ -49,7 +49,6 @@ public class IdentityAuthenticationQueryPageTest extends SuperTest {
 		wait.waitFor(1000);
 		
 		identityAuthenticationQueryPage.selectFirstRecord();
-		
 		identityAuthenticationQueryPage.clickSwitchButton();
 	}
 	
