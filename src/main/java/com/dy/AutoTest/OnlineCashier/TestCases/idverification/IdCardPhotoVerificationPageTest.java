@@ -1,5 +1,6 @@
 package com.dy.AutoTest.OnlineCashier.TestCases.idverification;
 
+import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -46,6 +47,8 @@ public class IdCardPhotoVerificationPageTest extends SuperTest {
 		wait.waitFor(1000);
 		
 		idCardPhotoVerificationPage.clickCloseButton();
+		
+		Reporter.log("注册身份证照片审核成功！");
 	}
 	
 }

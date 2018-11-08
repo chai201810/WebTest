@@ -1,5 +1,6 @@
 package com.dy.AutoTest.OnlineCashier.TestCases.authentication;
 
+import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -69,12 +70,16 @@ public class IdentityAuthenticationChannelPageTest extends SuperTest {
 		identityAuthenticationChannelPage.clickDisableButton();
 		identityAuthenticationChannelPage.DisableConfirm();
 		
+		Reporter.log("身份认证关闭成功！合作通道代码：" + identityAuthenticationChannelBean.getChannelCode());
+		
 		wait.waitFor(1000);
 
 		identityAuthenticationChannelPage.selectFirstRecord();
 		
 		identityAuthenticationChannelPage.clickEnableButton();
 		identityAuthenticationChannelPage.EnableConfirm();
+		
+		Reporter.log("身份认证开启成功！合作通道代码：" + identityAuthenticationChannelBean.getChannelCode());				
 	}
 
 	private void modifyCase(IdentityAuthenticationChannelBean identityAuthenticationChannelBean) {
@@ -100,6 +105,8 @@ public class IdentityAuthenticationChannelPageTest extends SuperTest {
 		identityAuthenticationChannelPage.inputContactTelephone("");
 		
 		identityAuthenticationChannelPage.submitModify();
+		
+		Reporter.log("身份认证修改成功！合作通道代码：" + identityAuthenticationChannelBean.getChannelCode());
 	}
 	
 }

@@ -1,5 +1,6 @@
 package com.dy.AutoTest.OnlineCashier.TestCases.cooperatingagent.routeinfo;
 
+import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -56,13 +57,19 @@ public class CooperatingRouteInfoPageTest extends SuperTest {
 		
 		cooperatingRouteInfoPage.clickDetailsButton();
 		cooperatingRouteInfoPage.clickAddCloseButton();
+		
+		Reporter.log("合作机构路由管理详细显示成功！合作机构编码：" + cooperatingRouteInfoBean.getSearch());
 	}
 
 	private void modifyCase(CooperatingRouteInfoBean cooperatingRouteInfoBean) {
 		cooperatingRouteInfoPage.selectFirstRecord();
 		cooperatingRouteInfoPage.clickModifyButton();
 		
+		wait.waitFor(500);
+		
 		cooperatingRouteInfoPage.submitModify();
+		
+		Reporter.log("合作机构路由管理修改成功！合作机构编码：" + cooperatingRouteInfoBean.getSearch());
 	}
 	
 }

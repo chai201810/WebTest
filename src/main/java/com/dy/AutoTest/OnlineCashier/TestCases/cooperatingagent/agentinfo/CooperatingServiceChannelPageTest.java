@@ -1,5 +1,6 @@
 package com.dy.AutoTest.OnlineCashier.TestCases.cooperatingagent.agentinfo;
 
+import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -66,11 +67,15 @@ public class CooperatingServiceChannelPageTest extends SuperTest {
 		
 		cooperatingServiceChannelPage.clickEnableButton();
 		cooperatingServiceChannelPage.EnableConfirm();
+		
+		Reporter.log("业务通道管理开启/关闭成功！合作机构编码：" + cooperatingServiceChannelBean.getSearch());
 	}
 
 	private void modifyCase(CooperatingServiceChannelBean cooperatingServiceChannelBean) {
 		cooperatingServiceChannelPage.clickModifyButton();
 		cooperatingServiceChannelPage.submitModify();
+		
+		Reporter.log("业务通道管理修改成功！合作机构编码：" + cooperatingServiceChannelBean.getSearch());
 	}
 	
 }

@@ -1,5 +1,6 @@
 package com.dy.AutoTest.OnlineCashier.TestCases.cooperatingagent.agentinfo;
 
+import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -122,6 +123,8 @@ public class CooperatingPaymentChannelPageTest extends SuperTest {
 		cooperatingPaymentChannelPage.inputCustomerManager("");
 
 		cooperatingPaymentChannelPage.submitModify();
+		
+		Reporter.log("资金通道管理修改成功！合作机构编码：" + cooperatingPaymentChannelBean.getSearch());
 	}
 	
 	private void enableCase(CooperatingPaymentChannelBean cooperatingPaymentChannelBean) {
@@ -137,6 +140,8 @@ public class CooperatingPaymentChannelPageTest extends SuperTest {
 		
 		cooperatingPaymentChannelPage.clickEnableButton();
 		cooperatingPaymentChannelPage.EnableConfirm();
+		
+		Reporter.log("资金通道管理开启/关闭成功！合作机构编码：" + cooperatingPaymentChannelBean.getSearch());
 	}
 
 }

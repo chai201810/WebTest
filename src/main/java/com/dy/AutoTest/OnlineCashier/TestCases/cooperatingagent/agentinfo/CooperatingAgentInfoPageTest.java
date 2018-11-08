@@ -1,5 +1,6 @@
 package com.dy.AutoTest.OnlineCashier.TestCases.cooperatingagent.agentinfo;
 
+import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -85,6 +86,8 @@ public class CooperatingAgentInfoPageTest extends SuperTest {
 		cooperatingAgentInfoPage.inputCustomerManager("");
 
 		cooperatingAgentInfoPage.submitModify();
+		
+		Reporter.log("合作机构管理修改成功！合作机构编码：" + cooperatingAgentInfoBean.getSearch());
 	}
 
 	private void addCase(CooperatingAgentInfoBean cooperatingAgentInfoBean) {
@@ -112,6 +115,8 @@ public class CooperatingAgentInfoPageTest extends SuperTest {
 		cooperatingAgentInfoPage.inputCustomerManager(cooperatingAgentInfoBean.getCustomerManager());
 		
 		cooperatingAgentInfoPage.clickAddCloseButton();
+		
+		Reporter.log("合作机构管理新增成功！合作机构编码：" + cooperatingAgentInfoBean.getSearch());
 	}
 
 	private void enableCase(CooperatingAgentInfoBean cooperatingAgentInfoBean) {
@@ -127,6 +132,8 @@ public class CooperatingAgentInfoPageTest extends SuperTest {
 		
 		cooperatingAgentInfoPage.clickEnableButton();
 		cooperatingAgentInfoPage.EnableConfirm();
+		
+		Reporter.log("合作机构管理开启/关闭成功！合作机构编码：" + cooperatingAgentInfoBean.getSearch());
 	}
 
 }

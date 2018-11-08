@@ -1,5 +1,6 @@
 package com.dy.AutoTest.OnlineCashier.TestCases.authentication;
 
+import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -51,7 +52,11 @@ public class IdentityAuthenticationDetailsPageTest extends SuperTest {
 		identityAuthenticationDetailsPage.selectFirstRecord();
 		identityAuthenticationDetailsPage.clickModifyButton();
 		
+		wait.waitFor(200);
+		
 		identityAuthenticationDetailsPage.submitModify();
+		
+		Reporter.log("身份认证明细修改成功！内部用户号：" + identityAuthenticationDetailsBean.getInnerUserId());
 	}
 	
 }

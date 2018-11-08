@@ -1,5 +1,6 @@
 package com.dy.AutoTest.OnlineCashier.TestCases.authentication;
 
+import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -50,6 +51,8 @@ public class IdentityAuthenticationQueryPageTest extends SuperTest {
 		
 		identityAuthenticationQueryPage.selectFirstRecord();
 		identityAuthenticationQueryPage.clickSwitchButton();
+		
+		Reporter.log("身份认证流水查询切换成功！内部用户号：" + identityAuthenticationQueryBean.getInnerUserId());
 	}
 	
 }

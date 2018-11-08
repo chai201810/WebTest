@@ -1,5 +1,6 @@
 package com.dy.AutoTest.OnlineCashier.TestCases.authentication;
 
+import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -48,7 +49,11 @@ public class IdentityAuthenticationRoutePageTest extends SuperTest {
 		identityAuthenticationRoutePage.selectFirstRecord();
 		identityAuthenticationRoutePage.clickModifyButton();
 		
+		wait.waitFor(500);
+		
 		identityAuthenticationRoutePage.submitModify();
+		
+		Reporter.log("身份认证路由修改成功！合作业务类型：" + identityAuthenticationRouteBean.getServiceType());
 	}
 
 }
