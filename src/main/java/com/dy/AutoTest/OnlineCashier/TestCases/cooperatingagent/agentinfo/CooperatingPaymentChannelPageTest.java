@@ -31,76 +31,112 @@ public class CooperatingPaymentChannelPageTest extends SuperTest {
 	public void testCooperatingPaymentChannel(CooperatingPaymentChannelBean cooperatingPaymentChannelBean) {
 
 		cooperatingPaymentChannelPage.navigateTo(URL);
-		
+
 		cooperatingPaymentChannelPage.setFocusOnSearch();
 		cooperatingPaymentChannelPage.queryOnSearch(cooperatingPaymentChannelBean.getSearch());
-		
+
 		wait.waitFor(1000);
-		
+
 		cooperatingPaymentChannelPage.selectFirstRecord();
+
+		String caseNo = cooperatingPaymentChannelBean.getCaseNo();
+
+		switch (caseNo) {
+		case "1":
+			modifyCase(cooperatingPaymentChannelBean);
+			break;
+		case "2":
+			enableCase(cooperatingPaymentChannelBean);
+			break;
+		default:
+			break;
+		}
+
+	}
+
+	private void modifyCase(CooperatingPaymentChannelBean cooperatingPaymentChannelBean) {
 		cooperatingPaymentChannelPage.clickModifyButton();
-		
+
 		cooperatingPaymentChannelPage.setFocusOnBankCode();
-		cooperatingPaymentChannelPage.inputBankCode("1");
-		
+		cooperatingPaymentChannelPage.inputBankCode(cooperatingPaymentChannelBean.getUnionBankCode());
+
 		cooperatingPaymentChannelPage.setFocusOnCashAccount();
-		cooperatingPaymentChannelPage.inputCashAccount("2");
+		cooperatingPaymentChannelPage.inputCashAccount(cooperatingPaymentChannelBean.getCashAccount());
+
+		cooperatingPaymentChannelPage.setFocusOnSettleAccountDirect();
+		cooperatingPaymentChannelPage.inputSettleAccountDirect(cooperatingPaymentChannelBean.getSettleAccountDirect());
 		
 		cooperatingPaymentChannelPage.setFocusOnSettleBankCode();
-		cooperatingPaymentChannelPage.inputSettleBankCode("3");
+		cooperatingPaymentChannelPage.inputSettleBankCode(cooperatingPaymentChannelBean.getSettleBankCode());
+
+		cooperatingPaymentChannelPage.setFocusOnSettleAccountBankName();
+		cooperatingPaymentChannelPage.inputSettleAccountBankName(cooperatingPaymentChannelBean.getSettleAccountBankName());
 		
 		cooperatingPaymentChannelPage.setFocusOnSettleAccountName();
-		cooperatingPaymentChannelPage.inputSettleAccountName("4");
-		
+		cooperatingPaymentChannelPage.inputSettleAccountName(cooperatingPaymentChannelBean.getSettleAccountName());
+
 		cooperatingPaymentChannelPage.setFocusOnSettleAccount();
-		cooperatingPaymentChannelPage.inputSettleAccount("5");
-		
+		cooperatingPaymentChannelPage.inputSettleAccount(cooperatingPaymentChannelBean.getSettleAccount());
+
 		cooperatingPaymentChannelPage.setFocusOnMerchantNumber();
-		cooperatingPaymentChannelPage.inputMerchantNumber("6");
-		
+		cooperatingPaymentChannelPage.inputMerchantNumber(cooperatingPaymentChannelBean.getMerchantNumber());
+
 		cooperatingPaymentChannelPage.setFocusOnContactName();
-		cooperatingPaymentChannelPage.inputContactName("7");
-		
+		cooperatingPaymentChannelPage.inputContactName(cooperatingPaymentChannelBean.getContactName());
+
 		cooperatingPaymentChannelPage.setFocusOnCustomerManager();
-		cooperatingPaymentChannelPage.inputCustomerManager("8");
-		
+		cooperatingPaymentChannelPage.inputCustomerManager(cooperatingPaymentChannelBean.getCustomerManager());
+
 		cooperatingPaymentChannelPage.submitModify();
-		
+
 		wait.waitFor(1000);
-		
+
 		cooperatingPaymentChannelPage.selectFirstRecord();
 		cooperatingPaymentChannelPage.clickModifyButton();
-		
+
 		cooperatingPaymentChannelPage.setFocusOnBankCode();
 		cooperatingPaymentChannelPage.inputBankCode("");
-		
+
 		cooperatingPaymentChannelPage.setFocusOnCashAccount();
 		cooperatingPaymentChannelPage.inputCashAccount("");
-		
+
 		cooperatingPaymentChannelPage.setFocusOnSettleBankCode();
 		cooperatingPaymentChannelPage.inputSettleBankCode("");
+
+		cooperatingPaymentChannelPage.setFocusOnSettleAccountBankName();
+		cooperatingPaymentChannelPage.inputSettleAccountBankName("");
 		
 		cooperatingPaymentChannelPage.setFocusOnSettleAccountName();
 		cooperatingPaymentChannelPage.inputSettleAccountName("");
-		
+
 		cooperatingPaymentChannelPage.setFocusOnSettleAccount();
 		cooperatingPaymentChannelPage.inputSettleAccount("");
-		
+
 		cooperatingPaymentChannelPage.setFocusOnMerchantNumber();
 		cooperatingPaymentChannelPage.inputMerchantNumber("");
-		
+
 		cooperatingPaymentChannelPage.setFocusOnContactName();
 		cooperatingPaymentChannelPage.inputContactName("");
-		
+
 		cooperatingPaymentChannelPage.setFocusOnCustomerManager();
 		cooperatingPaymentChannelPage.inputCustomerManager("");
-		
+
 		cooperatingPaymentChannelPage.submitModify();
 	}
 	
-	
-	
-	
-	
-	
+	private void enableCase(CooperatingPaymentChannelBean cooperatingPaymentChannelBean) {
+		cooperatingPaymentChannelPage.clickDetailsButton();
+		cooperatingPaymentChannelPage.clickAddCloseButton();
+		
+		cooperatingPaymentChannelPage.clickDisableButton();
+		cooperatingPaymentChannelPage.DisableConfirm();
+		
+		wait.waitFor(1000);
+
+		cooperatingPaymentChannelPage.selectFirstRecord();
+		
+		cooperatingPaymentChannelPage.clickEnableButton();
+		cooperatingPaymentChannelPage.EnableConfirm();
+	}
+
 }

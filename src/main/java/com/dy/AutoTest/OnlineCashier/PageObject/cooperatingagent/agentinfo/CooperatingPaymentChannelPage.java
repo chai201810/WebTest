@@ -35,15 +35,33 @@ public class CooperatingPaymentChannelPage extends SuperPage {
 		du.what("ModifyAgent").click();
 	}
 	
+	public void clickAddButton() {
+		du.what("AddButton").click();
+	}
 	
+	public void clickAddCloseButton() {
+		du.what("AddCloseButton").click();
+	}
+	
+	public void clickDetailsButton() {
+		du.what("DetailsButton").click();
+	}
+	
+	public void clickDisableButton() {
+		du.what("DisableButton").click();
+	}
+	
+	public void clickEnableButton() {
+		du.what("EnableButton").click();
+	}
 	
 	public void setFocusOnBankCode() {
-		du.what("BankCode").click();
+		du.what("UnionBankCode").click();
 	}
 	
 	public void inputBankCode(String value) {
-		du.what("BankCode").clear();
-		du.what("BankCode").sendKeys(value);
+		du.what("UnionBankCode").clear();
+		du.what("UnionBankCode").sendKeys(value);
 	}
 	
 	public void setFocusOnCashAccount() {
@@ -55,6 +73,14 @@ public class CooperatingPaymentChannelPage extends SuperPage {
 		du.what("CashAccount").sendKeys(value);
 	}
 	
+	public void setFocusOnSettleAccountDirect() {
+		du.what("SettleAccountDirect").click();
+	}
+	
+	public void inputSettleAccountDirect(String value) {
+		du.whatSelect("SettleAccountDirect").selectByValue(value);
+	}
+	
 	public void setFocusOnSettleBankCode() {
 		du.what("SettleBankCode").click();
 	}
@@ -62,6 +88,15 @@ public class CooperatingPaymentChannelPage extends SuperPage {
 	public void inputSettleBankCode(String value) {
 		du.what("SettleBankCode").clear();
 		du.what("SettleBankCode").sendKeys(value);
+	}
+	
+	public void setFocusOnSettleAccountBankName() {
+		du.what("SettleAccountBankName").click();
+	}
+	
+	public void inputSettleAccountBankName(String value) {
+		du.what("SettleAccountBankName").clear();
+		du.what("SettleAccountBankName").sendKeys(value);
 	}
 	
 	public void setFocusOnSettleAccountName() {
@@ -91,8 +126,6 @@ public class CooperatingPaymentChannelPage extends SuperPage {
 		du.what("MerchantNumber").sendKeys(value);
 	}
 	
-	
-	
 	public void setFocusOnContactName() {
 		du.what("ContactName").click();
 	}
@@ -115,5 +148,12 @@ public class CooperatingPaymentChannelPage extends SuperPage {
 		du.what("ModifySubmit").click();
 	}
 	
+	public void EnableConfirm() {
+		du.what("EnableConfirm").click();
+	}
+	
+	public void DisableConfirm() {
+		du.what("DisableConfirm").click();
+	}
 	
 }
