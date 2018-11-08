@@ -37,6 +37,28 @@ public class CooperatingRouteInfoPageTest extends SuperTest {
 		
 		wait.waitFor(1000);
 		
+		String caseNo = cooperatingRouteInfoBean.getCaseNo();
+
+		switch (caseNo) {
+		case "1":
+			modifyCase(cooperatingRouteInfoBean);
+			break;
+		case "2":
+			detailsCase(cooperatingRouteInfoBean);
+			break;
+		default:
+			break;
+		}
+	}
+
+	private void detailsCase(CooperatingRouteInfoBean cooperatingRouteInfoBean) {
+		cooperatingRouteInfoPage.selectFirstRecord();
+		
+		cooperatingRouteInfoPage.clickDetailsButton();
+		cooperatingRouteInfoPage.clickAddCloseButton();
+	}
+
+	private void modifyCase(CooperatingRouteInfoBean cooperatingRouteInfoBean) {
 		cooperatingRouteInfoPage.selectFirstRecord();
 		cooperatingRouteInfoPage.clickModifyButton();
 		

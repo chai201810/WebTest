@@ -39,4 +39,11 @@ public class CooperatingRouteInfoPage extends SuperPage {
 		du.what("ModifySubmit").click();
 	}
 	
+	public void clickDetailsButton() {
+		du.what("DetailsButton").click();
+	}
+	
+	public void clickAddCloseButton() {
+		du.what("AddCloseButton").click();
+	}
 }
