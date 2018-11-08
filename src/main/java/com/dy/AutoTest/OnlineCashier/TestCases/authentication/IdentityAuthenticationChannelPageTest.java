@@ -49,13 +49,42 @@ public class IdentityAuthenticationChannelPageTest extends SuperTest {
 		wait.waitFor(1000);
 		
 		identityAuthenticationChannelPage.selectFirstRecord();
+		
+		String caseNo = identityAuthenticationChannelBean.getCaseNo();
+
+		switch (caseNo) {
+		case "1":
+			modifyCase(identityAuthenticationChannelBean);
+			break;
+		case "2":
+			enableCase(identityAuthenticationChannelBean);
+			break;
+		default:
+			break;
+		}
+	}
+
+	private void enableCase(IdentityAuthenticationChannelBean identityAuthenticationChannelBean) {
+		
+		identityAuthenticationChannelPage.clickDisableButton();
+		identityAuthenticationChannelPage.DisableConfirm();
+		
+		wait.waitFor(1000);
+
+		identityAuthenticationChannelPage.selectFirstRecord();
+		
+		identityAuthenticationChannelPage.clickEnableButton();
+		identityAuthenticationChannelPage.EnableConfirm();
+	}
+
+	private void modifyCase(IdentityAuthenticationChannelBean identityAuthenticationChannelBean) {
 		identityAuthenticationChannelPage.clickModifyButton();
 		
 		identityAuthenticationChannelPage.setFocusOnContactName();
-		identityAuthenticationChannelPage.inputContactName("1");
+		identityAuthenticationChannelPage.inputContactName("熊大");
 		
 		identityAuthenticationChannelPage.setFocusOnContactTelephone();
-		identityAuthenticationChannelPage.inputContactTelephone("2");
+		identityAuthenticationChannelPage.inputContactTelephone("13636605660");
 		
 		identityAuthenticationChannelPage.submitModify();
 		

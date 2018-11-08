@@ -10,6 +10,7 @@ public class IdentityAuthenticationChannelBean implements Serializable {
 	private static final long serialVersionUID = 6875316999637686120L;
 	
 	private int ID;
+	private String CaseNo;
 	private String ChannelCode;
 	private String ChannelName;
 	private String ChannelCategory;
@@ -23,6 +24,14 @@ public class IdentityAuthenticationChannelBean implements Serializable {
 		ID = iD;
 	}
 	
+	public String getCaseNo() {
+		return CaseNo;
+	}
+
+	public void setCaseNo(String caseNo) {
+		CaseNo = caseNo;
+	}
+
 	public String getChannelCode() {
 		return ChannelCode;
 	}

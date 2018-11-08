@@ -85,5 +85,20 @@ public class IdentityAuthenticationChannelPage extends SuperPage {
 		du.what("ModifySubmit").click();
 	}
 	
+	public void clickDisableButton() {
+		du.what("DisableButton").click();
+	}
+	
+	public void clickEnableButton() {
+		du.what("EnableButton").click();
+	}
+	
+	public void EnableConfirm() {
+		du.what("EnableConfirm").click();
+	}
+	
+	public void DisableConfirm() {
+		du.what("DisableConfirm").click();
+	}
 	
 }
