@@ -38,8 +38,38 @@ public class CooperatingServiceChannelPageTest extends SuperTest {
 		wait.waitFor(1000);
 		
 		cooperatingServiceChannelPage.selectFirstRecord();
-		cooperatingServiceChannelPage.clickModifyButton();
 		
+		String caseNo = cooperatingServiceChannelBean.getCaseNo();
+
+		switch (caseNo) {
+		case "1":
+			modifyCase(cooperatingServiceChannelBean);
+			break;
+		case "2":
+			enableCase(cooperatingServiceChannelBean);
+			break;
+		default:
+			break;
+		}
+	}
+
+	private void enableCase(CooperatingServiceChannelBean cooperatingServiceChannelBean) {
+		cooperatingServiceChannelPage.clickDetailsButton();
+		cooperatingServiceChannelPage.clickAddCloseButton();
+		
+		cooperatingServiceChannelPage.clickDisableButton();
+		cooperatingServiceChannelPage.DisableConfirm();
+		
+		wait.waitFor(1000);
+
+		cooperatingServiceChannelPage.selectFirstRecord();
+		
+		cooperatingServiceChannelPage.clickEnableButton();
+		cooperatingServiceChannelPage.EnableConfirm();
+	}
+
+	private void modifyCase(CooperatingServiceChannelBean cooperatingServiceChannelBean) {
+		cooperatingServiceChannelPage.clickModifyButton();
 		cooperatingServiceChannelPage.submitModify();
 	}
 	

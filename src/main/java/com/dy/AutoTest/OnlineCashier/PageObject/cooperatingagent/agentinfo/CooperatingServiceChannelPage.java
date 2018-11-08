@@ -39,4 +39,32 @@ public class CooperatingServiceChannelPage extends SuperPage {
 		du.what("ModifySubmit").click();
 	}
 	
+	public void clickAddButton() {
+		du.what("AddButton").click();
+	}
+	
+	public void clickAddCloseButton() {
+		du.what("AddCloseButton").click();
+	}
+	
+	public void clickDetailsButton() {
+		du.what("DetailsButton").click();
+	}
+	
+	public void clickDisableButton() {
+		du.what("DisableButton").click();
+	}
+	
+	public void clickEnableButton() {
+		du.what("EnableButton").click();
+	}
+	
+	public void EnableConfirm() {
+		du.what("EnableConfirm").click();
+	}
+	
+	public void DisableConfirm() {
+		du.what("DisableConfirm").click();
+	}
+	
 }
