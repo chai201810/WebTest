@@ -35,6 +35,60 @@ public class CooperatingAgentInfoPage extends SuperPage {
 		du.what("ModifyAgent").click();
 	}
 	
+	public void clickAddButton() {
+		du.what("AddButton").click();
+	}
+	
+	public void clickAddCloseButton() {
+		du.what("AddCloseButton").click();
+	}
+	
+	public void clickDetailsButton() {
+		du.what("DetailsButton").click();
+	}
+	
+	public void clickDisableButton() {
+		du.what("DisableButton").click();
+	}
+	
+	public void clickEnableButton() {
+		du.what("EnableButton").click();
+	}
+	
+	public void setFocusOnAgentCode() {
+		du.what("AgentCode").click();
+	}
+	
+	public void inputAgentCode(String value) {
+		du.what("AgentCode").clear();
+		du.what("AgentCode").sendKeys(value);
+	}
+	
+	public void setFocusOnAgentName() {
+		du.what("AgentName").click();
+	}
+	
+	public void inputAgentName(String value) {
+		du.what("AgentName").clear();
+		du.what("AgentName").sendKeys(value);
+	}
+	
+	public void setFocusOnEnableFlag() {
+		du.what("EnableFlag").click();
+	}
+	
+	public void inputEnableFlag(String value) {
+		du.whatSelect("EnableFlag").selectByValue(value);
+	}
+	
+	public void setFocusOnAgentCategory() {
+		du.what("AgentCategory").click();
+	}
+	
+	public void inputAgentCategory(String value) {
+		du.whatSelect("AgentCategory").selectByValue(value);
+	}
+	
 	public void setFocusOnContactName() {
 		du.what("ContactName").click();
 	}
@@ -64,6 +118,14 @@ public class CooperatingAgentInfoPage extends SuperPage {
 	
 	public void submitModify() {
 		du.what("ModifySubmit").click();
+	}
+	
+	public void EnableConfirm() {
+		du.what("EnableConfirm").click();
+	}
+	
+	public void DisableConfirm() {
+		du.what("DisableConfirm").click();
 	}
 	
 }

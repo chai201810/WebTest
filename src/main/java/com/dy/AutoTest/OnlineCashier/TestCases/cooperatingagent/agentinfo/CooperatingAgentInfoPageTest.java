@@ -31,41 +31,102 @@ public class CooperatingAgentInfoPageTest extends SuperTest {
 	public void testCooperatingAgencyInfo(CooperatingAgentInfoBean cooperatingAgentInfoBean) {
 
 		cooperatingAgentInfoPage.navigateTo(URL);
-		
+
 		cooperatingAgentInfoPage.setFocusOnSearch();
-		cooperatingAgentInfoPage.queryOnSearch("HBCB");
-		
+		cooperatingAgentInfoPage.queryOnSearch(cooperatingAgentInfoBean.getSearch());
+
 		wait.waitFor(1000);
-		
+
 		cooperatingAgentInfoPage.selectFirstRecord();
+
+		String caseNo = cooperatingAgentInfoBean.getCaseNo();
+
+		switch (caseNo) {
+		case "1":
+			modifyCase(cooperatingAgentInfoBean);
+			break;
+		case "2":
+			addCase(cooperatingAgentInfoBean);
+			break;
+		case "3":
+			enableCase(cooperatingAgentInfoBean);
+			break;
+		default:
+			break;
+		}
+	}
+
+	private void modifyCase(CooperatingAgentInfoBean cooperatingAgentInfoBean) {
 		cooperatingAgentInfoPage.clickModifyButton();
-		
+
 		cooperatingAgentInfoPage.setFocusOnContactName();
-		cooperatingAgentInfoPage.inputContactName("1");
-		
+		cooperatingAgentInfoPage.inputContactName(cooperatingAgentInfoBean.getContactName());
+
 		cooperatingAgentInfoPage.setFocusOnContactTelephone();
-		cooperatingAgentInfoPage.inputContactTelephone("2");
-		
+		cooperatingAgentInfoPage.inputContactTelephone(cooperatingAgentInfoBean.getContactTelephone());
+
 		cooperatingAgentInfoPage.setFocusOnCustomerManager();
-		cooperatingAgentInfoPage.inputCustomerManager("3");
-		
+		cooperatingAgentInfoPage.inputCustomerManager(cooperatingAgentInfoBean.getCustomerManager());
+
 		cooperatingAgentInfoPage.submitModify();
-		
+
 		wait.waitFor(1000);
-		
+
 		cooperatingAgentInfoPage.selectFirstRecord();
 		cooperatingAgentInfoPage.clickModifyButton();
-		
+
 		cooperatingAgentInfoPage.setFocusOnContactName();
 		cooperatingAgentInfoPage.inputContactName("");
-		
+
 		cooperatingAgentInfoPage.setFocusOnContactTelephone();
 		cooperatingAgentInfoPage.inputContactTelephone("");
-		
+
 		cooperatingAgentInfoPage.setFocusOnCustomerManager();
 		cooperatingAgentInfoPage.inputCustomerManager("");
-		
+
 		cooperatingAgentInfoPage.submitModify();
+	}
+
+	private void addCase(CooperatingAgentInfoBean cooperatingAgentInfoBean) {
+		cooperatingAgentInfoPage.clickAddButton();
+		
+		cooperatingAgentInfoPage.setFocusOnAgentCode();
+		cooperatingAgentInfoPage.inputAgentCode(cooperatingAgentInfoBean.getAgentCode());
+		
+		cooperatingAgentInfoPage.setFocusOnAgentName();
+		cooperatingAgentInfoPage.inputAgentName(cooperatingAgentInfoBean.getAgentName());
+		
+		cooperatingAgentInfoPage.setFocusOnEnableFlag();
+		cooperatingAgentInfoPage.inputEnableFlag(cooperatingAgentInfoBean.getEnableFlag());
+		
+		cooperatingAgentInfoPage.setFocusOnAgentCategory();
+		cooperatingAgentInfoPage.inputAgentCategory(cooperatingAgentInfoBean.getAgentCategory());
+		
+		cooperatingAgentInfoPage.setFocusOnContactName();
+		cooperatingAgentInfoPage.inputContactName(cooperatingAgentInfoBean.getContactName());
+		
+		cooperatingAgentInfoPage.setFocusOnContactTelephone();
+		cooperatingAgentInfoPage.inputContactTelephone(cooperatingAgentInfoBean.getContactTelephone());
+		
+		cooperatingAgentInfoPage.setFocusOnCustomerManager();
+		cooperatingAgentInfoPage.inputCustomerManager(cooperatingAgentInfoBean.getCustomerManager());
+		
+		cooperatingAgentInfoPage.clickAddCloseButton();
+	}
+
+	private void enableCase(CooperatingAgentInfoBean cooperatingAgentInfoBean) {
+		cooperatingAgentInfoPage.clickDetailsButton();
+		cooperatingAgentInfoPage.clickAddCloseButton();
+		
+		cooperatingAgentInfoPage.clickDisableButton();
+		cooperatingAgentInfoPage.DisableConfirm();
+		
+		wait.waitFor(1000);
+
+		cooperatingAgentInfoPage.selectFirstRecord();
+		
+		cooperatingAgentInfoPage.clickEnableButton();
+		cooperatingAgentInfoPage.EnableConfirm();
 	}
 
 }
