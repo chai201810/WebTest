@@ -80,7 +80,7 @@ public class IdCardPhotoVerificationPageTest extends SuperTest {
 		
 		idCardPhotoVerificationPage.clickCloseButton();
 		
-		Reporter.log("注册身份证照片审核不同构，用例成功！");
+		Reporter.log("注册身份证照片审核不通过，用例成功！");
 	}
 	
 }
