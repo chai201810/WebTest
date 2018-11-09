@@ -28,7 +28,7 @@ public class IdCardPhotoVerificationPageTest extends SuperTest {
 		return data.getDataBeanArray();
 	}
 
-	@Test(dataProvider = "idCardPhotoVerification")
+	@Test(dataProvider = "idCardPhotoVerification", description = "运营平台-注册身份证照片审核")
 	public void testIdCardPhotoVerification(IdCardPhotoVerificationBean idCardPhotoVerificationBean) {
 
 		idCardPhotoVerificationPage.navigateTo(URL);

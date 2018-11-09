@@ -28,7 +28,7 @@ public class IdentityAuthenticationRoutePageTest extends SuperTest {
 		return data.getDataBeanArray();
 	}
 
-	@Test(dataProvider = "identityAuthenticationRoute")
+	@Test(dataProvider = "identityAuthenticationRoute", description = "运营平台-合作平台路由信息管理")
 	public void testIdentityAuthenticationRoute(IdentityAuthenticationRouteBean identityAuthenticationRouteBean) {
 
 		identityAuthenticationRoutePage.navigateTo(URL);

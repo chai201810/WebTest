@@ -28,7 +28,7 @@ public class CooperatingPaymentChannelPageTest extends SuperTest {
 		return data.getDataBeanArray();
 	}
 
-	@Test(dataProvider = "cooperatingAgencyInfo")
+	@Test(dataProvider = "cooperatingAgencyInfo", description = "运营平台-资金通道管理")
 	public void testCooperatingPaymentChannel(CooperatingPaymentChannelBean cooperatingPaymentChannelBean) {
 
 		cooperatingPaymentChannelPage.navigateTo(URL);

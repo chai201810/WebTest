@@ -28,7 +28,7 @@ public class CooperatingServiceChannelPageTest extends SuperTest {
 		return data.getDataBeanArray();
 	}
 
-	@Test(dataProvider = "cooperatingServiceChannel")
+	@Test(dataProvider = "cooperatingServiceChannel", description = "运营平台-业务通道管理")
 	public void testCooperatingServiceChannel(CooperatingServiceChannelBean cooperatingServiceChannelBean) {
 
 		cooperatingServiceChannelPage.navigateTo(URL);

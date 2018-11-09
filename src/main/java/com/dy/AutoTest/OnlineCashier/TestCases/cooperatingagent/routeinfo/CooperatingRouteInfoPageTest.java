@@ -28,7 +28,7 @@ public class CooperatingRouteInfoPageTest extends SuperTest {
 		return data.getDataBeanArray();
 	}
 
-	@Test(dataProvider = "cooperatingRouteInfo")
+	@Test(dataProvider = "cooperatingRouteInfo", description = "运营平台-身份认证路由管理")
 	public void testCooperatingRouteInfo(CooperatingRouteInfoBean cooperatingRouteInfoBean) {
 
 		cooperatingRouteInfoPage.navigateTo(URL);

@@ -28,7 +28,7 @@ public class CooperatingAgentInfoPageTest extends SuperTest {
 		return data.getDataBeanArray();
 	}
 
-	@Test(dataProvider = "cooperatingAgencyInfo")
+	@Test(dataProvider = "cooperatingAgencyInfo", description = "运营平台-合作机构基本信息管理")
 	public void testCooperatingAgencyInfo(CooperatingAgentInfoBean cooperatingAgentInfoBean) {
 
 		cooperatingAgentInfoPage.navigateTo(URL);

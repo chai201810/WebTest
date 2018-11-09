@@ -28,7 +28,7 @@ public class IdentityAuthenticationChannelPageTest extends SuperTest {
 		return data.getDataBeanArray();
 	}
 
-	@Test(dataProvider = "identityAuthenticationChannel")
+	@Test(dataProvider = "identityAuthenticationChannel", description = "运营平台-身份认证通道管理")
 	public void testIdentityAuthenticationChannel(IdentityAuthenticationChannelBean identityAuthenticationChannelBean) {
 
 		identityAuthenticationChannelPage.navigateTo(URL);

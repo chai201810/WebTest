@@ -28,7 +28,7 @@ public class IdentityAuthenticationQueryPageTest extends SuperTest {
 		return data.getDataBeanArray();
 	}
 
-	@Test(dataProvider = "identityAuthenticationQuery")
+	@Test(dataProvider = "identityAuthenticationQuery", description = "运营平台-身份认证流水查询")
 	public void testIdentityAuthenticationQuery(IdentityAuthenticationQueryBean identityAuthenticationQueryBean) {
 
 		identityAuthenticationQueryPage.navigateTo(URL);

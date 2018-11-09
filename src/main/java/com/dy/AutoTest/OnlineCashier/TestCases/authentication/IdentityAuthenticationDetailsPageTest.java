@@ -28,7 +28,7 @@ public class IdentityAuthenticationDetailsPageTest extends SuperTest {
 		return data.getDataBeanArray();
 	}
 
-	@Test(dataProvider = "identityAuthenticationDetails")
+	@Test(dataProvider = "identityAuthenticationDetails", description = "运营平台-用户身份证明明细管理")
 	public void testIdentityAuthenticationDetails(IdentityAuthenticationDetailsBean identityAuthenticationDetailsBean) {
 
 		identityAuthenticationDetailsPage.navigateTo(URL);
