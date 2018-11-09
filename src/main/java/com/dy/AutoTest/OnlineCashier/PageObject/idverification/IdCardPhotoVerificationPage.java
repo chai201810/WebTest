@@ -27,6 +27,14 @@ public class IdCardPhotoVerificationPage extends SuperPage {
 		du.what("UserMobile").sendKeys(value);
 	}
 
+	public void setFocusOnVerifyComment() {
+		du.what("VerifyComment").click();
+	}
+	
+	public void inputVerifyComment(String value) {
+		du.what("VerifyComment").sendKeys(value);
+	}
+	
 	public void clickReset() {
 		du.what("ResetButton").click();
 	}

@@ -42,13 +42,45 @@ public class IdCardPhotoVerificationPageTest extends SuperTest {
 		wait.waitFor(1000);
 		
 		idCardPhotoVerificationPage.selectFirstRecord();
+		
+		String caseNo = idCardPhotoVerificationBean.getCaseNo();
+		
+		switch (caseNo) {
+		case "1":
+			verificationPassCase(idCardPhotoVerificationBean);
+			break;
+		case "2":
+			verificationUnPassCase(idCardPhotoVerificationBean);
+			break;
+		default:
+			break;
+		}
+	}
+
+	private void verificationPassCase(IdCardPhotoVerificationBean idCardPhotoVerificationBean) {
 		idCardPhotoVerificationPage.clickVerifyButton();
 		
-		wait.waitFor(1000);
+		idCardPhotoVerificationPage.setFocusOnVerifyComment();
+		idCardPhotoVerificationPage.inputVerifyComment(idCardPhotoVerificationBean.getVerificationComment());
+		
+		wait.waitFor(500);
 		
 		idCardPhotoVerificationPage.clickCloseButton();
 		
-		Reporter.log("注册身份证照片审核成功！");
+		Reporter.log("注册身份证照片审核通过，用例成功！");
+	}
+	
+	private void verificationUnPassCase(IdCardPhotoVerificationBean idCardPhotoVerificationBean) {
+		idCardPhotoVerificationPage.clickVerifyButton();
+		
+		idCardPhotoVerificationPage.setFocusOnVerifyComment();
+		idCardPhotoVerificationPage.inputVerifyComment(idCardPhotoVerificationBean.getVerificationComment());
+		
+		wait.waitFor(500);
+		
+		idCardPhotoVerificationPage.clickCloseButton();
+		
+		Reporter.log("注册身份证照片审核不同构，用例成功！");
 	}
 	
 }
