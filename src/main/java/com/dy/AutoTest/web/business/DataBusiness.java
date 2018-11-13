@@ -9,6 +9,7 @@ import com.dy.AutoTest.OnlineCashier.POJO.CooperatingAgentInfoBean;
 import com.dy.AutoTest.OnlineCashier.POJO.CooperatingPaymentChannelBean;
 import com.dy.AutoTest.OnlineCashier.POJO.CooperatingRouteInfoBean;
 import com.dy.AutoTest.OnlineCashier.POJO.CooperatingServiceChannelBean;
+import com.dy.AutoTest.OnlineCashier.POJO.FinanceChannelManageFlowQueryBean;
 import com.dy.AutoTest.OnlineCashier.POJO.FinanceChannelManageInfoBean;
 import com.dy.AutoTest.OnlineCashier.POJO.IdCardPhotoVerificationBean;
 import com.dy.AutoTest.OnlineCashier.POJO.IdCardValidDateVerificationBean;
@@ -206,7 +207,11 @@ public class DataBusiness {
 			list=BaseUtil.toObject(testingDao.getDataList(tableName,FinanceChannelManageInfoBean.class));
 			break;
 		
-		
+		case "POP_Data_FinanceChannelManageFlowQuery":
+			list=BaseUtil.toObject(testingDao.getDataList(tableName,FinanceChannelManageFlowQueryBean.class));
+			break;
+			
+			
 		
 		case "POP_Data_MerchantAudit":
 			list=BaseUtil.toObject(testingDao.getDataList(tableName,MerchantAuditBean.class));
