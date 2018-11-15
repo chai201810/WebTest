@@ -27,7 +27,7 @@ public class FinanceChannelManageSignManagePageTest extends SuperTest {
 		return data.getDataBeanArray();
 	}
 
-	@Test(dataProvider = "financeChannelManageSignManage", description = "运营平台-通道返回码维护")
+	@Test(dataProvider = "financeChannelManageSignManage", description = "运营平台-通道签约管理")
 	public void testFinanceChannelManageSignManage(FinanceChannelManageSignManageBean financeChannelManageSignManageBean) {
 
 		financeChannelManageSignManagePage.navigateTo(URL);
