@@ -11,6 +11,7 @@ import com.dy.AutoTest.OnlineCashier.POJO.CooperatingRouteInfoBean;
 import com.dy.AutoTest.OnlineCashier.POJO.CooperatingServiceChannelBean;
 import com.dy.AutoTest.OnlineCashier.POJO.FinanceChannelManageFlowQueryBean;
 import com.dy.AutoTest.OnlineCashier.POJO.FinanceChannelManageInfoBean;
+import com.dy.AutoTest.OnlineCashier.POJO.FinanceChannelManageRateMaintainBean;
 import com.dy.AutoTest.OnlineCashier.POJO.FinanceChannelManageReturnCodeBean;
 import com.dy.AutoTest.OnlineCashier.POJO.FinanceChannelManageSignManageBean;
 import com.dy.AutoTest.OnlineCashier.POJO.IdCardPhotoVerificationBean;
@@ -220,6 +221,10 @@ public class DataBusiness {
 			
 		case "POP_Data_FinanceChannelManageSignManage":
 			list=BaseUtil.toObject(testingDao.getDataList(tableName,FinanceChannelManageSignManageBean.class));
+			break;
+			
+		case "POP_Data_FinanceChannelManageRateMaintain":
+			list=BaseUtil.toObject(testingDao.getDataList(tableName,FinanceChannelManageRateMaintainBean.class));
 			break;
 			
 			
