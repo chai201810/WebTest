@@ -8,8 +8,8 @@ import org.testng.annotations.Test;
 
 import com.dy.AutoTest.OperationPlatform.POJO.MerchantFeeRateBean;
 import com.dy.AutoTest.OperationPlatform.PageObject.MerchantManagementOnLine.OnLineMerchantInfo.MerchantFeeRatePage;
-import com.dy.AutoTest.OperationPlatform.TestCases.SuperTest;
 import com.dy.AutoTest.web.actions.SingletonSet;
+import com.dy.AutoTest.web.api.SuperTest;
 import com.dy.AutoTest.web.business.DataBusiness;
 
 public class MerchantFeeRatePageTest extends SuperTest{
@@ -20,9 +20,9 @@ public class MerchantFeeRatePageTest extends SuperTest{
 	public void init() {
     	MerchantFreeRatePage=new MerchantFeeRatePage(driver);
 		URL=host.toString()+DataBusiness.getData_URL("pop_OnlineMerchantFeeRate");
-	}
+	} 
 	
-	@DataProvider(name="feeRate")
+	@DataProvider(name="feeRate") 
 	protected static Object[][] parametersPool(){
 		data.loadDataBeanList("POP_Data_MerchantFeeRate");
 		return data.getDataBeanArray();

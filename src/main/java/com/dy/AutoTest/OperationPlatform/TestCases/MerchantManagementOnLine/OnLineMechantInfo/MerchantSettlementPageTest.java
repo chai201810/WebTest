@@ -5,14 +5,16 @@ import static org.testng.Assert.assertTrue;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.dy.AutoTest.OperationPlatform.POJO.MerchantSettlementAlterBean;
 import com.dy.AutoTest.OperationPlatform.POJO.MerchantSettlementBean;
 import com.dy.AutoTest.OperationPlatform.PageObject.MerchantManagementOnLine.OnLineMerchantInfo.MerchantSettlementPage;
-import com.dy.AutoTest.OperationPlatform.TestCases.SuperTest;
 import com.dy.AutoTest.web.actions.SingletonSet;
+import com.dy.AutoTest.web.api.SuperTest;
 import com.dy.AutoTest.web.business.DataBusiness;
 
 /**
@@ -28,7 +30,7 @@ import com.dy.AutoTest.web.business.DataBusiness;
  * 	- If true , insert new record in table "POP_Data_MerchantSettlement"
  * 
  */
-public class MerchantSettlementPageTest extends SuperTest{
+public class MerchantSettlementPageTest extends SuperTest{ 
 	
 	MerchantSettlementPage merchantSettlementPage;
 	String URL;
@@ -37,43 +39,61 @@ public class MerchantSettlementPageTest extends SuperTest{
 	@BeforeClass
 	public void init() {
 		merchantSettlementPage=new MerchantSettlementPage(driver);
-		URL=host.toString()+DataBusiness.getData_URL("pop_OnlineMerchantSettlementInsert");
+		URL=host.toString()+DataBusiness.getData_URL("pop_OnlineMerchantSettlement");
+		merchantSettlementPage.setWaitTime(1000);
 	}
 	
-	@DataProvider(name="SettlementInfo")
+	@DataProvider(name="SettlementInfoInsert")
 	protected static Object[][] parametersPoolForSqlite(){
 		data.loadDataBeanList("POP_Data_MerchantSettlement");
 		return data.getDataBeanArray();
 	}
 	
-	@Test(dataProvider="SettlementInfo")
+	@DataProvider(name="SettlementInfoAlter")
+	protected static Object[][] parametersPoolForSqlite2(){
+		data.loadDataBeanList("POP_Data_MerchantSettlementAlter");
+		return data.getDataBeanArray();
+	}
+	
+	/**
+	 * @param merchantSettlementBean
+	 * 商户结算信息新增
+	 */
+	@Test(dataProvider="SettlementInfoInsert")
 	public void testMerchantSettlementInsert(MerchantSettlementBean merchantSettlementBean) {
+		//跳转商户结算页面
 		merchantSettlementPage.navigateTo(URL);
-		
+		//如果数据中商户号和商户名都为空，直接打断测试
 		if(merchantSettlementBean.getMerchantNO().equals("")
 				&&merchantSettlementBean.getMerchantName().equals("")) {
 			System.out.println("Both of NO and Name is null! Please check (SQLite--POP_Data_MerchantSettlement) ID= "+merchantSettlementBean.getID());
+			Reporter.log("Both of NO and Name is null! Please check (SQLite--POP_Data_MerchantSettlement) ID= "+merchantSettlementBean.getID());
+
 			assertTrue(false);
-		}else if(!merchantSettlementBean.getMerchantNO().equals("")) {
+		}//如果商户号不为空，设置商户号
+		else if(!merchantSettlementBean.getMerchantNO().equals("")) {
 			merchantSettlementPage.setMerchantNO(merchantSettlementBean.getMerchantNO());
-		}else {
+		}//如果商户号为空，使用商户名去搜索商户
+		else {
 			merchantSettlementPage.setMerchantNOByName(merchantSettlementBean.getMerchantName());
 		}
+		//查询结算信息
 		merchantSettlementPage.doQuery();
 		
+		//判断是否可以新增结算信息
 		String merchantNO=merchantSettlementPage.getMerchantNO();
-		 System.out.println(merchantNO);
-		 
-		assertTrue(merchantSettlementPage.isSettlementInfoAddEnable());
+		assertTrue(merchantSettlementPage.isSettlementInfoAddEnable()); 
 		
-		
+		//插入当前会计日期为下个结算日期
 		Map<String , Object > updateMap=new HashMap<>();
 		if(merchantSettlementBean.getNextSettlementDate().equals("")){
 			updateMap.put("NextSettlementDate", SingletonSet.CurrentAccountantDate.toString());
 		}
+		//插入当前会计日期为结算开始日期
 		if(merchantSettlementBean.getSettlement_StartDate().equals("")){
 			updateMap.put("Settlement_StartDate", SingletonSet.CurrentAccountantDate.toString());
 		}
+		//如果商户号为空，更新商户号
 		if(merchantSettlementBean.getMerchantNO().equals("")) {
 			updateMap.put("MerchantNO", merchantNO);
 		}
@@ -114,11 +134,197 @@ public class MerchantSettlementPageTest extends SuperTest{
 			DataBusiness.updateTestData("POP_Data_MerchantSettlement", updateMap2, whereMap2);
 		}else {
 			System.out.println(merchantSettlementPage.getNotice());
+			Reporter.log(merchantSettlementPage.getNotice());
 			assertTrue(false);
 		}
 		
 	}
 	
+	
+
+	@Test(dataProvider="SettlementInfoAlter")
+	public void testMerchantSettlementDetail(MerchantSettlementAlterBean MerchantSettlementAlterBean) {
+		merchantSettlementPage.navigateTo(URL);
+		
+		
+		doSearchMerchantByNOorName(MerchantSettlementAlterBean);
+		
+		merchantSettlementPage.doQuery();
+		wait.waitFor(1000);
+		
+		if(!merchantSettlementPage.getSettlementStatus().equals("已配置")){
+			System.out.println("The SettlementStatus do not allow to see Detail");
+			Reporter.log("The SettlementStatus do not allow to see Detail");
+			assertTrue(false);
+		}
+		merchantSettlementPage.selectRadio();
+		merchantSettlementPage.doDetail();
+		merchantSettlementPage.doButton_Cancel();
+	}
+	
+	@Test(dataProvider="SettlementInfoAlter")
+	public void testMerchantSettlementAlter(MerchantSettlementAlterBean MerchantSettlementAlterBean) {
+		merchantSettlementPage.navigateTo(URL);
+		
+		
+		doSearchMerchantByNOorName(MerchantSettlementAlterBean);
+		
+		
+		merchantSettlementPage.doQuery();
+		wait.waitFor(1000);
+		
+		if(!merchantSettlementPage.getSettlementStatus().equals("已配置")){
+			System.out.println("The SettlementStatus do not allow to see Detail");
+			Reporter.log("The SettlementStatus do not allow to see Detail");
+			assertTrue(false);
+		}
+		
+		String merchantNO=merchantSettlementPage.getMerchantNO();
+		Map<String , Object > updateMap=new HashMap<>();
+		//如果商户号为空，更新商户号
+		if(MerchantSettlementAlterBean.getMerchantNO().equals("")) {
+			updateMap.put("MerchantNO", merchantNO);
+		}
+		if(!updateMap.isEmpty()) {
+			Map<String , Object> whereMap=new HashMap<>();
+			whereMap.put("ID", MerchantSettlementAlterBean.getID());
+			DataBusiness.updateTestData("POP_Data_MerchantSettlementAlter", updateMap, whereMap);
+		}
+		
+		merchantSettlementPage.selectRadio();
+		merchantSettlementPage.doAlter();
+/*		
+		if(!MerchantSettlementAlterBean.getAccountType().equals("")&&!merchantSettlementPage.getAccountType().equals(MerchantSettlementAlterBean.getAccountType())) {
+			merchantSettlementPage.setAccountType(MerchantSettlementAlterBean.getAccountType());
+		}
+		*/
+/*		if(!MerchantSettlementAlterBean.getSettlementType().equals("")&&!merchantSettlementPage.getSettlementType().equals(MerchantSettlementAlterBean.getSettlementType())) {
+			merchantSettlementPage.setSettlementType(MerchantSettlementAlterBean.getSettlementType());
+		}*/
+		
+		if(!MerchantSettlementAlterBean.getBankName().equals("")&&!merchantSettlementPage.getBankName().equals(MerchantSettlementAlterBean.getBankName())) {
+			merchantSettlementPage.setBankName(MerchantSettlementAlterBean.getBankName());
+		}
+		
+		if(!MerchantSettlementAlterBean.getSubBankBelongProvice().equals("")&&!merchantSettlementPage.getSubBankBelongProvice().equals(MerchantSettlementAlterBean.getSubBankBelongProvice())) {
+			merchantSettlementPage.setSubBankBelongProvice(MerchantSettlementAlterBean.getSubBankBelongProvice());
+		}
+		
+		if(!MerchantSettlementAlterBean.getSubBankBelongCity().equals("")&&!merchantSettlementPage.getSubBankBelongCity().equals(MerchantSettlementAlterBean.getSubBankBelongCity())) {
+			merchantSettlementPage.setSubBankBelongCity(MerchantSettlementAlterBean.getSubBankBelongCity());
+		}
+		
+		if(!MerchantSettlementAlterBean.getSubBankInfo().equals("")&&!merchantSettlementPage.getSubBankInfo().equals(MerchantSettlementAlterBean.getSubBankInfo())) {
+			merchantSettlementPage.setSubBankInfo(MerchantSettlementAlterBean.getSubBankInfo());
+		}
+		
+		if(!MerchantSettlementAlterBean.getAccount().equals("")&&!merchantSettlementPage.getAccount().equals(MerchantSettlementAlterBean.getAccount())) {
+			merchantSettlementPage.setAccount(MerchantSettlementAlterBean.getAccount());
+		}
+		
+		if(!MerchantSettlementAlterBean.getAccountName().equals("")&&!merchantSettlementPage.getAccountName().equals(MerchantSettlementAlterBean.getAccountName())) {
+			merchantSettlementPage.setAccountName(MerchantSettlementAlterBean.getAccountName());
+		}
+		
+		if(!MerchantSettlementAlterBean.getSettlementCycle().equals("")&&!merchantSettlementPage.getSettlementCycle().equals(MerchantSettlementAlterBean.getSettlementCycle())) {
+			merchantSettlementPage.setSettlementCycle(MerchantSettlementAlterBean.getSettlementCycle());
+		}
+		
+		if(!MerchantSettlementAlterBean.getSettlementDays().equals("")&&!merchantSettlementPage.getSettlementDays().equals(MerchantSettlementAlterBean.getSettlementDays())) {
+			merchantSettlementPage.setSettlementDays(MerchantSettlementAlterBean.getSettlementDays());
+		}
+		
+		if(!MerchantSettlementAlterBean.getNextSettlementDate().equals("")&&!merchantSettlementPage.getNextSettlementDate().equals(MerchantSettlementAlterBean.getNextSettlementDate())) {
+			merchantSettlementPage.setNextSettlementDate(MerchantSettlementAlterBean.getNextSettlementDate());
+		}
+			
+		if(!MerchantSettlementAlterBean.getSettlement_StartDate().equals("")&&!merchantSettlementPage.getSettlement_StartDate().equals(MerchantSettlementAlterBean.getSettlement_StartDate())) {
+			merchantSettlementPage.setSettlement_StartDate(MerchantSettlementAlterBean.getSettlement_StartDate());
+		}
+
+		if(!MerchantSettlementAlterBean.getSettlement_ExpireDate().equals("")&&!merchantSettlementPage.getSettlement_ExpireDate().equals(MerchantSettlementAlterBean.getSettlement_ExpireDate())) {
+			merchantSettlementPage.selectAll("Settlement_ExpireDate");
+			merchantSettlementPage.setSettlement_ExpireDate(MerchantSettlementAlterBean.getSettlement_ExpireDate());
+		}
+		
+		
+		if(!MerchantSettlementAlterBean.getStart_Amount().equals("")&&!merchantSettlementPage.getStart_Amount().equals(MerchantSettlementAlterBean.getStart_Amount())) {
+			merchantSettlementPage.setStart_Amount(MerchantSettlementAlterBean.getStart_Amount());
+		}
+		
+		if(!MerchantSettlementAlterBean.getMinimum_Amount().equals("")&&!merchantSettlementPage.getMinimum_Amount().equals(MerchantSettlementAlterBean.getMinimum_Amount())) {
+			merchantSettlementPage.setMinimum_Amount(MerchantSettlementAlterBean.getMinimum_Amount());
+		}
+/*		
+		if(!MerchantSettlementAlterBean.getMerchantSettlementType().equals("")&&!merchantSettlementPage.getMerchantSettlementType().equals(MerchantSettlementAlterBean.getMerchantSettlementType())) {
+			merchantSettlementPage.setMerchantSettlementType(MerchantSettlementAlterBean.getMerchantSettlementType());
+		}
+		
+		if(!MerchantSettlementAlterBean.getSelf_Settlement().equals("")&&!merchantSettlementPage.getSelf_Settlement().equals(MerchantSettlementAlterBean.getSelf_Settlement())) {
+			merchantSettlementPage.setSelf_Settlement(MerchantSettlementAlterBean.getSelf_Settlement());
+		}
+		*/
+	
+		
+		merchantSettlementPage.doButton_Submit();
+		
+		if(merchantSettlementPage.getNotice().contains("成功")) {
+			System.out.println(merchantSettlementPage.getNotice());
+			Reporter.log(merchantSettlementPage.getNotice());
+		}else {
+			System.out.println(merchantSettlementPage.getNotice());
+			Reporter.log(merchantSettlementPage.getNotice());
+			assertTrue(false);
+		}
+	}
+	
+	
+	@Test(dataProvider="SettlementInfoAlter")
+	public void testMerchantSettlementAlterVerify(MerchantSettlementAlterBean MerchantSettlementAlterBean) {
+		merchantSettlementPage.navigateTo(URL);
+		
+		
+		doSearchMerchantByNOorName(MerchantSettlementAlterBean);
+		
+		merchantSettlementPage.doQuery();
+		wait.waitFor(1000);
+		
+		if(!merchantSettlementPage.getSettlementStatus().equals("已配置")){
+			System.out.println("The SettlementStatus do not allow to see Detail");
+			Reporter.log("The SettlementStatus do not allow to see Detail");
+			assertTrue(false);
+		}
+		merchantSettlementPage.selectRadio();
+		merchantSettlementPage.doDetail();
+		
+		wait.waitFor(5000);
+		
+		merchantSettlementPage.doButton_Cancel();
+		
+		
+	}
+	
+	public void doSearchMerchantByNOorName(MerchantSettlementAlterBean MerchantSettlementAlterBean) {
+		if(!MerchantSettlementAlterBean.getMerchantNO().equals("")) {
+			merchantSettlementPage.setMerchantNO(MerchantSettlementAlterBean.getMerchantNO());
+		}else if(!MerchantSettlementAlterBean.getMerchantName().equals("")) {
+			merchantSettlementPage.setMerchantName(MerchantSettlementAlterBean.getMerchantName());
+			try {
+				merchantSettlementPage.isSearchMerchantIndexDisplayed(MerchantSettlementAlterBean.getSearchMerchant_Index());
+				merchantSettlementPage.doSearchMerchantSubmit(MerchantSettlementAlterBean.getSearchMerchant_Index());
+			} catch (Exception e) {
+				merchantSettlementPage.doSearchMerchantClose();
+				wait.waitFor(1000);
+				System.out.println("搜商户 该商户名数据不存在，Please Check TestData ! MerchantName is "+MerchantSettlementAlterBean.getMerchantName());
+				Reporter.log("搜商户 该商户名数据不存在，Please Check TestData ! MerchantName is "+MerchantSettlementAlterBean.getMerchantName());
+				assertTrue(false);
+			}
+		}else {
+			System.out.println("Both of MerchantNO and MerchantName are null ! Please check TestData !");
+			Reporter.log("Both of MerchantNO and MerchantName are null ! Please check TestData !");
+			assertTrue(false,"Both of MerchantNO and MerchantName are null ! Please check TestData !");
+		}
+	}
 	
 	
 }

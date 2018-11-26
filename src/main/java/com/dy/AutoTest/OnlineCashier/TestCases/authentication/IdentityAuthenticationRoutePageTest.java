@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import com.dy.AutoTest.OnlineCashier.POJO.IdentityAuthenticationRouteBean;
 import com.dy.AutoTest.OnlineCashier.PageObject.authentication.IdentityAuthenticationRoutePage;
-import com.dy.AutoTest.OperationPlatform.TestCases.SuperTest;
+import com.dy.AutoTest.web.api.SuperTest;
 import com.dy.AutoTest.web.business.DataBusiness;
 
 public class IdentityAuthenticationRoutePageTest extends SuperTest {

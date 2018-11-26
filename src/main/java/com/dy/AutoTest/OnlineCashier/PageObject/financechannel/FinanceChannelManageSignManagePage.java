@@ -3,7 +3,7 @@ package com.dy.AutoTest.OnlineCashier.PageObject.financechannel;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-import com.dy.AutoTest.OperationPlatform.PageObject.SuperPage;
+import com.dy.AutoTest.web.api.SuperPage;
 import com.dy.AutoTest.web.actions.DoPlus;
 
 public class FinanceChannelManageSignManagePage extends SuperPage {

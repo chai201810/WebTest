@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import com.dy.AutoTest.OnlineCashier.POJO.CooperatingServiceChannelBean;
 import com.dy.AutoTest.OnlineCashier.PageObject.cooperatingagent.agentinfo.CooperatingServiceChannelPage;
-import com.dy.AutoTest.OperationPlatform.TestCases.SuperTest;
+import com.dy.AutoTest.web.api.SuperTest;
 import com.dy.AutoTest.web.business.DataBusiness;
 
 public class CooperatingServiceChannelPageTest extends SuperTest {

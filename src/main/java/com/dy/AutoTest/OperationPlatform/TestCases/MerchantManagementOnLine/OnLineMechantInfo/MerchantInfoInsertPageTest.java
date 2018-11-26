@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import com.dy.AutoTest.OperationPlatform.POJO.MerchantInfoBean;
 import com.dy.AutoTest.OperationPlatform.PageObject.MerchantManagementOnLine.OnLineMerchantInfo.MerchantInfoInsertPage;
-import com.dy.AutoTest.OperationPlatform.TestCases.SuperTest;
+import com.dy.AutoTest.web.api.SuperTest;
 import com.dy.AutoTest.web.business.DataBusiness;
 
 /**
@@ -28,7 +28,7 @@ import com.dy.AutoTest.web.business.DataBusiness;
  * 	- Assert Notice is or not equal/contains expected value ;
  * 	- If true , insert new record in table "POP_Data_MerchantSettlement"
  */
-public class MerchantInfoInsertPageTest extends SuperTest{
+public class MerchantInfoInsertPageTest extends SuperTest{ 
 	
 	private MerchantInfoInsertPage merchentInfoInsertPage;
 	private String URL="";

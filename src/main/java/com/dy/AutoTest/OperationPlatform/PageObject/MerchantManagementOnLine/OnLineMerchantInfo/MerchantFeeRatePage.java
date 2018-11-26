@@ -2,8 +2,8 @@ package com.dy.AutoTest.OperationPlatform.PageObject.MerchantManagementOnLine.On
 
 import org.openqa.selenium.WebDriver;
 
-import com.dy.AutoTest.OperationPlatform.PageObject.SuperPage;
 import com.dy.AutoTest.web.actions.DoPlus;
+import com.dy.AutoTest.web.api.SuperPage;
 
 public class MerchantFeeRatePage extends SuperPage{
 
@@ -11,7 +11,7 @@ public class MerchantFeeRatePage extends SuperPage{
 		super(driver);
 		du.loadLocator("POP_Loc_MerchantFeeRate");
 	}
-
+ 
 	public void setWaitTime(long waitTime) {
 		du=new DoPlus(driver);
 		du.waitTime=waitTime;

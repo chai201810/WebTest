@@ -22,7 +22,7 @@ public class MainMenuPageTest {
 	public void init() {
 		driver=SingletonSet.driver;
 		wait=SingletonSet.wait;
-		mainMenuPage=new MainMenuPage(driver);
+		mainMenuPage=new MainMenuPage(driver); 
 		
 		URL=host.toString()+DataBusiness.getData_URL("pop_index");
 	}
@@ -32,7 +32,7 @@ public class MainMenuPageTest {
 		wait.waitFor(1000);
 	}
 	
-	@Test(description = "商品基础信息与审核")
+	@Test
 	public void testMechantInfoInsert() {
 		mainMenuPage.navigateTo(URL);
 		mainMenuPage.gotoMechantInfoInsert();

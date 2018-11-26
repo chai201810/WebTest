@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import com.dy.AutoTest.OnlineCashier.POJO.CooperatingRouteInfoBean;
 import com.dy.AutoTest.OnlineCashier.PageObject.cooperatingagent.routeinfo.CooperatingRouteInfoPage;
-import com.dy.AutoTest.OperationPlatform.TestCases.SuperTest;
+import com.dy.AutoTest.web.api.SuperTest;
 import com.dy.AutoTest.web.business.DataBusiness;
 
 public class CooperatingRouteInfoPageTest extends SuperTest {

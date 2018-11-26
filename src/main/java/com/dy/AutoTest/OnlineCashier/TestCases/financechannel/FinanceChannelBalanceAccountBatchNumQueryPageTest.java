@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import com.dy.AutoTest.OnlineCashier.POJO.FinanceChannelBalanceAccountBatchNumQueryBean;
 import com.dy.AutoTest.OnlineCashier.PageObject.financechannel.FinanceChannelBalanceAccountBatchNumQueryPage;
-import com.dy.AutoTest.OperationPlatform.TestCases.SuperTest;
+import com.dy.AutoTest.web.api.SuperTest;
 import com.dy.AutoTest.web.business.DataBusiness;
 
 public class FinanceChannelBalanceAccountBatchNumQueryPageTest extends SuperTest {

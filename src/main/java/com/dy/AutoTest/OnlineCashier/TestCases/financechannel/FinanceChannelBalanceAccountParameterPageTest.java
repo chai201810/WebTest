@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import com.dy.AutoTest.OnlineCashier.POJO.FinanceChannelBalanceAccountParameterBean;
 import com.dy.AutoTest.OnlineCashier.PageObject.financechannel.FinanceChannelBalanceAccountParameterPage;
-import com.dy.AutoTest.OperationPlatform.TestCases.SuperTest;
+import com.dy.AutoTest.web.api.SuperTest;
 import com.dy.AutoTest.web.business.DataBusiness;
 
 public class FinanceChannelBalanceAccountParameterPageTest extends SuperTest {

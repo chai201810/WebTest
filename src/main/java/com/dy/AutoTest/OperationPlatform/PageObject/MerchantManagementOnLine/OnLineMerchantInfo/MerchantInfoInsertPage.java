@@ -2,15 +2,15 @@ package com.dy.AutoTest.OperationPlatform.PageObject.MerchantManagementOnLine.On
 
 import org.openqa.selenium.WebDriver;
 
-import com.dy.AutoTest.OperationPlatform.PageObject.SuperPage;
 import com.dy.AutoTest.web.actions.DoPlus;
+import com.dy.AutoTest.web.api.SuperPage;
 
 public class MerchantInfoInsertPage extends SuperPage{
 
 	public MerchantInfoInsertPage(WebDriver driver) {
 		super(driver);
 		du.loadLocator("POP_Loc_OnlineMerchantInsert");
-	}
+	} 
 	@Override
 	public void setWaitTime(long waitTime) {
 		du=new DoPlus(driver);

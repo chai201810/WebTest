@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import com.dy.AutoTest.OnlineCashier.POJO.IdCardPhotoVerificationBean;
 import com.dy.AutoTest.OnlineCashier.PageObject.idverification.IdCardPhotoVerificationPage;
-import com.dy.AutoTest.OperationPlatform.TestCases.SuperTest;
+import com.dy.AutoTest.web.api.SuperTest;
 import com.dy.AutoTest.web.business.DataBusiness;
 
 public class IdCardPhotoVerificationPageTest extends SuperTest {

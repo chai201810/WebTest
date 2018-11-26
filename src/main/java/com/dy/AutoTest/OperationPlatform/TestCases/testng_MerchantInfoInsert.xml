@@ -20,7 +20,7 @@
 				<methods>
 					<include name="testMerchantInfoInsert" />
 				</methods>
-			</class>
+			</class> 
 			<class
 				name="com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest">
 				<methods>
@@ -30,7 +30,7 @@
 		</classes>
 	</test> 
   
-	 
+<!-- 	 
 	<test thread-count="5" name="MerchantAuditPass">
 		<parameter name="OperID" value="T00107"></parameter>
 		<parameter name="AuditID" value="1"></parameter>
@@ -53,7 +53,7 @@
 				<methods><include name="testQuit" /></methods> </class>
 		</classes>
 	</test> 
-    
+     -->
 <!--   
     <test thread-count="5" name="MerchantAuditRefuse" >
 		<parameter name="OperID" value="T00107"></parameter>
@@ -71,6 +71,7 @@
 	   		</class> 
 	    </classes>
   </test>  -->
+  
   
   <listeners>
            <listener class-name="org.uncommons.reportng.HTMLReporter" />

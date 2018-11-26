@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import com.dy.AutoTest.OperationPlatform.POJO.OperBean;
 import com.dy.AutoTest.OperationPlatform.PageObject.LoginPage;
 import com.dy.AutoTest.web.actions.SingletonSet;
+import com.dy.AutoTest.web.api.SuperTest;
 import com.dy.AutoTest.web.business.DataBusiness;
 
 /**
@@ -20,7 +21,7 @@ import com.dy.AutoTest.web.business.DataBusiness;
  *  - Do Login and record "CurrentAccountantDate" on index.jsp
  *
  */
-public class LoginPageTest extends SuperTest{
+public class LoginPageTest extends SuperTest{ 
 	private LoginPage loginPage;
 	private String URL="";
 	
@@ -44,6 +45,7 @@ public class LoginPageTest extends SuperTest{
 		String code_SMS = loginPage.getCode_SMS(operBean.getMobileNO());
 		loginPage.setCode_SMS(code_SMS);
 		loginPage.doLogin();
-		SingletonSet.CurrentAccountantDate.append(loginPage.getCurrentAccountantDate());
+		if(SingletonSet.CurrentAccountantDate.toString().equals(""))
+			SingletonSet.CurrentAccountantDate.append(loginPage.getCurrentAccountantDate());
 	}
 }
