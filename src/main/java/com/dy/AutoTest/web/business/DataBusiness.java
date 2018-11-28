@@ -11,6 +11,7 @@ import com.dy.AutoTest.OperationPlatform.POJO.UserInfoQueryBean;
 import com.dy.AutoTest.OnlineCashier.POJO.OnlineCashierB2BBean;
 import com.dy.AutoTest.OnlineCashier.POJO.OnlineCashierB2CBean;
 import com.dy.AutoTest.OnlineCashier.PageObject.accountmanage.AccountManageInternalAccountManagePage;
+import com.dy.AutoTest.OnlineCashier.POJO.AccountManageInternalAccountHistoryBalanceBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageInternalAccountManageBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageItemManageBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageItemRelationBean;
@@ -398,6 +399,11 @@ public class DataBusiness {
 		case "POP_Data_AccountManageInternalAccountManage":
 			list=BaseUtil.toObject(testingDao.getDataList(tableName,AccountManageInternalAccountManageBean.class));
 			break;	
+			
+		case "POP_Data_AccountManageInternalAccountHistoryBalance":
+			list=BaseUtil.toObject(testingDao.getDataList(tableName,AccountManageInternalAccountHistoryBalanceBean.class));
+			break;	
+			
 			
 		default:
 			System.out.println("table "+tableName+" is not exist! Please check!");
