@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MethodScan">
+
+	<insert id="addMethodScan" parameterType="MethodScan">
+		INSERT INTO
+		dy_scan_method
+		(
+		id_dy_method,
+		id_dy_class,
+		method_name,
+		memo,
+		depends_on_methods,
+		owner
+		) VALUES (
+		#{idDyMethod},
+		#{idDyClass},
+		#{methodName},
+		#{memo},
+		#{dependsOnMethods},
+		#{owner}
+		)
+	</insert>
+
+</mapper> 

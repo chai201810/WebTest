@@ -1,4 +1,4 @@
-package com.dy.AutoTest.scanner.impl;
+package com.dy.AutoTest.scanner.util;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -11,39 +11,12 @@ import java.util.Set;
 
 import org.testng.annotations.Test;
 
-public class Scanner {
-	/**
-	 * 从包package中获取所有的Class
-	 *
-	 * @param packageName
-	 * @return
-	 */
-	public Set<Class<?>> getClasses(String path, String packageName) throws Exception {
-
-		Set<Class<?>> classes = new HashSet<>();
-		// 是否循环迭代
-		boolean recursive = true;
-
-		try {
-			URL url = new URL(path);
-			String protocol = url.getProtocol();
-			// 如果是以文件的形式保存在服务器上
-			if ("file".equals(protocol)) {
-				// 获取包的物理路径
-				String filePath = URLDecoder.decode(url.getFile(), "UTF-8");
-				findAndAddClassesInPackageByFile(packageName, filePath, recursive, classes);
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return classes;
-	}
+public class ScannerUtil {
 
 	public void getTests(String path, String packageName) throws Exception {
 		Set<Class<?>> clsList = getClasses(path, packageName);
 		if (clsList != null && clsList.size() > 0) {
 			for (Class<?> cls : clsList) {
-
 				Method[] methods = cls.getMethods();
 
 				for (Method m : methods) {
@@ -65,16 +38,28 @@ public class Scanner {
 
 	}
 
-	/**
-	 * 以文件的形式来获取包下的所有Class
-	 *
-	 * @param packageName
-	 * @param packagePath
-	 * @param recursive
-	 * @param classes
-	 */
-	public static void findAndAddClassesInPackageByFile(String packageName, String packagePath, final boolean recursive,
-			Set<Class<?>> classes) {
+	private Set<Class<?>> getClasses(String path, String packageName) throws Exception {
+		Set<Class<?>> classes = new HashSet<>();
+		// 是否循环迭代
+		boolean recursive = true;
+
+		try {
+			URL url = new URL(path);
+			String protocol = url.getProtocol();
+			// 如果是以文件的形式保存在服务器上
+			if ("file".equals(protocol)) {
+				// 获取包的物理路径
+				String filePath = URLDecoder.decode(url.getFile(), "UTF-8");
+				findAndAddClassesInPackageByFile(packageName, filePath, recursive, classes);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return classes;
+	}
+
+	private static void findAndAddClassesInPackageByFile(String packageName, String packagePath,
+			final boolean recursive, Set<Class<?>> classes) {
 
 		File dir = new File(packagePath);
 
@@ -149,16 +134,4 @@ public class Scanner {
 		return null;
 	}
 
-	public static void main(String[] args) throws Exception {
-
-		URL path = new Scanner().getClass().getClassLoader().getResource("");
-		System.out.println(path);
-
-		String packageName = "com.dy.AutoTest";
-		String packagePath = packageName.replaceAll("\\.", "/");
-
-		System.out.println(packagePath);
-
-		new Scanner().getTests(path + "/" + packagePath, packageName);
-	}
 }

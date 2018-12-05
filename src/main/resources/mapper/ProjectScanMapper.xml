@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ProjectScan">
+
+	<insert id="addProjectScan" parameterType="ProjectScan">
+		INSERT INTO dy_scan_project
+		(
+		id_dy_project,
+		id_testproject,
+		dy_giturl,
+		job_name,
+		update_date,
+		create_date,
+		node_name,
+		dy_type
+		) VALUES (
+		#{idDyProject},
+		#{idTestproject},
+		#{dyGiturl},
+		#{jobName},
+		#{updateDate},
+		NOW(),
+		#{nodeName},
+		#{dyType}
+		)
+	</insert>
+
+</mapper> 

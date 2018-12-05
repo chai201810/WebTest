@@ -68,7 +68,18 @@
 			<version>4.2.0</version>
 		</dependency>
 
-
+		<!-- mysql数据库连接池 pool -->
+		<dependency>
+		  <groupId>com.alibaba</groupId>
+		     <artifactId>druid</artifactId>
+		     <version>1.0.8</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis</artifactId>
+		    <version>3.2.8</version>
+		</dependency>
 
 	</dependencies>
 

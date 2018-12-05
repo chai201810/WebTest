@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ClassScan">
+
+	<insert id="addClassScan" parameterType="ClassScan">
+		INSERT INTO
+		dy_scan_class
+		(
+		id_dy_class,
+		id_dy_project,
+		package_name,
+		class_name,
+		file_path,
+		memo
+		) VALUES (
+		#{idDyClass},
+		#{idDyProject},
+		#{packageName},
+		#{className},
+		#{filePath},
+		#{memo}
+		)
+	</insert>
+
+</mapper> 
