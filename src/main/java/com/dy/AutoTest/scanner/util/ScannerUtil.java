@@ -6,14 +6,20 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLDecoder;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.testng.annotations.Test;
 
+import com.dy.AutoTest.scanner.bean.ScanDto;
+
 public class ScannerUtil {
 
-	public void getTests(String path, String packageName) throws Exception {
+	public List<ScanDto> getTests(String path, String packageName) throws Exception {
+		List<ScanDto> scanList = new ArrayList<ScanDto>();
+		
 		Set<Class<?>> clsList = getClasses(path, packageName);
 		if (clsList != null && clsList.size() > 0) {
 			for (Class<?> cls : clsList) {
@@ -23,19 +29,31 @@ public class ScannerUtil {
 					Test annotationTest = m.getAnnotation(Test.class);
 					if (annotationTest != null) {
 
-						System.out.println("类名：" + cls.toString());
-						System.out.println("方法名：" + m.toString());
-						System.out.println("用例描述：" + annotationTest.description());
-
+						ScanDto dto = new ScanDto();
+						dto.setClassName(cls.toString());
+						dto.setMethodName(m.toString());
+						dto.setMemo(annotationTest.description());
+						
+//						System.out.println("类名：" + cls.toString());
+//						System.out.println("方法名：" + m.toString());
+//						System.out.println("用例描述：" + annotationTest.description());
+						
+						StringBuilder depends = new StringBuilder();
 						for (String depend : annotationTest.dependsOnMethods()) {
-							System.out.println("用例依赖：" + depend);
+							depends.append(depend).append(",");
+							
+//							System.out.println("用例依赖：" + depend);
+							
 						}
+						
+						scanList.add(dto);
 					}
 				}
 
 			}
 		}
 
+		return scanList;
 	}
 
 	private Set<Class<?>> getClasses(String path, String packageName) throws Exception {
