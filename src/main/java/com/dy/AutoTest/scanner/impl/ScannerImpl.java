@@ -30,7 +30,7 @@ public class ScannerImpl {
 
 		// Get DTO from Service
 		List<ClassScanDto> scanList = new ScannerUtil().getTests(path + "/" + packagePath, PACKAGE_NAME);
-		System.out.println(scanList.size());
+		System.out.println("CNO: " + scanList.size());
 
 		// Project Scan Data to DB
 		ProjectScan pScan = new ProjectScan();
