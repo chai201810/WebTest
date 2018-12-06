@@ -40,7 +40,7 @@ public class ScannerUtil {
 					if (annotationTest != null) {
 						MethodScanDto methodDto = new MethodScanDto();
 
-						methodDto.setMethodName(m.toString());
+						methodDto.setMethodName(m.getName());
 						methodDto.setMemo(annotationTest.description());
 						
 						StringBuilder depends = new StringBuilder();

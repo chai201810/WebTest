@@ -4,7 +4,8 @@
 
 <mapper namespace="ClassScan">
 
-	<insert id="addClassScan" useGeneratedKeys="true" keyProperty="id_dy_class" parameterType="ClassScan">
+	<insert id="addClassScan" parameterType="ClassScan"
+		useGeneratedKeys="true" keyProperty="idDyClass">
 		INSERT INTO
 		dy_scan_class
 		(

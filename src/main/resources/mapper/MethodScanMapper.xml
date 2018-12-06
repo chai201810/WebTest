@@ -4,7 +4,8 @@
 
 <mapper namespace="MethodScan">
 
-	<insert id="addMethodScan" useGeneratedKeys="true" keyProperty="id_dy_method" parameterType="MethodScan">
+	<insert id="addMethodScan" parameterType="MethodScan"
+		useGeneratedKeys="true" keyProperty="idDyMethod">
 		INSERT INTO
 		dy_scan_method
 		(

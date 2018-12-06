@@ -1,16 +1,16 @@
 package com.dy.AutoTest.scanner.impl;
 
-import java.io.Reader;
 import java.net.URL;
 import java.util.List;
 
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-
+import com.dy.AutoTest.scanner.bean.ClassScan;
 import com.dy.AutoTest.scanner.bean.ClassScanDto;
+import com.dy.AutoTest.scanner.bean.MethodScan;
+import com.dy.AutoTest.scanner.bean.MethodScanDto;
 import com.dy.AutoTest.scanner.bean.ProjectScan;
+import com.dy.AutoTest.scanner.dao.ClassScanDao;
+import com.dy.AutoTest.scanner.dao.MethodScanDao;
+import com.dy.AutoTest.scanner.dao.ProjectScanDao;
 import com.dy.AutoTest.scanner.util.ScannerUtil;
 
 public class ScannerImpl {
@@ -39,29 +39,38 @@ public class ScannerImpl {
 		pScan.setJobName(JOB_NAME);
 		pScan.setNodeName(NODE_NAME);
 
-		SqlSession session = null;
-		try {
-			String resource = "config/mybatis.xml";
-	        Reader reader = Resources.getResourceAsReader(resource);
-	        SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
-	        SqlSessionFactory factory = builder.build(reader);
-	        session = factory.openSession();
-			
-			session.insert("ProjectScan.addProjectScan", pScan);
-			session.commit();
-			
-			System.out.println(pScan.getIdDyProject());
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			if (session != null) {
-				session.close();
+		ProjectScanDao pScanDao = new ProjectScanDao();
+		long projectId = pScanDao.insert(pScan);
+		System.out.println("PID: " + projectId);
+
+		// Class Data And Method Data to DB
+		ClassScanDao cScanDao = new ClassScanDao();
+		MethodScanDao mScanDao = new MethodScanDao();
+
+		for (ClassScanDto cDto : scanList) {
+			ClassScan cScan = new ClassScan();
+			cScan.setIdDyProject(projectId);
+			cScan.setPackageName(cDto.getPackageName());
+			cScan.setClassName(cDto.getClassName());
+			cScan.setFilePath(cDto.getFilePath());
+			cScan.setMemo("");
+
+			long classId = cScanDao.insert(cScan);
+			System.out.println("CID: " + classId);
+
+			for (MethodScanDto mDto : cDto.getMethodList()) {
+				MethodScan mScan = new MethodScan();
+				mScan.setIdDyClass(classId);
+				mScan.setMethodName(mDto.getMethodName());
+				mScan.setMemo(mDto.getMemo());
+				mScan.setDependsOnMethods(mDto.getDepends());
+				mScan.setOwner("");
+
+				long methodId = mScanDao.insert(mScan);
+				System.out.println("MID: " + methodId);
 			}
+
 		}
-
-		// To Do: Class Data to DB
-
-		// To Do: Method Data to DB
 
 	}
 
