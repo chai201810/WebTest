@@ -4,26 +4,19 @@
 
 <mapper namespace="ProjectScan">
 
-	<insert id="addProjectScan" parameterType="ProjectScan">
+	<insert id="addProjectScan" parameterType="ProjectScan"
+		useGeneratedKeys="true" keyProperty="idDyProject">
 		INSERT INTO dy_scan_project
 		(
-		id_dy_project,
 		id_testproject,
 		dy_giturl,
 		job_name,
-		update_date,
-		create_date,
-		node_name,
-		dy_type
+		node_name
 		) VALUES (
-		#{idDyProject},
 		#{idTestproject},
 		#{dyGiturl},
 		#{jobName},
-		#{updateDate},
-		NOW(),
-		#{nodeName},
-		#{dyType}
+		#{nodeName}
 		)
 	</insert>
 

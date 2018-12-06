@@ -4,18 +4,16 @@
 
 <mapper namespace="ClassScan">
 
-	<insert id="addClassScan" parameterType="ClassScan">
+	<insert id="addClassScan" useGeneratedKeys="true" keyProperty="id_dy_class" parameterType="ClassScan">
 		INSERT INTO
 		dy_scan_class
 		(
-		id_dy_class,
 		id_dy_project,
 		package_name,
 		class_name,
 		file_path,
 		memo
 		) VALUES (
-		#{idDyClass},
 		#{idDyProject},
 		#{packageName},
 		#{className},

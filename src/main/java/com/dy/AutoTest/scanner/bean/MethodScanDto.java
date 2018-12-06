@@ -2,25 +2,16 @@ package com.dy.AutoTest.scanner.bean;
 
 import java.io.Serializable;
 
-public class ScanDto implements Serializable {
+public class MethodScanDto implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 463392800431848929L;
+	private static final long serialVersionUID = 1090648375840349834L;
 
-	private String className;
 	private String methodName;
 	private String memo;
 	private String depends;
-
-	public String getClassName() {
-		return className;
-	}
-
-	public void setClassName(String className) {
-		this.className = className;
-	}
 
 	public String getMethodName() {
 		return methodName;

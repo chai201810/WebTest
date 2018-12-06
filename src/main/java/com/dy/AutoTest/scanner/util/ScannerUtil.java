@@ -13,43 +13,46 @@ import java.util.Set;
 
 import org.testng.annotations.Test;
 
-import com.dy.AutoTest.scanner.bean.ScanDto;
+import com.dy.AutoTest.scanner.bean.ClassScanDto;
+import com.dy.AutoTest.scanner.bean.MethodScanDto;
 
 public class ScannerUtil {
 
-	public List<ScanDto> getTests(String path, String packageName) throws Exception {
-		List<ScanDto> scanList = new ArrayList<ScanDto>();
+	public List<ClassScanDto> getTests(String path, String packageName) throws Exception {
+		List<ClassScanDto> scanList = new ArrayList<ClassScanDto>();
 		
 		Set<Class<?>> clsList = getClasses(path, packageName);
 		if (clsList != null && clsList.size() > 0) {
 			for (Class<?> cls : clsList) {
+				
+				ClassScanDto dto = new ClassScanDto();
+				dto.setFilePath(path);
+				dto.setPackageName(packageName);
+				dto.setClassName(cls.toString());
+				
+				List<MethodScanDto> methodList = new ArrayList<MethodScanDto>();
+				dto.setMethodList(methodList);
+				
 				Method[] methods = cls.getMethods();
 
 				for (Method m : methods) {
 					Test annotationTest = m.getAnnotation(Test.class);
 					if (annotationTest != null) {
+						MethodScanDto methodDto = new MethodScanDto();
 
-						ScanDto dto = new ScanDto();
-						dto.setClassName(cls.toString());
-						dto.setMethodName(m.toString());
-						dto.setMemo(annotationTest.description());
-						
-//						System.out.println("类名：" + cls.toString());
-//						System.out.println("方法名：" + m.toString());
-//						System.out.println("用例描述：" + annotationTest.description());
+						methodDto.setMethodName(m.toString());
+						methodDto.setMemo(annotationTest.description());
 						
 						StringBuilder depends = new StringBuilder();
 						for (String depend : annotationTest.dependsOnMethods()) {
 							depends.append(depend).append(",");
-							
-//							System.out.println("用例依赖：" + depend);
-							
 						}
 						
-						scanList.add(dto);
+						methodDto.setDepends(depends.toString());
+						methodList.add(methodDto);
 					}
 				}
-
+				scanList.add(dto);
 			}
 		}
 
