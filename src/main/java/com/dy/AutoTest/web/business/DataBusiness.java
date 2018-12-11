@@ -18,6 +18,7 @@ import com.dy.AutoTest.OnlineCashier.POJO.AccountManageItemManageBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageItemRelationBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageManualAccountCheckBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageManualSingleAccountBean;
+import com.dy.AutoTest.OnlineCashier.POJO.AccountManageOfflineInternalAccountPaymentQueryBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageOnlineInternalAccountPaymentQueryBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageSceneComprehensiveBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageWholeHistoryQueryBean;
@@ -437,6 +438,10 @@ public class DataBusiness {
 			
 		case "POP_Data_AccountManageOnlineInternalAccountPaymentQuery":
 			list=BaseUtil.toObject(testingDao.getDataList(tableName,AccountManageOnlineInternalAccountPaymentQueryBean.class));
+			break;	
+			
+		case "POP_Data_AccountManageOfflineInternalAccountPaymentQuery":
+			list=BaseUtil.toObject(testingDao.getDataList(tableName,AccountManageOfflineInternalAccountPaymentQueryBean.class));
 			break;	
 			
 			
