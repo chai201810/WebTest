@@ -34,7 +34,7 @@ public class LoginPageTest extends SuperTest{
 	}
 	
 	@Parameters({ "OperID" })
-	@Test
+	@Test(description = "运营平台-登录")
 	public void testLogin(String OperID) {
 		operBean = data.getDataBean("POP_Data_Oper", OperID);
 		loginPage.navigateTo(URL);
