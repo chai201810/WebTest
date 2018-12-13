@@ -60,7 +60,7 @@ public class FinanceChannelBalanceAccountErrorManagePageTest extends SuperTest {
 			mineOwnCase(financeChannelBalanceAccountErrorManageBean);
 			break;
 		case "2":
-			mineNoneCaseOne(financeChannelBalanceAccountErrorManageBean);
+			mineNoneCase(financeChannelBalanceAccountErrorManageBean);
 			break;
 		default:
 			break;
@@ -85,7 +85,7 @@ public class FinanceChannelBalanceAccountErrorManagePageTest extends SuperTest {
 		wait.waitFor(1000);		
 	}
 
-	private void mineNoneCaseOne(
+	private void mineNoneCase(
 			FinanceChannelBalanceAccountErrorManageBean financeChannelBalanceAccountErrorManageBean) {
 		wait.waitFor(1000);
 		financeChannelBalanceAccountErrorManagePage.clickReplacementOrder();
