@@ -11,6 +11,7 @@ import com.dy.AutoTest.OperationPlatform.POJO.UserInfoQueryBean;
 import com.dy.AutoTest.OnlineCashier.POJO.OnlineCashierB2BBean;
 import com.dy.AutoTest.OnlineCashier.POJO.OnlineCashierB2CBean;
 import com.dy.AutoTest.OnlineCashier.PageObject.accountmanage.AccountManageInternalAccountManagePage;
+import com.dy.AutoTest.OnlineCashier.POJO.AccountManageInformDetailQueryBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageInnerAccountBalanceQueryBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageInternalAccountHistoryBalanceBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageInternalAccountManageBean;
@@ -449,6 +450,9 @@ public class DataBusiness {
 			list=BaseUtil.toObject(testingDao.getDataList(tableName,AccountManageSummonsQueryBean.class));
 			break;	
 			
+		case "POP_Data_AccountManageInformDetailQuery":
+			list=BaseUtil.toObject(testingDao.getDataList(tableName,AccountManageInformDetailQueryBean.class));
+			break;	
 			
 			
 		default:
