@@ -27,7 +27,7 @@ public class FinanceChannelBalanceAccountErrorManagePageTest extends SuperTest {
 		return data.getDataBeanArray();
 	}
 
-	@Test(dataProvider = "financeChannelBalanceAccountErrorManage", description = "运营平台-对账批次查询")
+	@Test(dataProvider = "financeChannelBalanceAccountErrorManage", description = "运营平台-对账差错管理")
 	public void testFinanceChannelBalanceAccountBatchNumQueryPageTest(
 			FinanceChannelBalanceAccountErrorManageBean financeChannelBalanceAccountErrorManageBean) {
 
