@@ -27,7 +27,7 @@ public class AccountManageAccountingEntryCheckPageTest extends SuperTest {
 		return data.getDataBeanArray();
 	}
 
-	@Test(dataProvider = "accountManageAccountingEntryCheck", description = "运营平台-会计分录维护")
+	@Test(dataProvider = "accountManageAccountingEntryCheck", description = "运营平台-会计分录新增复核")
 	public void testAccountManageAccountingEntryCheck(
 			AccountManageAccountingEntryCheckBean accountManageAccountingEntryCheckBean) {
 
