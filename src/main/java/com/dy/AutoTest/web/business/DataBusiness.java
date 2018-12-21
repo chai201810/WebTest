@@ -11,6 +11,7 @@ import com.dy.AutoTest.OperationPlatform.POJO.UserInfoQueryBean;
 import com.dy.AutoTest.OnlineCashier.POJO.OnlineCashierB2BBean;
 import com.dy.AutoTest.OnlineCashier.POJO.OnlineCashierB2CBean;
 import com.dy.AutoTest.OnlineCashier.PageObject.accountmanage.AccountManageInternalAccountManagePage;
+import com.dy.AutoTest.OnlineCashier.POJO.AccountManageAccountOrgnizationManageBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageAccountingEntryCheckBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageAccountingEntryMaintainBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageExternalBalanceDetailQueryBean;
@@ -473,7 +474,12 @@ public class DataBusiness {
 		case "POP_Data_AccountManageAccountingEntryCheck":
 			list=BaseUtil.toObject(testingDao.getDataList(tableName,AccountManageAccountingEntryCheckBean.class));
 			break;	
-			
+		
+		case "POP_Data_AccountManageAccountOrgnizationManage":
+			list=BaseUtil.toObject(testingDao.getDataList(tableName,AccountManageAccountOrgnizationManageBean.class));
+			break;	
+		
+		
 			
 		default:
 			System.out.println("table "+tableName+" is not exist! Please check!");
