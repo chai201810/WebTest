@@ -21,11 +21,11 @@
           <include name="testQuit"/>
         </methods>
       </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest -->
-      <class name="com.dy.AutoTest.OnlineCashier.TestCases.FinanceChannelManageRateCodePageTest">
+      <class name="com.dy.AutoTest.OnlineCashier.TestCases.financechannel.FinanceChannelManageRateCodePageTest">
         <methods>
           <include name="testFinanceChannelManageRateCode"/>
         </methods>
-      </class> <!-- com.dy.AutoTest.OnlineCashier.TestCases.FinanceChannelManageRateCodePageTest -->
+      </class> <!-- com.dy.AutoTest.OnlineCashier.TestCases.financechannel.FinanceChannelManageRateCodePageTest -->
     </classes>
   </test> <!-- MerchantInfoInsert -->
 </suite> <!-- SuiteOperationPlatform -->
