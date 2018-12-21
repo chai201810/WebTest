@@ -16,16 +16,16 @@
           <include name="testLogin"/>
         </methods>
       </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest -->
-      <class name="com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest">
-        <methods>
-          <include name="testQuit"/>
-        </methods>
-      </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest -->
       <class name="com.dy.AutoTest.OnlineCashier.TestCases.financechannel.FinanceChannelBalanceAccountParameterPageTest">
         <methods>
           <include name="testFinanceChannelBalanceAccountParameterPageTest"/>
         </methods>
       </class> <!-- com.dy.AutoTest.OnlineCashier.TestCases.financechannel.FinanceChannelBalanceAccountParameterPageTest -->
+      <class name="com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest">
+        <methods>
+          <include name="testQuit"/>
+        </methods>
+      </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest -->
     </classes>
   </test> <!-- MerchantInfoInsert -->
 </suite> <!-- SuiteOperationPlatform -->
