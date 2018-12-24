@@ -15,9 +15,9 @@
 				</methods>
 			</class>
 			<class
-				name="com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageWholeHistoryQueryPageTest">
+				name="com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageBookingKeppFlowPageTest">
 				<methods>
-					<include name="testAccountManageWholeHistoryQuery" />
+					<include name="testAccountManageBookingKeppFlow" />
 				</methods>
 			</class>
 			<class

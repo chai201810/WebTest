@@ -14,6 +14,7 @@ import com.dy.AutoTest.OnlineCashier.PageObject.accountmanage.AccountManageInter
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageAccountOrgnizationManageBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageAccountingEntryCheckBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageAccountingEntryMaintainBean;
+import com.dy.AutoTest.OnlineCashier.POJO.AccountManageBookingKeppFlowBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageExternalBalanceDetailQueryBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageFrozenDetailQueryBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageInformDetailQueryBean;
@@ -479,7 +480,12 @@ public class DataBusiness {
 			list=BaseUtil.toObject(testingDao.getDataList(tableName,AccountManageAccountOrgnizationManageBean.class));
 			break;	
 		
-		
+		case "POP_Data_AccountManageBookingKeppFlow":
+			list=BaseUtil.toObject(testingDao.getDataList(tableName,AccountManageBookingKeppFlowBean.class));
+			break;	
+			
+			
+			
 			
 		default:
 			System.out.println("table "+tableName+" is not exist! Please check!");

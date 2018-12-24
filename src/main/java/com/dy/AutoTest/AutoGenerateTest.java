@@ -21,8 +21,8 @@ public class AutoGenerateTest {
 	//com.dy.AutoTest.OnlineCashier.PageObject.accountmanage
 	private static String directory="src\\main\\java\\com\\dy\\AutoTest\\OnlineCashier\\PageObject\\accountmanage\\";
 	private static String packageName="com.dy.AutoTest.OnlineCashier.PageObject.accountmanage";
-	private static String className="AccountManageAccountOrgnizationManagePage";
-	private static String locatorName="POP_Loc_AccountManageAccountOrgnizationManage";
+	private static String className="AccountManageBookingKeppFlowPage";
+	private static String locatorName="POP_Loc_AccountManageBookingKeppFlow";
 	
 	@DataProvider(name="locator")
 	protected static Object[][] parametersPoolForSqlite(){
