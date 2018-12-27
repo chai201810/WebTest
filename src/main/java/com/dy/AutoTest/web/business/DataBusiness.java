@@ -494,6 +494,10 @@ public class DataBusiness {
 			list=BaseUtil.toObject(testingDao.getDataList(tableName,AccountManageOfflineReleaseManageBean.class));
 			break;	
 			
+		
+			
+			
+			
 			
 		default:
 			System.out.println("table "+tableName+" is not exist! Please check!");
