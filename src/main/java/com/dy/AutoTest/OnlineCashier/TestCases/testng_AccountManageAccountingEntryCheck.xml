@@ -30,9 +30,8 @@
 	</test>
 
 	<listeners>
+		<listener class-name="com.dy.AutoTest.listener.TestResultListener" />
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener
-			class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
 
 </suite> <!-- SuiteOperationPlatform -->

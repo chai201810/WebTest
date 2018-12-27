@@ -26,14 +26,14 @@
 			<artifactId>opencsv</artifactId>
 			<version>4.2</version>
 		</dependency>
-		<!-- install in native on Oracle site -->		
+		<!-- install in native on Oracle site -->
 		<dependency>
 			<groupId>jdbc</groupId>
 			<artifactId>sqlite-jdbc</artifactId>
 			<version>3.23.1</version>
 			<scope>runtime</scope>
 		</dependency>
-		
+
 		<!-- install in native on Oracle site -->
 		<dependency>
 			<groupId>ojdbc</groupId>
@@ -46,7 +46,7 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>6.14.3</version>
-			<!--scope>test</scope-->
+			<!--scope>test</scope -->
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.uncommons/reportng -->
 		<dependency>
@@ -61,7 +61,7 @@
 			<artifactId>velocity</artifactId>
 			<version>1.7</version>
 		</dependency>
-		<!--  https://mvnrepository.com/artifact/com.google.inject/guice  -->
+		<!-- https://mvnrepository.com/artifact/com.google.inject/guice -->
 		<dependency>
 			<groupId>com.google.inject</groupId>
 			<artifactId>guice</artifactId>
@@ -73,17 +73,17 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.12</version>
 		</dependency>
-		
+
 		<dependency>
-		  <groupId>com.alibaba</groupId>
-		     <artifactId>druid</artifactId>
-		     <version>1.1.6</version>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.1.6</version>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>org.mybatis</groupId>
-		    <artifactId>mybatis</artifactId>
-		    <version>3.2.8</version>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.2.8</version>
 		</dependency>
 
 	</dependencies>
