@@ -17,16 +17,46 @@
           <include name="testLogin"/>
         </methods>
       </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest -->
-      <class name="com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageItemManagePageTest">
-        <methods>
-          <include name="testAccountManageItemManagePage"/>
-        </methods>
-      </class> <!-- com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageItemManagePageTest -->
       <class name="com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest">
         <methods>
           <include name="testQuit"/>
         </methods>
       </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest -->
+      <class name="com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageBookingKeppFlowPageTest">
+        <methods>
+          <include name="testAccountManageBookingKeppFlow"/>
+        </methods>
+      </class> <!-- com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageBookingKeppFlowPageTest -->
+      <class name="com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest">
+        <methods>
+          <include name="testLogin"/>
+        </methods>
+      </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest -->
+      <class name="com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest">
+        <methods>
+          <include name="testQuit"/>
+        </methods>
+      </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest -->
+      <class name="com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageOfflineFreezeManagePageTest">
+        <methods>
+          <include name="testAccountManageOfflineFreezeManage"/>
+        </methods>
+      </class> <!-- com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageOfflineFreezeManagePageTest -->
+      <class name="com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest">
+        <methods>
+          <include name="testLogin"/>
+        </methods>
+      </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest -->
+      <class name="com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest">
+        <methods>
+          <include name="testQuit"/>
+        </methods>
+      </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest -->
+      <class name="com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageOfflineReleaseManagePageTest">
+        <methods>
+          <include name="testAccountManageOfflineReleaseManage"/>
+        </methods>
+      </class> <!-- com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageOfflineReleaseManagePageTest -->
     </classes>
   </test> <!-- MerchantInfoInsert -->
 </suite> <!-- SuiteOperationPlatform -->
