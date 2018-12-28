@@ -17,21 +17,21 @@
           <include name="testLogin"/>
         </methods>
       </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest -->
-      <class name="com.dy.AutoTest.OnlineCashier.TestCases.financechannel.FinanceChannelBalanceAccountParameterPageTest">
+      <class name="com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageManualSingleAccountPageTest">
         <methods>
-          <include name="testFinanceChannelBalanceAccountParameterPageTest"/>
+          <include name="testAccountManageManualSingleAccount"/>
         </methods>
-      </class> <!-- com.dy.AutoTest.OnlineCashier.TestCases.financechannel.FinanceChannelBalanceAccountParameterPageTest -->
+      </class> <!-- com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageManualSingleAccountPageTest -->
       <class name="com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest">
         <methods>
           <include name="testLogin"/>
         </methods>
       </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest -->
-      <class name="com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageWholeHistoryQueryPageTest">
+      <class name="com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageSceneComprehensivePageTest">
         <methods>
-          <include name="testAccountManageWholeHistoryQuery"/>
+          <include name="testAccountManageSceneComprehensive"/>
         </methods>
-      </class> <!-- com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageWholeHistoryQueryPageTest -->
+      </class> <!-- com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageSceneComprehensivePageTest -->
       <class name="com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest">
         <methods>
           <include name="testQuit"/>
