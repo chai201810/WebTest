@@ -20,14 +20,14 @@ public class TestResultListener extends TestListenerAdapter {
 		// collect all id's from passed test
 		Set<Integer> passedTestIds = new HashSet<Integer>();
 		for (ITestResult passedTest : testContext.getPassedTests().getAllResults()) {
-			System.out.println("*****Success Case = " + passedTest.getName() + "; Cost Time = " + (passedTest.getEndMillis()-passedTest.getStartMillis()));
+			System.out.println("#Success Case = " + passedTest.getName() + "; Cost Time = " + (passedTest.getEndMillis()-passedTest.getStartMillis()));
 			passedTestIds.add(getId(passedTest));
 		}
 
 		// Eliminate the repeat methods
 		Set<Integer> skipTestIds = new HashSet<Integer>();
 		for (ITestResult skipTest : testContext.getSkippedTests().getAllResults()) {
-			System.out.println("*****Skipped Case = " + skipTest.getName() + "; Cost Time = " + (skipTest.getEndMillis()-skipTest.getStartMillis()));
+			System.out.println("#Skipped Case = " + skipTest.getName() + "; Cost Time = " + (skipTest.getEndMillis()-skipTest.getStartMillis()));
 			int skipTestId = getId(skipTest);
 
 			if (skipTestIds.contains(skipTestId) || passedTestIds.contains(skipTestId)) {
@@ -40,7 +40,7 @@ public class TestResultListener extends TestListenerAdapter {
 		// Eliminate the repeat failed methods
 		Set<Integer> failedTestIds = new HashSet<Integer>();
 		for (ITestResult failedTest : testContext.getFailedTests().getAllResults()) {
-			System.out.println("*****Failed Case = " + failedTest.getName() + "; Cost Time = " + (failedTest.getEndMillis()-failedTest.getStartMillis()));
+			System.out.println("#Failed Case = " + failedTest.getName() + "; Cost Time = " + (failedTest.getEndMillis()-failedTest.getStartMillis()));
 			int failedTestId = getId(failedTest);
 			if (failedTestIds.contains(failedTestId) || passedTestIds.contains(failedTestId)
 					|| skipTestIds.contains(failedTestId)) {
