@@ -11,6 +11,7 @@ import com.dy.AutoTest.OperationPlatform.POJO.UserInfoQueryBean;
 import com.dy.AutoTest.OnlineCashier.POJO.OnlineCashierB2BBean;
 import com.dy.AutoTest.OnlineCashier.POJO.OnlineCashierB2CBean;
 import com.dy.AutoTest.OnlineCashier.PageObject.accountmanage.AccountManageInternalAccountManagePage;
+import com.dy.AutoTest.MerchantPortal.POJO.PmOperBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageAccountOrgnizationManageBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageAccountingEntryCheckBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageAccountingEntryMaintainBean;
@@ -228,6 +229,10 @@ public class DataBusiness {
 				data_URLBean=new Data_URLBean();
 				break;
 
+			case "PM_Data_Oper":
+				pojo=(T)testingDao.getData(tableName,ID,PmOperBean.class);
+				return pojo;
+				
 			default:
 				System.out.println("DataBusiness.getDataBean: "+tableName+" is not exist! Please check!");
 				assertTrue(false);
