@@ -48,7 +48,7 @@ public class LoginPageTest extends SuperTest{
 		wait.waitFor(10000);
 		
 		loginPage.doLogin();
-		if(SingletonSet.CurrentAccountantDate.toString().equals(""))
-			SingletonSet.CurrentAccountantDate.append(loginPage.getCurrentAccountantDate());
+//		if(SingletonSet.CurrentAccountantDate.toString().equals(""))
+//			SingletonSet.CurrentAccountantDate.append(loginPage.getCurrentAccountantDate());
 	}
 }

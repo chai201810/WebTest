@@ -24,7 +24,7 @@ public class MainMenuPageTest {
 		wait=SingletonSet.wait;
 		mainMenuPage=new MainMenuPage(driver); 
 		
-		URL=host.toString()+DataBusiness.getData_URL("pop_index");
+		URL=host.toString()+DataBusiness.getData_URL("pweb_index");
 	}
 	
 	@AfterClass
@@ -33,19 +33,25 @@ public class MainMenuPageTest {
 	}
 	
 	@Test
-	public void testMechantInfoInsert() {
-		mainMenuPage.navigateTo(URL);
-		mainMenuPage.gotoMechantInfoInsert();
+	public void testLink() {
+//		mainMenuPage.navigateTo(URL);
 		
+		mainMenuPage.gotoTradeQuery();
+		mainMenuPage.gotoMainPage();
+		mainMenuPage.gotoIncomeExpensesDetail();
+		mainMenuPage.gotoMainPage();
+		mainMenuPage.gotoRecharge();
+		mainMenuPage.gotoMainPage();
+		mainMenuPage.gotoWithdrawDeposit();
+		mainMenuPage.gotoMainPage();
+		mainMenuPage.gotoTradeDetail();
+		mainMenuPage.gotoMainPage();
+		
+		mainMenuPage.doQuit();
 	}
 	@Test
 	public void testQuit() {
 		mainMenuPage.doQuit();
-	}
-	@Test
-	public void testGetCurrentAccountantDate() {
-		System.out.println(mainMenuPage.getCurrentAccountantDate());
-		
 	}
 	
 }

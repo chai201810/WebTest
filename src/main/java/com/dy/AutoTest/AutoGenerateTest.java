@@ -18,11 +18,11 @@ public class AutoGenerateTest {
 	private static LocatorBusiness locator=new LocatorBusiness();
 	private StringBuffer pageObjectString=new StringBuffer();
 	private String path;
-	//com.dy.AutoTest.OnlineCashier.PageObject.accountmanage
-	private static String directory="src\\main\\java\\com\\dy\\AutoTest\\OnlineCashier\\PageObject\\accountmanage\\";
-	private static String packageName="com.dy.AutoTest.OnlineCashier.PageObject.accountmanage";
-	private static String className="AccountManageOfflineReleaseManagePage";
-	private static String locatorName="POP_Loc_AccountManageOfflineReleaseManage";
+	//com.dy.AutoTest.MerchantPortal.PageObject.base
+	private static String directory="src\\main\\java\\com\\dy\\AutoTest\\MerchantPortal\\PageObject\\";
+	private static String packageName="com.dy.AutoTest.MerchantPortal.PageObject";
+	private static String className="MainMenuPage";
+	private static String locatorName="MP_Loc_MainMenuPage";
 	
 	@DataProvider(name="locator")
 	protected static Object[][] parametersPoolForSqlite(){

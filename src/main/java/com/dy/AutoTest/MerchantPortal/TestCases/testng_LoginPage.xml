@@ -17,7 +17,7 @@
 			<class
 				name="com.dy.AutoTest.MerchantPortal.TestCases.base.MainMenuPageTest">
 				<methods>
-					<include name="testQuit" />
+					<include name="testLink" />
 				</methods>
 			</class>
 		</classes>
