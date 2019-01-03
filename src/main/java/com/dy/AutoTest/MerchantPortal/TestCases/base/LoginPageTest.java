@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 
 import com.dy.AutoTest.MerchantPortal.POJO.PmOperBean;
 import com.dy.AutoTest.MerchantPortal.PageObject.base.LoginPage;
-import com.dy.AutoTest.web.actions.SingletonSet;
 import com.dy.AutoTest.web.api.SuperTest;
 import com.dy.AutoTest.web.business.DataBusiness;
 
@@ -30,13 +29,13 @@ public class LoginPageTest extends SuperTest{
 	@BeforeClass
 	public void init() {
 		loginPage=new LoginPage(driver);
-		URL=host.toString()+DataBusiness.getData_URL("pm_login");
+		URL=host.toString()+DataBusiness.getData_URL("mp_login");
 	}
 	
 	@Parameters({ "OperID" })
 	@Test(description = "商户门户-登录")
 	public void testLogin(String OperID) {
-		operBean = data.getDataBean("PM_Data_Oper", OperID);
+		operBean = data.getDataBean("MP_Data_Oper", OperID);
 		loginPage.navigateTo(URL);
 		loginPage.setOperID(operBean.getOperID());
 		loginPage.setPassword(operBean.getPassword());
@@ -45,10 +44,8 @@ public class LoginPageTest extends SuperTest{
 		String code_SMS = loginPage.getCode_SMS(operBean.getMobileNO());
 		loginPage.setCode_SMS(code_SMS);
 		
-		wait.waitFor(10000);
+		wait.waitFor(15000);
 		
 		loginPage.doLogin();
-//		if(SingletonSet.CurrentAccountantDate.toString().equals(""))
-//			SingletonSet.CurrentAccountantDate.append(loginPage.getCurrentAccountantDate());
 	}
 }

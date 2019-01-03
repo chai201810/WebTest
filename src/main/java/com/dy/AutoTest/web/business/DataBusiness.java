@@ -229,9 +229,10 @@ public class DataBusiness {
 				data_URLBean=new Data_URLBean();
 				break;
 
-			case "PM_Data_Oper":
+			case "MP_Data_Oper":
 				pojo=(T)testingDao.getData(tableName,ID,PmOperBean.class);
 				return pojo;
+				
 				
 			default:
 				System.out.println("DataBusiness.getDataBean: "+tableName+" is not exist! Please check!");
@@ -499,7 +500,9 @@ public class DataBusiness {
 			list=BaseUtil.toObject(testingDao.getDataList(tableName,AccountManageOfflineReleaseManageBean.class));
 			break;	
 			
-		
+		case "MP_Data_MerchantInfo":
+			list=BaseUtil.toObject(testingDao.getDataList(tableName,com.dy.AutoTest.MerchantPortal.POJO.MerchantInfoBean.class));
+			break;	
 			
 			
 			

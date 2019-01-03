@@ -16,6 +16,7 @@ public class MainMenuPageTest {
 	private MainMenuPage mainMenuPage;
 
 	private StringBuffer host=SingletonSet.URL;
+	@SuppressWarnings("unused")
 	private String URL="";
 	
 	@BeforeClass
@@ -34,8 +35,6 @@ public class MainMenuPageTest {
 	
 	@Test
 	public void testLink() {
-//		mainMenuPage.navigateTo(URL);
-		
 		mainMenuPage.gotoTradeQuery();
 		mainMenuPage.gotoMainPage();
 		mainMenuPage.gotoIncomeExpensesDetail();
