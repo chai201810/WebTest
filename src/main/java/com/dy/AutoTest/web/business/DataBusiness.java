@@ -818,6 +818,15 @@ public class DataBusiness {
 	    return MerchantFeeRateBean;
 	}
 
-
-
+	public <T> T getDataBean(String tableName, String ID, Class<T> cls) {
+		return (T)testingDao.getData(tableName, ID, cls);
+	}
+	
+	public <T> void loadDataBeanList(String tableName, Class<T> cls) {
+		loadDataBeanList(tableName, "", cls);
+	}
+	
+	public <T> void loadDataBeanList(String tableName, String caseNO, Class<T> cls) {
+		list = BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,cls));
+	}
 }

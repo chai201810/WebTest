@@ -23,7 +23,7 @@ public class MMAddOperPageTest  extends SuperTest {
 
 	@DataProvider(name = "mMAddOper")
 	protected static Object[][] parametersPool() {
-		data.loadDataBeanList("MP_Data_MMAddOper");
+		data.loadDataBeanList("MP_Data_MMAddOper", MMAddOperBean.class);
 		return data.getDataBeanArray();
 	}
 

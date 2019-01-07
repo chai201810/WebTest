@@ -20,39 +20,17 @@ public interface TestingDao {
 	
 	List<Map<String, Object>> getLocator(String tableName);
 	
-//	boolean updateMerchantInfoStatusToPass(String merchantNO,String merchantName);
-	
-//	boolean updateMerchantInfoStatusToRefuse(String merchantName);
-	
-//	boolean updateMerchantNextSettlementDate(int ID,String NextSettlementDate);
-	
-//	boolean insertMerchantSettlementInfo(String merchantID,String merchantName);
-	
-//	boolean updateMerchantSettlementStatus(int ID, String status);
-	
-//	boolean updateMerchantNOByID(int ID, String merchantName);
-	
-//	boolean updateSettlementByID(int ID, Map<String, String> map);
-	
-//	boolean updateMerchantInfoByID(int ID, Map<String, String> map); 
-	
-//	boolean insertMerchantFeeRate(String merchantID,String merchantName);
-	
-//	boolean insertMerchantProduct(String merchantID,String merchantName);
-//	boolean insertMerchantProduct(Map<String , Object> map);
-
-//	Map<String,Object> querySingleMerchantProduct(List<String> list,Map<String , String>map);
-	
-	
 	
 	<T> T getData(String tableName,String ID,Class<T> cls);
 	<T> List<T> getDataList(String tableName,Class<T> cls);
+	<T> List<T> getDataListByCase(String tableName,String caseNO,Class<T> cls);
 	Map<String,Object> querySingle(String tableName,List<String> selectList,Map<String , Object> whereMap);
 	List<Map<String,Object>> queryMore(String tableName,List<String> selectList,Map<String , Object> whereMap);
+	<T> List<T> queryMoreBeans(String tableName,List<String> selectList,Map<String , Object> whereMap,Class<T> cls);
 	boolean updateTestData(String tableName,Map<String, Object> updateMap, Map<String, Object> whereMap);
 	boolean updateTestData(String tableName,Map<String, Object> updateMap, Map<String, Object> whereMap,boolean existExpression);
 	boolean insertTestData(String tableName,Map<String , Object> insertMap);
-	
+	String [][] getTableStruct(String tableName);
 	
 	boolean updateMerchantProductType(String productType, Map<String, Object> whereMap);
 	
