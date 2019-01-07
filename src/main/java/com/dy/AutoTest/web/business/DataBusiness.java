@@ -12,6 +12,7 @@ import com.dy.AutoTest.OnlineCashier.POJO.OnlineCashierB2BBean;
 import com.dy.AutoTest.OnlineCashier.POJO.OnlineCashierB2CBean;
 import com.dy.AutoTest.OnlineCashier.PageObject.accountmanage.AccountManageInternalAccountManagePage;
 import com.dy.AutoTest.MerchantPortal.POJO.AccountInfoBean;
+import com.dy.AutoTest.MerchantPortal.POJO.MMAddOperBean;
 import com.dy.AutoTest.MerchantPortal.POJO.PmOperBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageAccountOrgnizationManageBean;
 import com.dy.AutoTest.OnlineCashier.POJO.AccountManageAccountingEntryCheckBean;
@@ -508,6 +509,11 @@ public class DataBusiness {
 		case "MP_Data_AccountInfo":
 			list=BaseUtil.toObject(testingDao.getDataList(tableName,AccountInfoBean.class));
 			break;	
+			
+		case "MP_Data_MMAddOper":
+			list=BaseUtil.toObject(testingDao.getDataList(tableName,MMAddOperBean.class));
+			break;	
+			
 			
 			
 		default:

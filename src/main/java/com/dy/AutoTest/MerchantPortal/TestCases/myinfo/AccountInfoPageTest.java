@@ -18,7 +18,7 @@ public class AccountInfoPageTest extends SuperTest {
 	@BeforeClass
 	public void init() {
 		accountInfoPage = new AccountInfoPage(driver);
-		URL = host.toString() + DataBusiness.getData_URL("mp_AccountInfo");
+		URL = host.toString() + DataBusiness.getData_URL("mp_MMAccountInfo");
 	}
 
 	@DataProvider(name = "accountInfo")
