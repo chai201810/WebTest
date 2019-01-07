@@ -39,6 +39,17 @@ public class MMOperManagementPageTest  extends SuperTest {
 		mMOperManagementPage.clickOperManagement_Modify();
 		wait.waitFor(500);
 		mMOperManagementPage.clickOperManagement_ModifyCancel();
+		
+		wait.waitFor(500);
+		mMOperManagementPage.clickOperLog();
+		
+		wait.waitFor(500);
+		mMOperManagementPage.setOperLog_BeginDate(mMOperManagementBean.getOperLog_BeginDate());
+		mMOperManagementPage.setOperLog_EndDate(mMOperManagementBean.getOperLog_EndDate());
+		mMOperManagementPage.setOperLog_Oper(mMOperManagementBean.getOperLog_Oper());
+		
+		wait.waitFor(500);
+		mMOperManagementPage.clickOperLog_Query();
 	}
 	
 }

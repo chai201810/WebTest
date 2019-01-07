@@ -16,6 +16,9 @@ public class MMOperManagementBean implements Serializable {
 	private String OperManagement_PhoneNO;
 	private String OperManagement_OperType;
 	private String OperManagement_Status;
+	private String OperLog_BeginDate;
+	private String OperLog_EndDate;
+	private String OperLog_Oper;
 
 	public int getID() {
 		return ID;
@@ -73,4 +76,28 @@ public class MMOperManagementBean implements Serializable {
 		OperManagement_Status = operManagement_Status;
 	}
 
+	public String getOperLog_BeginDate() {
+		return OperLog_BeginDate;
+	}
+
+	public void setOperLog_BeginDate(String operLog_BeginDate) {
+		OperLog_BeginDate = operLog_BeginDate;
+	}
+
+	public String getOperLog_EndDate() {
+		return OperLog_EndDate;
+	}
+
+	public void setOperLog_EndDate(String operLog_EndDate) {
+		OperLog_EndDate = operLog_EndDate;
+	}
+
+	public String getOperLog_Oper() {
+		return OperLog_Oper;
+	}
+
+	public void setOperLog_Oper(String operLog_Oper) {
+		OperLog_Oper = operLog_Oper;
+	}
+	
 }
