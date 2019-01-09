@@ -3,6 +3,9 @@ package com.dy.AutoTest.MerchantPortal.PageObject.merchantmanage;
 import org.openqa.selenium.WebDriver;
 
 import com.dy.AutoTest.web.api.SuperPage;
+
+import safeInput.KeyBoardSimulator;
+
 import com.dy.AutoTest.web.actions.DoPlus;
 
 public class MMAddOperPage extends SuperPage {
@@ -45,6 +48,13 @@ public class MMAddOperPage extends SuperPage {
 	public void setPassword(String value) {
 //		du.what("Password").clear();
 //		du.what("Password").sendKeys(value);
+		try {
+			du.what("Password").click();
+			du.waitFor(500);
+			KeyBoardSimulator.inputMockKeyBoard(value);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	public String getPassword() {
 		return du.what("Password").getAttribute("value");
@@ -53,6 +63,13 @@ public class MMAddOperPage extends SuperPage {
 	public void setConfirmPassword(String value) {
 //		du.what("ConfirmPassword").clear();
 //		du.what("ConfirmPassword").sendKeys(value);
+		try {
+			du.what("ConfirmPassword").click();
+			du.waitFor(500);
+			KeyBoardSimulator.inputMockKeyBoard(value);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		du.waitFor(10000);
 	}
 	public String getConfirmPassword() {

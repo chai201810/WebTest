@@ -9,6 +9,8 @@ import com.dy.AutoTest.MerchantPortal.PageObject.base.LoginPage;
 import com.dy.AutoTest.web.api.SuperTest;
 import com.dy.AutoTest.web.business.DataBusiness;
 
+import safeInput.KeyBoardSimulator;
+
 /**
  * @author Jerry
  * @description

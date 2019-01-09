@@ -9,6 +9,8 @@ import com.dy.AutoTest.web.business.OperBusiness;
 import com.dy.AutoTest.web.dao.OperDao;
 import com.dy.AutoTest.web.dao.impl.OperDaoImpl;
 
+import safeInput.KeyBoardSimulator;
+
 public class LoginPage extends SuperPage {
 	
 	
@@ -35,7 +37,14 @@ public class LoginPage extends SuperPage {
 	 * @param password
 	 */
 	public void setPassword(String password) {
-		du.what("Password").sendKeys(password);
+//		du.what("Password").sendKeys(password);
+		try {
+			du.what("Password").click();
+			du.waitFor(500);
+			KeyBoardSimulator.inputMockKeyBoard(password);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	/**发送短信验证码

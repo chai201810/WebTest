@@ -86,6 +86,23 @@
 			<version>3.2.8</version>
 		</dependency>
 
+		<dependency>
+			<groupId>safe</groupId>
+			<artifactId>input</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>safe</groupId>
+			<artifactId>jna</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>safe</groupId>
+			<artifactId>platform</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 	</dependencies>
 
 </project>
