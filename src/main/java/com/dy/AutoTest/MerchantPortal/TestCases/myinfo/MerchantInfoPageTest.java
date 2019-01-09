@@ -23,7 +23,7 @@ public class MerchantInfoPageTest extends SuperTest {
 
 	@DataProvider(name = "merchantInfo")
 	protected static Object[][] parametersPool() {
-		data.loadDataBeanList("MP_Data_MerchantInfo");
+		data.loadDataBeanList("MP_Data_MerchantInfo", MerchantInfoBean.class);
 		return data.getDataBeanArray();
 	}
 

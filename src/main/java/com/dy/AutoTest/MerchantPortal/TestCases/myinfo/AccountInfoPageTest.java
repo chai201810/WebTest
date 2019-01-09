@@ -23,7 +23,7 @@ public class AccountInfoPageTest extends SuperTest {
 
 	@DataProvider(name = "accountInfo")
 	protected static Object[][] parametersPool() {
-		data.loadDataBeanList("MP_Data_AccountInfo");
+		data.loadDataBeanList("MP_Data_AccountInfo", AccountInfoBean.class);
 		return data.getDataBeanArray();
 	}
 
