@@ -31,6 +31,15 @@ public class SCUpdateLoginPasswordPageTest extends SuperTest {
 	public void testSCUpdateLoginPassword(SCUpdateLoginPasswordBean sCUpdateLoginPasswordBean) {
 		sCUpdateLoginPasswordPage.navigateTo(URL);
 		wait.waitFor(500);
+		
+		sCUpdateLoginPasswordPage.setOriginLoginPassword(sCUpdateLoginPasswordBean.getOriginLoginPassword());
+		sCUpdateLoginPasswordPage.setNewLoginPassword(sCUpdateLoginPasswordBean.getNewLoginPassword());
+		sCUpdateLoginPasswordPage.setConfirmNewLoginPassword(sCUpdateLoginPasswordBean.getConfirmNewLoginPassword());
+		
+		wait.waitFor(500);
+		sCUpdateLoginPasswordPage.clickSave();
+//		wait.waitFor(500);
+//		sCUpdateLoginPasswordPage.clickConfirm();
 	}
 
 }
