@@ -17,21 +17,21 @@
           <include name="testLogin"/>
         </methods>
       </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest -->
-      <class name="com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageManualSingleAccountPageTest">
+      <class name="com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageSummonsQueryPageTest">
         <methods>
-          <include name="testAccountManageManualSingleAccount"/>
+          <include name="testAccountManageSummonsQuery"/>
         </methods>
-      </class> <!-- com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageManualSingleAccountPageTest -->
+      </class> <!-- com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageSummonsQueryPageTest -->
       <class name="com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest">
         <methods>
           <include name="testLogin"/>
         </methods>
       </class> <!-- com.dy.AutoTest.OperationPlatform.TestCases.LoginPageTest -->
-      <class name="com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageSceneComprehensivePageTest">
+      <class name="com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageAccountingEntryMaintainPageTest">
         <methods>
-          <include name="testAccountManageSceneComprehensive"/>
+          <include name="testAccountManageAccountingEntryMaintain"/>
         </methods>
-      </class> <!-- com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageSceneComprehensivePageTest -->
+      </class> <!-- com.dy.AutoTest.OnlineCashier.TestCases.accountmanage.AccountManageAccountingEntryMaintainPageTest -->
       <class name="com.dy.AutoTest.OperationPlatform.TestCases.MainMenuPageTest">
         <methods>
           <include name="testQuit"/>
