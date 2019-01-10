@@ -21,8 +21,8 @@ public class AutoGenerateTest {
 	//com.dy.AutoTest.MerchantPortal.PageObject.base
 	private static String directory="src\\main\\java\\com\\dy\\AutoTest\\MerchantPortal\\PageObject\\";
 	private static String packageName="com.dy.AutoTest.MerchantPortal.PageObject";
-	private static String className="TMServiceChargeQueryPage";
-	private static String locatorName="MP_Loc_TMServiceChargeQuery";
+	private static String className="SCUpdateLoginPasswordPage";
+	private static String locatorName="MP_Loc_SCUpdateLoginPassword";
 	
 	@DataProvider(name="locator")
 	protected static Object[][] parametersPoolForSqlite(){

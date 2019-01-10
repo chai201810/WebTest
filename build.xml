@@ -98,6 +98,9 @@
         <pathelement location="${user.home}/.m2/repository/com/google/protobuf/protobuf-java/2.6.0/protobuf-java-2.6.0.jar"/>
         <pathelement location="${user.home}/.m2/repository/com/alibaba/druid/1.1.6/druid-1.1.6.jar"/>
         <pathelement location="${user.home}/.m2/repository/org/mybatis/mybatis/3.2.8/mybatis-3.2.8.jar"/>
+        <pathelement location="${user.home}/.m2/repository/safe/input/1.0.0/input-1.0.0.jar"/>
+        <pathelement location="${user.home}/.m2/repository/safe/jna/1.0.0/jna-1.0.0.jar"/>
+        <pathelement location="${user.home}/.m2/repository/safe/platform/1.0.0/platform-1.0.0.jar"/>
 	</path>
 	<path id="AutoTest.classpath">
 		<pathelement location="target/classes" />
