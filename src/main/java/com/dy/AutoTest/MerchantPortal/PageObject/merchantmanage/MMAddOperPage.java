@@ -46,14 +46,13 @@ public class MMAddOperPage extends SuperPage {
 	}
 	//登录密码
 	public void setPassword(String value) {
-//		du.what("Password").clear();
-//		du.what("Password").sendKeys(value);
 		try {
 			du.what("Password").click();
 			du.waitFor(500);
 			KeyBoardSimulator.inputMockKeyBoard(value);
 		} catch (Exception e) {
 			e.printStackTrace();
+			du.waitFor(10000);
 		}
 	}
 	public String getPassword() {
@@ -61,16 +60,14 @@ public class MMAddOperPage extends SuperPage {
 	}
 	//确认登录密码
 	public void setConfirmPassword(String value) {
-//		du.what("ConfirmPassword").clear();
-//		du.what("ConfirmPassword").sendKeys(value);
 		try {
 			du.what("ConfirmPassword").click();
 			du.waitFor(500);
 			KeyBoardSimulator.inputMockKeyBoard(value);
 		} catch (Exception e) {
 			e.printStackTrace();
+			du.waitFor(10000);
 		}
-		du.waitFor(10000);
 	}
 	public String getConfirmPassword() {
 		return du.what("ConfirmPassword").getAttribute("value");

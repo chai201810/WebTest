@@ -9,8 +9,6 @@ import com.dy.AutoTest.MerchantPortal.PageObject.base.LoginPage;
 import com.dy.AutoTest.web.api.SuperTest;
 import com.dy.AutoTest.web.business.DataBusiness;
 
-import safeInput.KeyBoardSimulator;
-
 /**
  * @author Jerry
  * @description
@@ -46,7 +44,7 @@ public class LoginPageTest extends SuperTest{
 		String code_SMS = loginPage.getCode_SMS(operBean.getMobileNO());
 		loginPage.setCode_SMS(code_SMS);
 		
-		wait.waitFor(15000);
+		wait.waitFor(10000);
 		
 		loginPage.doLogin();
 	}

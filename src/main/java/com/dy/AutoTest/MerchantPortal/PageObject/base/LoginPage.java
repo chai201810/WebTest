@@ -37,13 +37,13 @@ public class LoginPage extends SuperPage {
 	 * @param password
 	 */
 	public void setPassword(String password) {
-//		du.what("Password").sendKeys(password);
 		try {
 			du.what("Password").click();
 			du.waitFor(500);
 			KeyBoardSimulator.inputMockKeyBoard(password);
 		} catch (Exception e) {
 			e.printStackTrace();
+			du.waitFor(15000);
 		}
 	}
 	
@@ -69,6 +69,10 @@ public class LoginPage extends SuperPage {
 	 */
 	public void setCode_SMS(String code_sms) {
 		du.what("MessageVerificationCode").sendKeys(code_sms);
+	}
+	
+	public void setFocusOnVerificationCode() {
+		du.what("VerificationCode").click();
 	}
 	
 	/**点击登录
