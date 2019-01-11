@@ -39,7 +39,7 @@ public class LoginPageTest extends SuperTest{
 		loginPage.navigateTo(URL);
 		loginPage.setOperID(operBean.getOperID());
 		loginPage.setPassword(operBean.getPassword());
-		wait.waitFor(1000);
+		wait.waitFor(2000);
 		loginPage.sendCode_SMS();
 		wait.waitFor(500);
 		String code_SMS = loginPage.getCode_SMS(operBean.getMobileNO());
