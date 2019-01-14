@@ -27,7 +27,7 @@ public class ScannerUtil {
 				
 				ClassScanDto dto = new ClassScanDto();
 				dto.setFilePath(path);
-				dto.setPackageName(packageName);
+				dto.setPackageName(cls.getPackage().getName());
 				dto.setClassName(cls.getSimpleName());
 				
 				List<MethodScanDto> methodList = new ArrayList<MethodScanDto>();

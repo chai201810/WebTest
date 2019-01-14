@@ -20,7 +20,7 @@ public class ScannerImpl {
 	private final static String JOB_NAME = "WEB_TEST";
 	private final static String NODE_NAME = "WIN_WEB_AUTO";
 
-	private final static String PACKAGE_NAME = "com.dy.AutoTest.OnlineCashier.TestCases.accountmanage";
+	private final static String PACKAGE_NAME = "com.dy.AutoTest.OnlineCashier.TestCases";
 
 	public static void main(String[] args) throws Exception {
 
