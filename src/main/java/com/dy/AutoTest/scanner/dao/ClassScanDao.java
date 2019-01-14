@@ -8,7 +8,7 @@ public class ClassScanDao extends BaseAbstractDao {
 
 	public long insert(ClassScan cScan) {
 		super.insert(INSERT, cScan);
-		return cScan.getIdDyClass();
+		return cScan.getIdSvnClass();
 	}
 
 }

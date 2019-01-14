@@ -8,7 +8,7 @@ public class MethodScanDao extends BaseAbstractDao {
 
 	public long insert(MethodScan mScan) {
 		super.insert(INSERT, mScan);
-		return mScan.getIdDyMethod();
+		return mScan.getIdSvnMethod();
 	}
 
 }

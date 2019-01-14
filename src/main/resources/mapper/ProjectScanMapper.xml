@@ -4,7 +4,7 @@
 
 <mapper namespace="ProjectScan">
 
-	<insert id="addProjectScan" parameterType="ProjectScan"
+	<!--insert id="addProjectScan" parameterType="ProjectScan"
 		useGeneratedKeys="true" keyProperty="idDyProject">
 		INSERT INTO dy_scan_project
 		(
@@ -18,6 +18,29 @@
 		#{jobName},
 		#{nodeName}
 		)
+	</insert-->
+	
+	<insert id="addProjectScan" parameterType="ProjectScan"
+		useGeneratedKeys="true" keyProperty="idTaProject">
+		INSERT INTO ta_project2
+		(
+			id_testproject,
+			ta_svnurl,
+			job_name,
+			node_name
+		) SELECT
+			#{idTestproject},
+			#{taSvnurl},
+			#{jobName},
+			#{nodeName}
+		FROM dual
+		WHERE NOT EXISTS 
+      	(
+      		SELECT 1 
+      		FROM ta_project2
+      		WHERE 
+      			ta_svnurl=#{taSvnurl}
+      	)
 	</insert>
-
+	
 </mapper> 

@@ -4,7 +4,7 @@
 
 <mapper namespace="ClassScan">
 
-	<insert id="addClassScan" parameterType="ClassScan"
+	<!--insert id="addClassScan" parameterType="ClassScan"
 		useGeneratedKeys="true" keyProperty="idDyClass">
 		INSERT INTO
 		dy_scan_class
@@ -21,6 +21,32 @@
 		#{filePath},
 		#{memo}
 		)
+	</insert-->
+
+	<insert id="addClassScan" parameterType="ClassScan"
+		useGeneratedKeys="true" keyProperty="idSvnClass">
+		INSERT INTO ta_svn_class2
+		(
+			id_ta_project,
+			package_name,
+			class_name,
+			file_path,
+			memo
+		) SELECT
+			#{idTaProject},
+			#{packageName},
+			#{className},
+			#{filePath},
+			#{memo}
+		FROM dual
+		WHERE NOT EXISTS 
+      	(
+      		SELECT 1 
+      		FROM ta_svn_class2
+      		WHERE
+      			package_name=#{packageName}
+      			AND class_name=#{className}
+      	)
 	</insert>
 
 </mapper> 

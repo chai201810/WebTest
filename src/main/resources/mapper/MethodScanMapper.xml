@@ -4,7 +4,7 @@
 
 <mapper namespace="MethodScan">
 
-	<insert id="addMethodScan" parameterType="MethodScan"
+	<!--insert id="addMethodScan" parameterType="MethodScan"
 		useGeneratedKeys="true" keyProperty="idDyMethod">
 		INSERT INTO
 		dy_scan_method
@@ -21,6 +21,32 @@
 		#{dependsOnMethods},
 		#{owner}
 		)
-	</insert>
+	</insert-->
 
+	<insert id="addMethodScan" parameterType="MethodScan"
+		useGeneratedKeys="true" keyProperty="idSvnMethod">
+		INSERT INTO ta_svn_method2
+		(
+			id_svn_class,
+			method_name,
+			memo,
+			depends_on_methods,
+			owner
+		) SELECT
+			#{idSvnClass},
+			#{methodName},
+			#{memo},
+			#{dependsOnMethods},
+			#{owner}
+		FROM dual
+		WHERE NOT EXISTS 
+      	(
+      		SELECT 1 
+      		FROM ta_svn_method2
+      		WHERE
+      			method_name=#{methodName}
+      			AND memo=#{memo}
+      			AND memo IS NOT NULL
+      	)
+	</insert>
 </mapper> 

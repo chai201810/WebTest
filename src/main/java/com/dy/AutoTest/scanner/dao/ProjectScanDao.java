@@ -8,7 +8,7 @@ public class ProjectScanDao extends BaseAbstractDao {
 
 	public long insert(ProjectScan pScan) {
 		super.insert(INSERT, pScan);
-		return pScan.getIdDyProject();
+		return pScan.getIdTaProject();
 	}
 
 }

@@ -9,27 +9,27 @@ public class ClassScan implements Serializable {
 	 */
 	private static final long serialVersionUID = -1382421213485322285L;
 
-	private Long idDyClass;
-	private Long idDyProject;
+	private Long idSvnClass;
+	private Long idTaProject;
 	private String packageName;
 	private String className;
 	private String filePath;
 	private String memo;
 
-	public Long getIdDyClass() {
-		return idDyClass;
+	public Long getIdSvnClass() {
+		return idSvnClass;
 	}
 
-	public void setIdDyClass(Long idDyClass) {
-		this.idDyClass = idDyClass;
+	public void setIdSvnClass(Long idSvnClass) {
+		this.idSvnClass = idSvnClass;
 	}
 
-	public Long getIdDyProject() {
-		return idDyProject;
+	public Long getIdTaProject() {
+		return idTaProject;
 	}
 
-	public void setIdDyProject(Long idDyProject) {
-		this.idDyProject = idDyProject;
+	public void setIdTaProject(Long idTaProject) {
+		this.idTaProject = idTaProject;
 	}
 
 	public String getPackageName() {

@@ -9,27 +9,27 @@ public class MethodScan implements Serializable {
 	 */
 	private static final long serialVersionUID = 2916592648309271327L;
 
-	private Long idDyMethod;
-	private Long idDyClass;
+	private Long idSvnMethod;
+	private Long idSvnClass;
 	private String methodName;
 	private String memo;
 	private String dependsOnMethods;
 	private String owner;
 
-	public Long getIdDyMethod() {
-		return idDyMethod;
+	public Long getIdSvnMethod() {
+		return idSvnMethod;
 	}
 
-	public void setIdDyMethod(Long idDyMethod) {
-		this.idDyMethod = idDyMethod;
+	public void setIdSvnMethod(Long idSvnMethod) {
+		this.idSvnMethod = idSvnMethod;
 	}
 
-	public Long getIdDyClass() {
-		return idDyClass;
+	public Long getIdSvnClass() {
+		return idSvnClass;
 	}
 
-	public void setIdDyClass(Long idDyClass) {
-		this.idDyClass = idDyClass;
+	public void setIdSvnClass(Long idSvnClass) {
+		this.idSvnClass = idSvnClass;
 	}
 
 	public String getMethodName() {

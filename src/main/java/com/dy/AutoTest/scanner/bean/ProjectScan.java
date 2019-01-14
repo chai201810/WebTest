@@ -10,21 +10,21 @@ public class ProjectScan implements Serializable {
 	 */
 	private static final long serialVersionUID = -7845211197829817282L;
 
-	private Long idDyProject;
+	private Long idTaProject;
 	private Long idTestproject;
-	private String dyGiturl;
+	private String taSvnurl;
 	private String jobName;
 	private Date updateDate;
 	private Date createDate;
 	private String nodeName;
-	private String dyType;
+	private String taType;
 
-	public Long getIdDyProject() {
-		return idDyProject;
+	public Long getIdTaProject() {
+		return idTaProject;
 	}
 
-	public void setIdDyProject(Long idDyProject) {
-		this.idDyProject = idDyProject;
+	public void setIdTaProject(Long idTaProject) {
+		this.idTaProject = idTaProject;
 	}
 
 	public Long getIdTestproject() {
@@ -35,12 +35,12 @@ public class ProjectScan implements Serializable {
 		this.idTestproject = idTestproject;
 	}
 
-	public String getDyGiturl() {
-		return dyGiturl;
+	public String getTaSvnurl() {
+		return taSvnurl;
 	}
 
-	public void setDyGiturl(String dyGiturl) {
-		this.dyGiturl = dyGiturl;
+	public void setTaSvnurl(String taSvnurl) {
+		this.taSvnurl = taSvnurl;
 	}
 
 	public String getJobName() {
@@ -75,12 +75,12 @@ public class ProjectScan implements Serializable {
 		this.nodeName = nodeName;
 	}
 
-	public String getDyType() {
-		return dyType;
+	public String getTaType() {
+		return taType;
 	}
 
-	public void setDyType(String dyType) {
-		this.dyType = dyType;
+	public void setTaType(String taType) {
+		this.taType = taType;
 	}
 
 }
