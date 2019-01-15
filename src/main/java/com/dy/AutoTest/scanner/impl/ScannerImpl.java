@@ -40,7 +40,10 @@ public class ScannerImpl {
 		pScan.setNodeName(NODE_NAME);
 
 		ProjectScanDao pScanDao = new ProjectScanDao();
-		long projectId = pScanDao.insert(pScan);
+		Long projectId = pScanDao.insert(pScan);
+		if (projectId == null || projectId == 0) {
+			projectId = pScanDao.getProjectId(pScan);
+		}
 		System.out.println("PID: " + projectId);
 
 		// Class Data And Method Data to DB
@@ -55,7 +58,10 @@ public class ScannerImpl {
 			cScan.setFilePath(cDto.getFilePath());
 			cScan.setMemo("");
 
-			long classId = cScanDao.insert(cScan);
+			Long classId = cScanDao.insert(cScan);
+			if (classId == null || classId ==0) {
+				classId = cScanDao.getClassId(cScan);
+			}
 			System.out.println("CID: " + classId);
 
 			for (MethodScanDto mDto : cDto.getMethodList()) {
@@ -66,7 +72,7 @@ public class ScannerImpl {
 				mScan.setDependsOnMethods(mDto.getDepends());
 				mScan.setOwner("");
 
-				long methodId = mScanDao.insert(mScan);
+				Long methodId = mScanDao.insert(mScan);
 				System.out.println("MID: " + methodId);
 			}
 

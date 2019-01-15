@@ -44,8 +44,26 @@ public class BaseAbstractDao {
 		}
 	}
 	
+	protected Object select(String statement, Object obj) {
+		Object result = null;
+		try {
+			connectDB();
+			result = selectSQL(statement, obj);
+			commitDB();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+		return result;
+	}
+	
 	private void insertSQL(String statement, Object obj) {
 		session.insert(statement, obj);
 	}
 
+	private Object selectSQL(String statement, Object obj) {
+		return session.selectList(statement, obj);
+	}
+	
 }

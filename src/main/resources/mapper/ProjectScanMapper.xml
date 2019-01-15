@@ -3,22 +3,6 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="ProjectScan">
-
-	<!--insert id="addProjectScan" parameterType="ProjectScan"
-		useGeneratedKeys="true" keyProperty="idDyProject">
-		INSERT INTO dy_scan_project
-		(
-		id_testproject,
-		dy_giturl,
-		job_name,
-		node_name
-		) VALUES (
-		#{idTestproject},
-		#{dyGiturl},
-		#{jobName},
-		#{nodeName}
-		)
-	</insert-->
 	
 	<insert id="addProjectScan" parameterType="ProjectScan"
 		useGeneratedKeys="true" keyProperty="idTaProject">
@@ -42,5 +26,14 @@
       			ta_svnurl=#{taSvnurl}
       	)
 	</insert>
+	
+	<select id="getProjectId" parameterType="ProjectScan" resultType="long">
+		    SELECT
+		    	id_ta_project
+      		FROM
+      			ta_project2
+      		WHERE 
+      			ta_svnurl=#{taSvnurl}
+	</select>
 	
 </mapper> 

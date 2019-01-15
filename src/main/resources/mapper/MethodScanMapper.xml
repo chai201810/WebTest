@@ -4,25 +4,6 @@
 
 <mapper namespace="MethodScan">
 
-	<!--insert id="addMethodScan" parameterType="MethodScan"
-		useGeneratedKeys="true" keyProperty="idDyMethod">
-		INSERT INTO
-		dy_scan_method
-		(
-		id_dy_class,
-		method_name,
-		memo,
-		depends_on_methods,
-		owner
-		) VALUES (
-		#{idDyClass},
-		#{methodName},
-		#{memo},
-		#{dependsOnMethods},
-		#{owner}
-		)
-	</insert-->
-
 	<insert id="addMethodScan" parameterType="MethodScan"
 		useGeneratedKeys="true" keyProperty="idSvnMethod">
 		INSERT INTO ta_svn_method2

@@ -4,25 +4,6 @@
 
 <mapper namespace="ClassScan">
 
-	<!--insert id="addClassScan" parameterType="ClassScan"
-		useGeneratedKeys="true" keyProperty="idDyClass">
-		INSERT INTO
-		dy_scan_class
-		(
-		id_dy_project,
-		package_name,
-		class_name,
-		file_path,
-		memo
-		) VALUES (
-		#{idDyProject},
-		#{packageName},
-		#{className},
-		#{filePath},
-		#{memo}
-		)
-	</insert-->
-
 	<insert id="addClassScan" parameterType="ClassScan"
 		useGeneratedKeys="true" keyProperty="idSvnClass">
 		INSERT INTO ta_svn_class2
@@ -48,5 +29,15 @@
       			AND class_name=#{className}
       	)
 	</insert>
+
+	<select id="getClassId" parameterType="ClassScan" resultType="long">
+		    SELECT
+		    	id_svn_class
+      		FROM
+      			ta_svn_class2
+      		WHERE 
+      			package_name=#{packageName}
+      			AND class_name=#{className}
+	</select>
 
 </mapper> 

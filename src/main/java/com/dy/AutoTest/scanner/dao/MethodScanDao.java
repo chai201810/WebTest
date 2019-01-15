@@ -6,7 +6,7 @@ public class MethodScanDao extends BaseAbstractDao {
 
 	private final static String INSERT = "MethodScan.addMethodScan";
 
-	public long insert(MethodScan mScan) {
+	public Long insert(MethodScan mScan) {
 		super.insert(INSERT, mScan);
 		return mScan.getIdSvnMethod();
 	}
