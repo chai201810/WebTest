@@ -5,70 +5,11 @@ import static org.testng.Assert.assertTrue;
 import java.util.List;
 import java.util.Map;
 
-
-import com.dy.AutoTest.OperationPlatform.POJO.UserIncomeExpenditureDetailBean;
-import com.dy.AutoTest.OperationPlatform.POJO.UserInfoQueryBean;
 import com.dy.AutoTest.OnlineCashier.POJO.OnlineCashierB2BBean;
 import com.dy.AutoTest.OnlineCashier.POJO.OnlineCashierB2CBean;
-import com.dy.AutoTest.OnlineCashier.PageObject.accountmanage.AccountManageInternalAccountManagePage;
-import com.dy.AutoTest.MerchantPortal.POJO.AccountInfoBean;
-import com.dy.AutoTest.MerchantPortal.POJO.MMAddOperBean;
+import com.dy.AutoTest.OperationPlatform.POJO.*;
+import com.dy.AutoTest.AcquiringOperationPlatform.POJO.LoginBean;
 import com.dy.AutoTest.MerchantPortal.POJO.PmOperBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageAccountOrgnizationManageBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageAccountingEntryCheckBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageAccountingEntryMaintainBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageBookingKeppFlowBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageExternalBalanceDetailQueryBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageFrozenDetailQueryBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageInformDetailQueryBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageInnerAccountBalanceQueryBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageInternalAccountHistoryBalanceBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageInternalAccountManageBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageItemManageBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageItemRelationBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageManualAccountCheckBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageManualSingleAccountBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageOfflineFreezeManageBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageOfflineInternalAccountPaymentQueryBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageOfflineReleaseManageBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageOnlineInternalAccountPaymentQueryBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageSceneComprehensiveBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageSummonsQueryBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageWholeHistoryQueryBean;
-import com.dy.AutoTest.OnlineCashier.POJO.AccountManageYesterdayWholeQueryBean;
-import com.dy.AutoTest.OnlineCashier.POJO.CooperatingAgentInfoBean;
-import com.dy.AutoTest.OnlineCashier.POJO.CooperatingPaymentChannelBean;
-import com.dy.AutoTest.OnlineCashier.POJO.CooperatingRouteInfoBean;
-import com.dy.AutoTest.OnlineCashier.POJO.CooperatingServiceChannelBean;
-import com.dy.AutoTest.OnlineCashier.POJO.FinanceChannelBalanceAccountBatchNumQueryBean;
-import com.dy.AutoTest.OnlineCashier.POJO.FinanceChannelBalanceAccountErrorManageBean;
-import com.dy.AutoTest.OnlineCashier.POJO.FinanceChannelBalanceAccountParameterBean;
-import com.dy.AutoTest.OnlineCashier.POJO.FinanceChannelManageFlowQueryBean;
-import com.dy.AutoTest.OnlineCashier.POJO.FinanceChannelManageInfoBean;
-import com.dy.AutoTest.OnlineCashier.POJO.FinanceChannelManageRateCodeBean;
-import com.dy.AutoTest.OnlineCashier.POJO.FinanceChannelManageRateMaintainBean;
-import com.dy.AutoTest.OnlineCashier.POJO.FinanceChannelManageReturnCodeBean;
-import com.dy.AutoTest.OnlineCashier.POJO.FinanceChannelManageSignManageBean;
-import com.dy.AutoTest.OnlineCashier.POJO.IdCardPhotoVerificationBean;
-import com.dy.AutoTest.OnlineCashier.POJO.IdCardValidDateVerificationBean;
-import com.dy.AutoTest.OnlineCashier.POJO.IdentityAuthenticationChannelBean;
-import com.dy.AutoTest.OnlineCashier.POJO.IdentityAuthenticationDetailsBean;
-import com.dy.AutoTest.OnlineCashier.POJO.IdentityAuthenticationQueryBean;
-import com.dy.AutoTest.OnlineCashier.POJO.IdentityAuthenticationRouteBean;
-import com.dy.AutoTest.OperationPlatform.POJO.MainChildMerRelationshipBean;
-import com.dy.AutoTest.OperationPlatform.POJO.MerchantAccountManagementBean;
-import com.dy.AutoTest.OperationPlatform.POJO.MerchantAuditBean;
-import com.dy.AutoTest.OperationPlatform.POJO.MerchantBalanceQueryBean;
-import com.dy.AutoTest.OperationPlatform.POJO.MerchantFeeRateBean;
-import com.dy.AutoTest.OperationPlatform.POJO.MerchantIncomeExpenditureDetailBean;
-import com.dy.AutoTest.OperationPlatform.POJO.MerchantInfoBean;
-import com.dy.AutoTest.OperationPlatform.POJO.MerchantInfoSearchBean;
-import com.dy.AutoTest.OperationPlatform.POJO.MerchantSettlementAlterBean;
-import com.dy.AutoTest.OperationPlatform.POJO.MerchantSettlementBean;
-import com.dy.AutoTest.OperationPlatform.POJO.OperBean;
-import com.dy.AutoTest.OperationPlatform.POJO.OverdueMerInfoQueryBean;
-import com.dy.AutoTest.OperationPlatform.POJO.UserAccountModifySearchBean;
-import com.dy.AutoTest.OperationPlatform.POJO.UserActionBean;
 import com.dy.AutoTest.web.beans.Data_URLBean;
 import com.dy.AutoTest.web.dao.TestingDao;
 import com.dy.AutoTest.web.dao.impl.TestingDaoImpl;
@@ -102,9 +43,56 @@ public class DataBusiness {
 	private MerchantAccountManagementBean MerchantAccountManagementBean;
 	private OverdueMerInfoQueryBean OverdueMerInfoQueryBean;
 	private MainChildMerRelationshipBean MainChildMerRelationshipBean;
-	
-	
-	
+	private OnlinePurchaseOrderQueryBean OnlinePurchaseOrderQueryBean;
+	private OnlineRefundOrderQueryBean OnlineRefundOrderQueryBean;
+	private OnlineDepositOrderQueryBean OnlineDepositOrderQueryBean;
+	private OnlineDepositRefundQueryBean OnlineDepositRefundQueryBean;
+	private OnlineTransferInOrderQueryBean OnlineTransferInOrderQueryBean;
+	private OnlineTransferOutOrderQueryBean OnlineTransferOutOrderQueryBean;
+	private OnlineWithdrawOrderQueryBean OnlineWithdrawOrderQueryBean;
+	private SettlementManagement_RiskApprovalBean SettlementManagement_RiskApprovalBean;
+	private SettlementManagement_PaymentApprovalBean SettlementManagement_PaymentApprovalBean ;
+	private SettlementManagement_PaymentApprovalStatusQueryBean SettlementManagement_PaymentApprovalStatusQueryBean;
+	private SettlementManagement_PaymentOperationBean SettlementManagement_PaymentOperationBean;
+	private SettlementManagement_PaymentWorkFlowQueryBean SettlementManagement_PaymentWorkFlowQueryBean;
+	private SettlementManagement_SettlementBillQueryBean SettlementManagement_SettlementBillQueryBean;
+	private SettlementManagement_TradeClearingManagementOrderQueryBean SettlementManagement_TradeClearingManagementOrderQueryBean ;
+	private SettlementManagement_TradeClearingManagementQueryBean SettlementManagement_TradeClearingManagementQueryBean;
+	private RiskControlRuleManagement_RiskControlRuleManagementBean RiskControlRuleManagement_RiskControlRuleManagementBean;
+	private RiskControlRuleManagement_RiskControlTypeCorrespondingRulesManagementBean RiskControlRuleManagement_RiskControlTypeCorrespondingRulesManagementBean;
+	private RiskControlRuleManagement_RiskControlTypeManagementBean RiskControlRuleManagement_RiskControlTypeManagementBean;
+	private RiskControlRuleManagement_RiskTypeAndTradeCodeManagementBean RiskControlRuleManagement_RiskTypeAndTradeCodeManagementBean ;
+	private RiskControlParamManagement_AccountTradeParamMaintainBean RiskControlParamManagement_AccountTradeParamMaintainBean;
+	private RiskControlParamManagement_AccountBalanceParamMaintainBean RiskControlParamManagement_AccountBalanceParamMaintainBean;
+	private RiskControlParamManagement_AccountApproveParamMaintainBean RiskControlParamManagement_AccountApproveParamMaintainBean;
+	private BlackWhiteListManagement_BlackListMaintainBean BlackWhiteListManagement_BlackListMaintainBean;
+	private BlackWhiteListManagement_WhiteListMaintainBean BlackWhiteListManagement_WhiteListMaintainBean;
+	private RiskControlWarning_WarningRuleManagementBean RiskControlWarning_WarningRuleManagementBean;
+	private RiskControlWarning_TimesWarningBean RiskControlWarning_TimesWarningBean;
+	private RiskControlWarning_LimitWarningBean RiskControlWarning_LimitWarningBean;
+	private RiskControlWarning_EmailWarningBean RiskControlWarning_EmailWarningBean;
+	private RefusedTradeQuery_BeforehandBlackListRefusedQueryBean RefusedTradeQuery_BeforehandBlackListRefusedQueryBean;
+	private RefusedTradeQuery_RefusedOrderQueryBean RefusedTradeQuery_RefusedOrderQueryBean;
+	private RefusedTradeQuery_WarningOrderQueryBean RefusedTradeQuery_WarningOrderQueryBean;
+	private RiskControlLvMaintain_RiskCustomerMaintainBean RiskControlLvMaintain_RiskCustomerMaintainBean;
+	private RiskControlLvMaintain_RiskMonitorRuleMaintainBean RiskControlLvMaintain_RiskMonitorRuleMaintainBean;
+	private RiskControlLvMaintain_RiskOperationMaintainBean RiskControlLvMaintain_RiskOperationMaintainBean;
+	private RiskControlTotalQueryBean RiskControlTotalQueryBean;
+	private ComplianceMaintain_ComplianceLimitMaintainBean ComplianceMaintain_ComplianceLimitMaintainBean;
+	private ComplianceMaintain_ComplianceRiskControlQuantityBean ComplianceMaintain_ComplianceRiskControlQuantityBean ;
+	private ComplianceMaintain_TradeVerificationWaySetBean ComplianceMaintain_TradeVerificationWaySetBean;
+	private ComplianceMaintain_WeightMaintainBean ComplianceMaintain_WeightMaintainBean;
+	private ComplianceMaintain_CustomerPaymentLimitBean ComplianceMaintain_CustomerPaymentLimitBean;
+	private MonitorRulesManagement_MonitorParameterMaintainBean MonitorRulesManagement_MonitorParameterMaintainBean;
+	private MonitorRulesManagement_MonitorRulesMaintainBean MonitorRulesManagement_MonitorRulesMaintainBean;
+	private MonitorRulesManagement_MonitorOperationMaintainBean MonitorRulesManagement_MonitorOperationMaintainBean;
+	private SuspiciousTradeManagement_SuspiciousTradeAnalyzeBean SuspiciousTradeManagement_SuspiciousTradeAnalyzeBean;
+	private SuspiciousTradeManagement_BeingProcessedSuspiciousTradeMaintainBean SuspiciousTradeManagement_BeingProcessedSuspiciousTradeMaintainBean;
+	private SuspiciousTradeManagement_ProcessedSuspiciousTradeQueryBean SuspiciousTradeManagement_ProcessedSuspiciousTradeQueryBean;
+	private RiskControlLvMaintain_RiskLvMaintainBean RiskControlLvMaintain_RiskLvMaintainBean;
+	private LoginBean LoginBean;
+
+
 	
 	private List<Object> list;
 	
@@ -157,13 +145,13 @@ public class DataBusiness {
 			case "Data_URL":
 				data_URLBean=new Data_URLBean();
 				break;
-
+				
 			default:
 				System.out.println("table is not exist! Please check!");
 				break;
 		}
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public <T> T getDataBean(String tableName,String ID) {
 		
@@ -202,6 +190,148 @@ public class DataBusiness {
 			case "POP_Data_MainChildMerRelationship":
 				pojo=(T)testingDao.getData(tableName,ID,MainChildMerRelationshipBean.class);
 				return pojo;
+			case "POP_Data_OnlinePurchaseOrderQuery":
+				pojo=(T)testingDao.getData(tableName,ID,OnlinePurchaseOrderQueryBean.class);
+				return pojo;
+			case "POP_Data_OnlineRefundOrderQuery":
+				pojo=(T)testingDao.getData(tableName,ID,OnlineRefundOrderQueryBean.class);
+				return pojo;
+			case "POP_Data_OnlineDepositOrderQuery":
+				pojo=(T)testingDao.getData(tableName,ID,OnlineDepositOrderQueryBean.class);
+				return pojo;
+			case "POP_Data_OnlineDepositRefundQuery":
+				pojo=(T)testingDao.getData(tableName,ID,OnlineDepositRefundQueryBean.class);
+				return pojo;
+			case "POP_Data_OnlineTransferInOrderQuery":
+				pojo=(T)testingDao.getData(tableName,ID,OnlineTransferInOrderQueryBean.class);
+				return pojo;
+			case "POP_Data_OnlineTransferOutOrderQuery":
+				pojo=(T)testingDao.getData(tableName,ID,OnlineTransferOutOrderQueryBean.class);
+				return pojo;
+			case "POP_Data_OnlineWithdrawOrderQuery":
+				pojo=(T)testingDao.getData(tableName,ID,OnlineWithdrawOrderQueryBean.class);
+				return pojo;
+			case "POP_Data_SettlementManagement_RiskApproval":
+				pojo=(T)testingDao.getData(tableName,ID,SettlementManagement_RiskApprovalBean.class);
+				return pojo;
+			case "POP_Data_SettlementManagement_PaymentApproval":
+				pojo=(T)testingDao.getData(tableName,ID,SettlementManagement_PaymentApprovalBean.class);
+				return pojo;
+			case "POP_Data_SettlementManagement_PaymentApprovalStatusQuery":
+				pojo=(T)testingDao.getData(tableName,ID,SettlementManagement_PaymentApprovalStatusQueryBean.class);
+				return pojo;
+			case "POP_Data_SettlementManagement_PaymentOperation":
+				pojo=(T)testingDao.getData(tableName,ID,SettlementManagement_PaymentOperationBean.class);
+				return pojo;
+			case "POP_Data_SettlementManagement_PaymentWorkFlowQuery":
+				pojo=(T)testingDao.getData(tableName,ID,SettlementManagement_PaymentWorkFlowQueryBean.class);
+				return pojo;
+			case "POP_Data_SettlementManagement_SettlementBillQuery":
+				pojo=(T)testingDao.getData(tableName,ID,SettlementManagement_SettlementBillQueryBean.class);
+				return pojo;
+			case "POP_Data_SettlementManagement_TradeClearingManagementOrderQuery":
+				pojo=(T)testingDao.getData(tableName,ID,SettlementManagement_TradeClearingManagementOrderQueryBean.class);
+				return pojo;
+			case "POP_Data_SettlementManagement_TradeClearingManagementQuery":
+				pojo=(T)testingDao.getData(tableName,ID,SettlementManagement_TradeClearingManagementQueryBean.class);
+				return pojo;
+			case "POP_Data_RiskControlRuleManagement_RiskControlRuleManagement":
+				pojo=(T)testingDao.getData(tableName,ID,RiskControlRuleManagement_RiskControlRuleManagementBean.class);
+				return pojo;
+			case "POP_Data_RiskControlRuleManagement_RiskControlTypeCorrespondingRulesManagement":
+				pojo=(T)testingDao.getData(tableName,ID,RiskControlRuleManagement_RiskControlTypeCorrespondingRulesManagementBean.class);
+				return pojo;
+			case "POP_Data_RiskControlRuleManagement_RiskControlTypeManagement":
+				pojo=(T)testingDao.getData(tableName,ID,RiskControlRuleManagement_RiskControlTypeManagementBean.class);
+				return pojo;
+			case "POP_Data_RiskControlRuleManagement_RiskTypeAndTradeCodeManagement":
+				pojo=(T)testingDao.getData(tableName,ID,RiskControlRuleManagement_RiskTypeAndTradeCodeManagementBean.class);
+				return pojo;
+			case "POP_Data_RiskControlParamManagement_AccountTradeParamMaintain":
+				pojo=(T)testingDao.getData(tableName,ID,RiskControlParamManagement_AccountTradeParamMaintainBean.class);
+				return pojo;
+			case "POP_Data_RiskControlParamManagement_AccountBalanceParamMaintain":
+				pojo=(T)testingDao.getData(tableName,ID,RiskControlParamManagement_AccountBalanceParamMaintainBean.class);
+				return pojo;
+			case "POP_Data_RiskControlParamManagement_AccountApproveParamMaintain":
+				pojo=(T)testingDao.getData(tableName,ID,RiskControlParamManagement_AccountApproveParamMaintainBean.class);
+				return pojo;
+			case "POP_Data_BlackWhiteListManagement_BlackListMaintain":
+				pojo=(T)testingDao.getData(tableName,ID,BlackWhiteListManagement_BlackListMaintainBean.class);
+				return pojo;
+			case "POP_Data_BlackWhiteListManagement_WhiteListMaintain":
+				pojo=(T)testingDao.getData(tableName,ID,BlackWhiteListManagement_WhiteListMaintainBean.class);
+				return pojo;
+			case "POP_Data_RiskControlWarning_WarningRuleManagement":
+				pojo=(T)testingDao.getData(tableName,ID,RiskControlWarning_WarningRuleManagementBean.class);
+				return pojo;
+			case "POP_Data_RiskControlWarning_TimesWarning":
+				pojo=(T)testingDao.getData(tableName,ID,RiskControlWarning_TimesWarningBean.class);
+				return pojo;
+			case "POP_Data_RiskControlWarning_LimitWarning":
+				pojo=(T)testingDao.getData(tableName,ID,RiskControlWarning_LimitWarningBean.class);
+				return pojo;
+			case "POP_Data_RiskControlWarning_EmailWarning":
+				pojo=(T)testingDao.getData(tableName,ID,RiskControlWarning_EmailWarningBean.class);
+				return pojo;
+			case "POP_Data_RefusedTradeQuery_BeforehandBlackListRefusedQuery":
+				pojo=(T)testingDao.getData(tableName,ID,RefusedTradeQuery_BeforehandBlackListRefusedQueryBean.class);
+				return pojo;
+			case "POP_Data_RefusedTradeQuery_RefusedOrderQuery":
+				pojo=(T)testingDao.getData(tableName,ID,RefusedTradeQuery_RefusedOrderQueryBean.class);
+				return pojo;
+			case "POP_Data_RefusedTradeQuery_WarningOrderQuery":
+				pojo=(T)testingDao.getData(tableName,ID,RefusedTradeQuery_WarningOrderQueryBean.class);
+				return pojo;
+			case "POP_Data_RiskControlLvMaintain_RiskCustomerMaintain":
+				pojo=(T)testingDao.getData(tableName,ID,RiskControlLvMaintain_RiskCustomerMaintainBean.class);
+				return pojo;
+			case "POP_Data_RiskControlLvMaintain_RiskLvMaintain":
+				pojo=(T)testingDao.getData(tableName,ID,RiskControlLvMaintain_RiskLvMaintainBean.class);
+				return pojo;
+			case "POP_Data_RiskControlLvMaintain_RiskMonitorRuleMaintain":
+				pojo=(T)testingDao.getData(tableName,ID,RiskControlLvMaintain_RiskMonitorRuleMaintainBean.class);
+				return pojo;
+			case "POP_Data_RiskControlLvMaintain_RiskOperationMaintain":
+				pojo=(T)testingDao.getData(tableName,ID,RiskControlLvMaintain_RiskOperationMaintainBean.class);
+				return pojo;
+			case "POP_Data_RiskControlTotalQuery":
+				pojo=(T)testingDao.getData(tableName,ID,RiskControlTotalQueryBean.class);
+				return pojo;
+			case "POP_Data_ComplianceMaintain_ComplianceLimitMaintain":
+				pojo=(T)testingDao.getData(tableName,ID,ComplianceMaintain_ComplianceLimitMaintainBean.class);
+				return pojo;
+			case "POP_Data_ComplianceMaintain_ComplianceRiskControlQuantity":
+				pojo=(T)testingDao.getData(tableName,ID,ComplianceMaintain_ComplianceRiskControlQuantityBean.class);
+				return pojo;
+			case "POP_Data_ComplianceMaintain_TradeVerificationWaySet":
+				pojo=(T)testingDao.getData(tableName,ID,ComplianceMaintain_TradeVerificationWaySetBean.class);
+				return pojo;
+			case "POP_Data_ComplianceMaintain_WeightMaintain":
+				pojo=(T)testingDao.getData(tableName,ID,ComplianceMaintain_WeightMaintainBean.class);
+				return pojo;
+			case "POP_Data_ComplianceMaintain_CustomerPaymentLimit":
+				pojo=(T)testingDao.getData(tableName,ID,ComplianceMaintain_CustomerPaymentLimitBean.class);
+				return pojo;
+			case "POP_Data_MonitorRulesManagement_MonitorParameterMaintain":
+				pojo=(T)testingDao.getData(tableName,ID,MonitorRulesManagement_MonitorParameterMaintainBean.class);
+				return pojo;
+			case "POP_Data_MonitorRulesManagement_MonitorRulesMaintain":
+				pojo=(T)testingDao.getData(tableName,ID,MonitorRulesManagement_MonitorRulesMaintainBean.class);
+				return pojo;
+			case "POP_Data_MonitorRulesManagement_MonitorOperationMaintain":
+				pojo=(T)testingDao.getData(tableName,ID,MonitorRulesManagement_MonitorOperationMaintainBean.class);
+				return pojo;
+			case "POP_Data_SuspiciousTradeManagement_SuspiciousTradeAnalyze":
+				pojo=(T)testingDao.getData(tableName,ID,SuspiciousTradeManagement_SuspiciousTradeAnalyzeBean.class);
+				return pojo;
+			case "POP_Data_SuspiciousTradeManagement_BeingProcessedSuspiciousTradeMaintain":
+				pojo=(T)testingDao.getData(tableName,ID,SuspiciousTradeManagement_BeingProcessedSuspiciousTradeMaintainBean.class);
+				return pojo;
+			case "POP_Data_SuspiciousTradeManagement_ProcessedSuspiciousTradeQuery":
+				pojo=(T)testingDao.getData(tableName,ID,SuspiciousTradeManagement_ProcessedSuspiciousTradeQueryBean.class);
+				return pojo;
+				
 			case "POP_Data_MerchantOper":
 				
 				break;
@@ -226,16 +356,15 @@ public class DataBusiness {
 			case "Online_Data_Cashier_B2B":
 				pojo=(T)testingDao.getData(tableName,ID,OnlineCashierB2BBean.class);
 				return pojo;				
-				
 			case "Data_URL":
 				data_URLBean=new Data_URLBean();
 				break;
-
+			case "AOP_Data_Login":
+				pojo=(T)testingDao.getData(tableName,ID,LoginBean.class);
+				return pojo;
 			case "MP_Data_Oper":
 				pojo=(T)testingDao.getData(tableName,ID,PmOperBean.class);
 				return pojo;
-				
-				
 			default:
 				System.out.println("DataBusiness.getDataBean: "+tableName+" is not exist! Please check!");
 				assertTrue(false);
@@ -272,66 +401,221 @@ public class DataBusiness {
 		}
 	}
 	*/
+	public <T> T getDataBean(String tableName,String ID,Class<T> cls){
+		return (T)testingDao.getData(tableName,ID,cls);
+	}
+	public <T> void loadDataBeanList(String tableName,Class<T> cls) {
+		loadDataBeanList(tableName,"",cls);
+	}
+	public <T> void loadDataBeanList(String tableName,String caseNO,Class<T> cls){
+		list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,cls));
+	}
 	
 	public void loadDataBeanList(String tableName) {
+		loadDataBeanList(tableName,"");
+	}
+	
+	public void loadDataBeanList(String tableName,String caseNO) {
 		switch (tableName) {
 		case "POP_Data_MerchantAudit":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,MerchantAuditBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,MerchantAuditBean.class));
 			break;
 		case "POP_Data_MerchantInfo":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,MerchantInfoBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,MerchantInfoBean.class));
 			break;
 		case "POP_Data_MerchantSettlement":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,MerchantSettlementBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,MerchantSettlementBean.class));
 			break;
 		case "POP_Data_MerchantSettlementAlter":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,MerchantSettlementAlterBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,MerchantSettlementAlterBean.class));
 			break;
 		case "POP_Data_MerchantFeeRate":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,MerchantFeeRateBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,MerchantFeeRateBean.class));
 			break;
 		case "POP_Data_MerchantInfoSearch":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,MerchantInfoSearchBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,MerchantInfoSearchBean.class));
 			break;
 		case "POP_Data_MerchantBalanceQuery":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,MerchantBalanceQueryBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,MerchantBalanceQueryBean.class));
 			break;
 		case "POP_Data_MerchantIncomeExpenditureDetail":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,MerchantIncomeExpenditureDetailBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,MerchantIncomeExpenditureDetailBean.class));
 			break;
 		case "POP_Data_MerchantAccountManagement":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,MerchantAccountManagementBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,MerchantAccountManagementBean.class));
 			break;
 		case "POP_Data_OverdueMerInfoQuery":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,OverdueMerInfoQueryBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,OverdueMerInfoQueryBean.class));
 			break;
 		case "POP_Data_MainChildMerRelationship":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,MainChildMerRelationshipBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,MainChildMerRelationshipBean.class));
 			break;
+		case "POP_Data_OnlinePurchaseOrderQuery":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,OnlinePurchaseOrderQueryBean.class));
+			break;
+		case "POP_Data_OnlineRefundOrderQuery":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,OnlineRefundOrderQueryBean.class));
+			break;
+		case "POP_Data_OnlineDepositOrderQuery":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,OnlineDepositOrderQueryBean.class));
+			break;
+		case "POP_Data_OnlineDepositRefundQuery":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,OnlineDepositRefundQueryBean.class));
+			break;
+		case "POP_Data_OnlineTransferInOrderQuery":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,OnlineTransferInOrderQueryBean.class));
+			break;
+		case "POP_Data_OnlineTransferOutOrderQuery":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,OnlineTransferOutOrderQueryBean.class));
+			break;
+		case "POP_Data_OnlineWithdrawOrderQuery":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,OnlineWithdrawOrderQueryBean.class));
+			break;
+		case "POP_Data_SettlementManagement_RiskApproval":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,SettlementManagement_RiskApprovalBean.class));
+			break;
+		case "POP_Data_SettlementManagement_PaymentApproval":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,SettlementManagement_PaymentApprovalBean.class));
+			break;
+		case "POP_Data_SettlementManagement_PaymentApprovalStatusQuery":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,SettlementManagement_PaymentApprovalStatusQueryBean.class));
+			break;
+		case "POP_Data_SettlementManagement_PaymentOperation":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,SettlementManagement_PaymentOperationBean.class));
+			break;
+		case "POP_Data_SettlementManagement_PaymentWorkFlowQuery":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,SettlementManagement_PaymentWorkFlowQueryBean.class));
+			break;
+		case "POP_Data_SettlementManagement_SettlementBillQuery":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,SettlementManagement_SettlementBillQueryBean.class));
+			break;
+		case "POP_Data_SettlementManagement_TradeClearingManagementOrderQuery":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,SettlementManagement_TradeClearingManagementOrderQueryBean.class));
+			break;
+		case "POP_Data_RiskControlRuleManagement_RiskControlRuleManagement":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,RiskControlRuleManagement_RiskControlRuleManagementBean.class));
+			break;
+		case "POP_Data_RiskControlRuleManagement_RiskControlTypeCorrespondingRulesManagement":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,RiskControlRuleManagement_RiskControlTypeCorrespondingRulesManagementBean.class));
+			break;
+		case "POP_Data_RiskControlRuleManagement_RiskControlTypeManagement":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,RiskControlRuleManagement_RiskControlTypeManagementBean.class));
+			break;
+		case "POP_Data_RiskControlRuleManagement_RiskTypeAndTradeCodeManagement":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,RiskControlRuleManagement_RiskTypeAndTradeCodeManagementBean.class));
+			break;
+		case "POP_Data_RiskControlParamManagement_AccountTradeParamMaintain":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,RiskControlParamManagement_AccountTradeParamMaintainBean.class));
+			break;
+		case "POP_Data_RiskControlParamManagement_AccountBalanceParamMaintain":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,RiskControlParamManagement_AccountBalanceParamMaintainBean.class));
+			break;
+		case "POP_Data_RiskControlParamManagement_AccountApproveParamMaintain":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,RiskControlParamManagement_AccountApproveParamMaintainBean.class));
+			break;
+		case "POP_Data_BlackWhiteListManagement_BlackListMaintain":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,BlackWhiteListManagement_BlackListMaintainBean.class));
+			break;
+		case "POP_Data_BlackWhiteListManagement_WhiteListMaintain":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,BlackWhiteListManagement_WhiteListMaintainBean.class));
+			break;
+		case "POP_Data_RiskControlWarning_WarningRuleManagement":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,RiskControlWarning_WarningRuleManagementBean.class));
+			break;
+		case "POP_Data_RiskControlWarning_TimesWarning":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,RiskControlWarning_TimesWarningBean.class));
+			break;
+		case "POP_Data_RiskControlWarning_LimitWarning":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,RiskControlWarning_LimitWarningBean.class));
+			break;
+		case "POP_Data_RiskControlWarning_EmailWarning":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,RiskControlWarning_EmailWarningBean.class));
+			break;
+		case "POP_Data_RefusedTradeQuery_BeforehandBlackListRefusedQuery":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,RefusedTradeQuery_BeforehandBlackListRefusedQueryBean.class));
+			break;
+		case "POP_Data_RefusedTradeQuery_RefusedOrderQuery":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,RefusedTradeQuery_RefusedOrderQueryBean.class));
+			break;
+		case "POP_Data_RefusedTradeQuery_WarningOrderQuery":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,RefusedTradeQuery_WarningOrderQueryBean.class));
+			break;
+		case "POP_Data_RiskControlLvMaintain_RiskCustomerMaintain":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,RiskControlLvMaintain_RiskCustomerMaintainBean.class));
+			break;
+		case "POP_Data_RiskControlLvMaintain_RiskLvMaintain":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,RiskControlLvMaintain_RiskLvMaintainBean.class));
+			break;
+		case "POP_Data_RiskControlLvMaintain_RiskMonitorRuleMaintain":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,RiskControlLvMaintain_RiskMonitorRuleMaintainBean.class));
+			break;
+		case "POP_Data_RiskControlLvMaintain_RiskOperationMaintain":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,RiskControlLvMaintain_RiskOperationMaintainBean.class));
+			break;
+		case "POP_Data_RiskControlTotalQuery":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,RiskControlTotalQueryBean.class));
+			break;
+		case "POP_Data_ComplianceMaintain_ComplianceLimitMaintain":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,ComplianceMaintain_ComplianceLimitMaintainBean.class));
+			break;
+		case "POP_Data_ComplianceMaintain_ComplianceRiskControlQuantity":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,ComplianceMaintain_ComplianceRiskControlQuantityBean.class));
+			break;
+		case "POP_Data_ComplianceMaintain_TradeVerificationWaySet":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,ComplianceMaintain_TradeVerificationWaySetBean.class));
+			break;
+		case "POP_Data_ComplianceMaintain_WeightMaintain":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,ComplianceMaintain_WeightMaintainBean.class));
+			break;
+		case "POP_Data_ComplianceMaintain_CustomerPaymentLimit":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,ComplianceMaintain_CustomerPaymentLimitBean.class));
+			break;
+		case "POP_Data_MonitorRulesManagement_MonitorOperationMaintain":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,MonitorRulesManagement_MonitorOperationMaintainBean.class));
+			break;
+		case "POP_Data_SuspiciousTradeManagement_SuspiciousTradeAnalyze":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,SuspiciousTradeManagement_SuspiciousTradeAnalyzeBean.class));
+			break;
+		case "POP_Data_SuspiciousTradeManagement_BeingProcessedSuspiciousTradeMaintain":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,SuspiciousTradeManagement_BeingProcessedSuspiciousTradeMaintainBean.class));
+			break;
+		case "POP_Data_SuspiciousTradeManagement_ProcessedSuspiciousTradeQuery":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,SuspiciousTradeManagement_ProcessedSuspiciousTradeQueryBean.class));
+			break;
+			
 		case "POP_Data_MerchantOper":
 			
 			break;
 			
 		case "POP_Data_UserInfoQuery":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,UserInfoQueryBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,UserInfoQueryBean.class));
 			break;
 		case "POP_Data_UserAccountModifySearch":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,UserAccountModifySearchBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,UserAccountModifySearchBean.class));
 			break;
 		case "POP_Data_UserIncomeExpenditureDetail":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,UserIncomeExpenditureDetailBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,UserIncomeExpenditureDetailBean.class));
 			break;
 		case "POP_Data_UserAction":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,UserActionBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,UserActionBean.class));
 			break;
 		case "POP_Data_Oper":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,OperBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,OperBean.class));
 			break;
 		case "Online_Data_Cashier_B2C":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,OnlineCashierB2CBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,OnlineCashierB2CBean.class));
 			break;
 		case "Online_Data_Cashier_B2B":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,OnlineCashierB2BBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,OnlineCashierB2BBean.class));
+			break;
+		case "POP_Data_SettlementManagement_TradeClearingManagementQuery":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,SettlementManagement_TradeClearingManagementQueryBean.class));
+			break;
+		case "POP_Data_MonitorRulesManagement_MonitorParameterMaintain":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,MonitorRulesManagement_MonitorParameterMaintainBean.class));
+			break;
+		case "POP_Data_MonitorRulesManagement_MonitorRulesMaintain":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,MonitorRulesManagement_MonitorRulesMaintainBean.class));
 			break;
 		case "Data_URL":
 			data_URLBean=new Data_URLBean();
@@ -339,68 +623,69 @@ public class DataBusiness {
 		
 		
 		case "POP_Data_CooperatingAgencyInfo":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,CooperatingAgentInfoBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,CooperatingAgentInfoBean.class));
 			break;
 			
 		case "POP_Data_CooperatingPaymentChannel":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,CooperatingPaymentChannelBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,CooperatingPaymentChannelBean.class));
 			break;
 			
 		case "POP_Data_CooperatingServiceChannel":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,CooperatingServiceChannelBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,CooperatingServiceChannelBean.class));
 			break;
 		
 		case "POP_Data_CooperatingRouteInfo":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,CooperatingRouteInfoBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,CooperatingRouteInfoBean.class));
 			break;
 			
 		case "POP_Data_IdentityAuthenticationChannel":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,IdentityAuthenticationChannelBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,IdentityAuthenticationChannelBean.class));
 			break;
 		
 		case "POP_Data_IdentityAuthenticationRoute":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,IdentityAuthenticationRouteBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,IdentityAuthenticationRouteBean.class));
 			break;
 		
 		case "POP_Data_IdentityAuthenticationDetails":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,IdentityAuthenticationDetailsBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,IdentityAuthenticationDetailsBean.class));
 			break;
 			
 		case "POP_Data_IdentityAuthenticationQuery":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,IdentityAuthenticationQueryBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,IdentityAuthenticationQueryBean.class));
 			break;
 		
 		case "POP_Data_IdCardPhotoVerification":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,IdCardPhotoVerificationBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,IdCardPhotoVerificationBean.class));
 			break;
 		
 		case "POP_Data_IdCardValidDateVerification":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,IdCardValidDateVerificationBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,IdCardValidDateVerificationBean.class));
 			break;
 		
 		case "POP_Data_FinanceChannelManageInfo":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,FinanceChannelManageInfoBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,FinanceChannelManageInfoBean.class));
 			break;
 		
 		case "POP_Data_FinanceChannelManageFlowQuery":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,FinanceChannelManageFlowQueryBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,FinanceChannelManageFlowQueryBean.class));
 			break;
 			
 		case "POP_Data_FinanceChannelManageReturnCode":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,FinanceChannelManageReturnCodeBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,FinanceChannelManageReturnCodeBean.class));
 			break;
 			
 		case "POP_Data_FinanceChannelManageSignManage":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,FinanceChannelManageSignManageBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,FinanceChannelManageSignManageBean.class));
 			break;
 			
 		case "POP_Data_FinanceChannelManageRateMaintain":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,FinanceChannelManageRateMaintainBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,FinanceChannelManageRateMaintainBean.class));
 			break;
 			
 		case "POP_Data_FinanceChannelManageRateCode":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,FinanceChannelManageRateCodeBean.class));
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,FinanceChannelManageRateCodeBean.class));
 			break;
+			
 			
 		case "POP_Data_FinanceChannelBalanceAccountParameter":
 			list=BaseUtil.toObject(testingDao.getDataList(tableName,FinanceChannelBalanceAccountParameterBean.class));
@@ -502,25 +787,18 @@ public class DataBusiness {
 			list=BaseUtil.toObject(testingDao.getDataList(tableName,AccountManageOfflineReleaseManageBean.class));
 			break;	
 			
-		case "MP_Data_MerchantInfo":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,com.dy.AutoTest.MerchantPortal.POJO.MerchantInfoBean.class));
-			break;	
-			
-		case "MP_Data_AccountInfo":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,AccountInfoBean.class));
-			break;	
-			
-		case "MP_Data_MMAddOper":
-			list=BaseUtil.toObject(testingDao.getDataList(tableName,MMAddOperBean.class));
-			break;	
 			
 			
+		case "AOP_Data_Login":
+			list=BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,LoginBean.class));
+			break;
 			
 		default:
 			System.out.println("table "+tableName+" is not exist! Please check!");
 			break;
 		}
 	}
+	
 	
 	/**
 	 * using loadDataBeanList(String tableName) method before this method 
@@ -818,15 +1096,6 @@ public class DataBusiness {
 	    return MerchantFeeRateBean;
 	}
 
-	public <T> T getDataBean(String tableName, String ID, Class<T> cls) {
-		return (T)testingDao.getData(tableName, ID, cls);
-	}
-	
-	public <T> void loadDataBeanList(String tableName, Class<T> cls) {
-		loadDataBeanList(tableName, "", cls);
-	}
-	
-	public <T> void loadDataBeanList(String tableName, String caseNO, Class<T> cls) {
-		list = BaseUtil.toObject(testingDao.getDataListByCase(tableName,caseNO,cls));
-	}
+
+
 }

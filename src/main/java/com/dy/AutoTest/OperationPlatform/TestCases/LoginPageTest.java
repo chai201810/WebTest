@@ -34,7 +34,7 @@ public class LoginPageTest extends SuperTest{
 	}
 	
 	@Parameters({ "OperID" })
-	@Test(description = "运营平台-登录")
+	@Test
 	public void testLogin(String OperID) {
 		operBean = data.getDataBean("POP_Data_Oper", OperID);
 		loginPage.navigateTo(URL);
@@ -47,5 +47,5 @@ public class LoginPageTest extends SuperTest{
 		loginPage.doLogin();
 		if(SingletonSet.CurrentAccountantDate.toString().equals(""))
 			SingletonSet.CurrentAccountantDate.append(loginPage.getCurrentAccountantDate());
-	}
+	}  
 }

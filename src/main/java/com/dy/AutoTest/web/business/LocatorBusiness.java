@@ -15,7 +15,7 @@ public class LocatorBusiness {
 	private List<Map<String, Object>> list;
 	private List<Object> list2;
 	private Map<String, Object> map;
-	private TestingDao testingDao=new TestingDaoImpl();;
+	private TestingDao testingDao=new TestingDaoImpl();
 	
 	public LocatorBusiness(String tableName) {
 		testingDao=new TestingDaoImpl();
@@ -36,7 +36,7 @@ public class LocatorBusiness {
 				break;
 			}
 		}
-		if(i==list.size()) {
+		if(i==list.size()) { 
 //			System.out.println(Thread.currentThread() .getStackTrace()[1].getClassName()+
 //					"."+Thread.currentThread().getStackTrace()[1].getMethodName()+": ElementName: "+elementName+" in table is not exist! Please check!");
 			System.out.println("LocatorBusiness.getXPath: ElementName("+elementName+") in table is not exist! Please check!");

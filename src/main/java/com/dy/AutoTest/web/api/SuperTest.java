@@ -15,6 +15,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
+import com.dy.AutoTest.OperationPlatform.POJO.RiskControlParamManagement_AccountApproveParamMaintainBean;
 import com.dy.AutoTest.web.actions.SingletonSet;
 import com.dy.AutoTest.web.actions.Wait;
 import com.dy.AutoTest.web.business.DataBusiness;
@@ -30,6 +31,14 @@ public class SuperTest {
 	
 	protected String testinfo=""; 
 	
+	
+	/********** interface identify ***********/
+	protected IQuery iQuery;
+	protected IClickRadio iClickRadio;
+	protected IClickButton iClickButton;
+	protected ISearchMerchantByNOorName iSearchMerchantByNOorName;
+	
+	/************* test area ****************/
 	@BeforeClass
 	public void beforeClass() { 
 		wait = SingletonSet.wait;
@@ -68,25 +77,31 @@ public class SuperTest {
 		}
 		wait.waitFor(2000);
 	}
+	
+	
+	
+/*************************** interface function *****************************/
+	
 	//搜商户
-	public void doSearchMerchantByNOorName(SearchMerchantByNOorName searchMerchantByNOorName,String merchantNO,String merchantName,String index) {
+	public void doSearchMerchantByNOorName(String merchantNO,String merchantName,String index) {
 		if(!merchantNO.equals("")) {
-			searchMerchantByNOorName.setMerchantNO(merchantNO);
+			iSearchMerchantByNOorName.setMerchantNO(merchantNO);
 		}else if(!merchantName.equals("")) {
-			searchMerchantByNOorName.clickSearchMer();
-			searchMerchantByNOorName.setSearchMer_MerName(merchantName);
-			searchMerchantByNOorName.clickSearchMer_Search();
+			iSearchMerchantByNOorName.clickSearchMer();
+			iSearchMerchantByNOorName.setSearchMer_MerName(merchantName);
+			iSearchMerchantByNOorName.clickSearchMer_Search();
+			wait.waitFor(800);
 			try {
-				searchMerchantByNOorName.isSearchMer_RadioDisplayed(index);
+				iSearchMerchantByNOorName.isSearchMer_RadioDisplayed(index);
 			} catch (Exception e) {
-				searchMerchantByNOorName.clickSearchMer_Close();
+				iSearchMerchantByNOorName.clickSearchMer_Close();
 				wait.waitFor(1000);
 				System.out.println("搜商户 该商户名数据不存在，Please Check TestData ! MerchantName is "+merchantName);
 				Reporter.log("搜商户 该商户名数据不存在，Please Check TestData ! MerchantName is "+merchantName);
 				assertTrue(false);
 			}
-			searchMerchantByNOorName.clickSearchMer_Radio(index);
-			searchMerchantByNOorName.clickSearchMer_Submit();
+			iSearchMerchantByNOorName.clickSearchMer_Radio(index);
+			iSearchMerchantByNOorName.clickSearchMer_Submit();
 		}else {
 			System.out.println("Both of MerchantNO and MerchantName are null ! Please check TestData !");
 			Reporter.log("Both of MerchantNO and MerchantName are null ! Please check TestData !");
@@ -94,10 +109,103 @@ public class SuperTest {
 		}
 	}
 	
-	//查询
+	//查询 testQuery()
+	public void doQuery() {
+		doQuery(1000);
+	}
+	public void doQuery(int waitTime) {
+//		iQuery.doPageDown();
+		iQuery.clickQuery();
+		wait.waitFor(waitTime);
+		iQuery.doPageDown();
+		wait.waitFor(500+waitTime);
+		iQuery.doPageUp();
+		wait.waitFor(waitTime);
+		iQuery.clickReset();
+		wait.waitFor(waitTime);
+	}
+	public void clickAdvanceBeforeDoQuery() {
+		clickAdvanceBeforeDoQuery(1000);
+	}
+	public void clickAdvanceBeforeDoQuery(int waitTime) {
+		wait.waitFor(1000);
+		iQuery.clickAdvance();
+		wait.waitFor(1000);
+		iQuery.clickQuery();
+		wait.waitFor(waitTime);
+		iQuery.doPageDown();
+		wait.waitFor(1000+waitTime);
+		iQuery.doPageUp();
+		wait.waitFor(waitTime);
+		iQuery.clickReset();
+		wait.waitFor(waitTime);
+	}
 	
+	//点击Radio
+	public void clickRadio(String radio) {
+		clickRadio(radio,1000);
+	}
+	public void clickRadio(String radio,int waitTime) {
+		iClickRadio.clickQuery();
+		wait.waitFor(waitTime);
+		if(!iClickRadio.isElementExist("Radio",radio)) {	
+			System.out.println("查询数据不存在，请更换查询条件。Please Change TestData !");
+			Reporter.log("查询数据数据不存在，请更换查询条件。Please Change TestData !");
+			assertTrue(false);
+		}
+		while(!iClickRadio.isElementDisplayed("Radio",radio)) {
+			iClickRadio.doPageDown();
+			wait.waitFor(300);
+		}
+		iClickRadio.clickRadio(radio);
+		wait.waitFor(waitTime);
+		iClickRadio.doLoseFocus("Radio",radio,80,0 );
+	}
+	//Click Button
+	public void clickButton(String buttonName) {
+		if(!iClickButton.isElementExist(buttonName)) {	
+			System.out.println("按钮不存在，Please Change TestData !");
+			Reporter.log("按钮不存在，Please Change TestData !");
+			assertTrue(false);
+		}
+		while(!iClickButton.isElementDisplayed(buttonName)) {
+			iClickButton.doPageUp();
+			wait.waitFor(300);
+		}
+		iClickButton.clickElement(buttonName);
+		wait.waitFor(2000);
+	}
+	
+	
+	//查看 
 	//修改
 	
+	
+//	public void doQueryForClickButton() {
+		//主要功能是if的填值，query点击，radio选择
+/*		
+		if(!raapmBean.getAccountType().equals("")) {
+			AccountApproveParamMaintainPage.selectAccountType(raapmBean.getAccountType());
+		}
+		AccountApproveParamMaintainPage.clickQuery();
+		wait.waitFor(500);
+		AccountApproveParamMaintainPage.clickRadio(raapmBean.getRadio());
+		wait.waitFor(500);
+		*/
+//	}
+//	public void testAdd() {
+		/*		
+		if(ctvwsBean.getModeID().equals("")) {
+			System.out.println("ID字段为必输项，不能为空");
+			Reporter.log("ID字段为必输项，不能为空");
+			assertTrue(false);
+		}
+		*/
+	
+//	System.out.println(TradeVerificationWaySetPage.getNotice());
+//	Reporter.log(TradeVerificationWaySetPage.getNotice());
+	
+//	}
 	
 	
 }

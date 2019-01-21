@@ -9,17 +9,6 @@ import com.dy.AutoTest.MerchantPortal.PageObject.base.LoginPage;
 import com.dy.AutoTest.web.api.SuperTest;
 import com.dy.AutoTest.web.business.DataBusiness;
 
-/**
- * @author Jerry
- * @description
- * Process of Testing Login:
- * 	- Get url from Database ;
- *  - Get get OperBean
- *  - SendKeys OperID, Password
- *  - Get SMS and sendKeys SMS
- *  - Do Login and record "CurrentAccountantDate" on index.jsp
- *
- */
 public class LoginPageTest extends SuperTest{ 
 	private LoginPage loginPage;
 	private String URL="";

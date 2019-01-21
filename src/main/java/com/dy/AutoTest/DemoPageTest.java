@@ -1,10 +1,12 @@
 package com.dy.AutoTest;
 
+import java.lang.reflect.Method;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.dy.AutoTest.DemoPage;
 import com.dy.AutoTest.web.api.SuperTest;
 import com.dy.AutoTest.web.beans.DemoBean;
 import com.dy.AutoTest.web.business.DataBusiness;
@@ -15,9 +17,17 @@ public class DemoPageTest extends SuperTest{
     
     @BeforeClass
 	public void init() {
+    	/******** instant objectPage *********/
     	DemoPage=new DemoPage(driver);
 //    	DemoPage.setWaitTime(800);
+    	
+    	/******** set URL *********/
 		URL=host.toString()+DataBusiness.getData_URL("XXXX");
+		
+		/******** instant Interface *********/
+//		iQuery=DemoPage;
+//		iClickButton=DemoPage;
+//		iClickRadio=DemoPage;
 	}
 	
 	@DataProvider(name="xxxx")
@@ -26,11 +36,14 @@ public class DemoPageTest extends SuperTest{
 		return data.getDataBeanArray();
 	}
 	
-	@Test(dataProvider="xxxx")       
+	@DataProvider(name="xxxxByCaseNO")
+	protected static Object[][] parametersPool(Method method){
+		data.loadDataBeanList("POP_Data_XXXX",method.getName());
+		return data.getDataBeanArray();
+	}
+	
+	@Test(dataProvider="xxxxByCaseNO")       
 	public void testXXXX(DemoBean DemoBean) {    
 		DemoPage.navigateTo(URL);
-		  
-		
-		
 	}
 }
