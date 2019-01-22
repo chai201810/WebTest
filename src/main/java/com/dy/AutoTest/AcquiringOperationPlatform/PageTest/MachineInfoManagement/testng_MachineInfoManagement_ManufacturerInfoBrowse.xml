@@ -23,11 +23,11 @@
 			<class
 				name="com.dy.AutoTest.AcquiringOperationPlatform.PageTest.MachineInfoManagement.ManufacturerInfoBrowsePageTest">
 				<methods>
-					<!--include name="testQuery" /-->
+					<!-- <include name="testQuery" /> -->
 					<include name="testCheck" />
-					<!--include name="testAdd" />
+					<include name="testDelete" />
 					<include name="testUpdate" />
-					<include name="testDelete" /-->
+					<include name="testAdd" />
 				</methods>
 			</class> 
 		</classes>

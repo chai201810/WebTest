@@ -39,18 +39,6 @@ public class ManufacturerInfoBrowsePageTest extends SuperTest{
 		return data.getDataBeanArray();
 	}
 
-//	@Test(dataProvider="MachineInfoManagement_ManufacturerInfoBrowseByCaseNO")
-//	public void testQuery(MachineInfoManagement_ManufacturerInfoBrowseBean bean) {
-//		ManufacturerInfoBrowsePage.navigateTo(URL);
-//		
-//		ManufacturerInfoBrowsePage.setManufacturerNO(bean.getManufacturerNO());
-//		ManufacturerInfoBrowsePage.setManufacturerName(bean.getManufacturerName());
-//		
-//		ManufacturerInfoBrowsePage.clickQuery();
-//		
-//		wait.waitFor(500);
-//
-//	}
 	@Test(dataProvider="MachineInfoManagement_ManufacturerInfoBrowseByCaseNO")
 	public void testCheck(MachineInfoManagement_ManufacturerInfoBrowseBean bean) {
 		ManufacturerInfoBrowsePage.navigateTo(URL);
@@ -63,55 +51,77 @@ public class ManufacturerInfoBrowsePageTest extends SuperTest{
 		wait.waitFor(2000);
 		ManufacturerInfoBrowsePage.clickCheck_Close();
 	}
+	
 	@Test(dataProvider="MachineInfoManagement_ManufacturerInfoBrowseByCaseNO")
 	public void testDelete(MachineInfoManagement_ManufacturerInfoBrowseBean bean) {
 		ManufacturerInfoBrowsePage.navigateTo(URL);
+		
+		ManufacturerInfoBrowsePage.setManufacturerNO(bean.getManufacturerNO());
+		ManufacturerInfoBrowsePage.setManufacturerName(bean.getManufacturerName());
+		
 		wait.waitFor(500);
 		doQueryForClickButton(bean);
 		ManufacturerInfoBrowsePage.clickDelete();
 		wait.waitFor(1000);
 //		ManufacturerInfoBrowsePage.clickDelete_Confirm();
-//		System.out.println(ManufacturerInfoBrowsePage.getNotice());
-//		Reporter.log(ManufacturerInfoBrowsePage.getNotice());
 		ManufacturerInfoBrowsePage.clickDelete_Close();
 	}
+	
 	@Test(dataProvider="MachineInfoManagement_ManufacturerInfoBrowseByCaseNO")
 	public void testUpdate(MachineInfoManagement_ManufacturerInfoBrowseBean bean) {
 		ManufacturerInfoBrowsePage.navigateTo(URL);
+		
+		ManufacturerInfoBrowsePage.setManufacturerNO(bean.getManufacturerNO());
+		ManufacturerInfoBrowsePage.setManufacturerName(bean.getManufacturerName());
+		
 		wait.waitFor(500);
 		doQueryForClickButton(bean);
 		ManufacturerInfoBrowsePage.clickUpdate();
 		wait.waitFor(1000);
-//		判断update字段是否为空
 
+		ManufacturerInfoBrowsePage.setUpdate_ManufacturerAddress(bean.getManufacturerAddress());
+		ManufacturerInfoBrowsePage.setUpdate_PostalCode(bean.getPostalCode());
+		ManufacturerInfoBrowsePage.setUpdate_ContactPerson(bean.getContactPerson());
+		ManufacturerInfoBrowsePage.setUpdate_ContactNumber(bean.getContactNumber());
+		ManufacturerInfoBrowsePage.setUpdate_SaleServiceHotline(bean.getSaleServiceHotline());
+		ManufacturerInfoBrowsePage.selectUpdate_CompanyNature(bean.getCompanyNature());
+		ManufacturerInfoBrowsePage.selectUpdate_CompanyScale(bean.getCompanyScale());
+		ManufacturerInfoBrowsePage.setUpdate_CompanyURL(bean.getCompanyURL());
+		ManufacturerInfoBrowsePage.setUpdate_CompanyMail(bean.getCompanyMail());
+		ManufacturerInfoBrowsePage.setUpdate_TipsInfo(bean.getTipsInfo());
+		
 		wait.waitFor(1000);
 //		ManufacturerInfoBrowsePage.clickUpdate_Submit();
-//		System.out.println(ManufacturerInfoBrowsePage.getNotice());
-//		Reporter.log(ManufacturerInfoBrowsePage.getNotice());
 		ManufacturerInfoBrowsePage.clickUpdate_Close();
 	}
+	
 	@Test(dataProvider="MachineInfoManagement_ManufacturerInfoBrowseByCaseNO")
 	public void testAdd(MachineInfoManagement_ManufacturerInfoBrowseBean bean) {
 		ManufacturerInfoBrowsePage.navigateTo(URL);
-		wait.waitFor(500);
-//		add需要先判断必输项的测试数据是否为空
-
-//			System.out.println("验证方式字段为必输项，不能为空");
-//			Reporter.log("验证方式字段为必输项，不能为空");
-//			assertTrue(false);
-
+		
 		ManufacturerInfoBrowsePage.clickAdd();
+		wait.waitFor(500);
+
+		ManufacturerInfoBrowsePage.setAdd_ManufacturerNO("1" + bean.getManufacturerNO());
+		ManufacturerInfoBrowsePage.setAdd_ManufacturerName(bean.getManufacturerName());
+		ManufacturerInfoBrowsePage.setAdd_ManufacturerAddress(bean.getManufacturerAddress());
+		ManufacturerInfoBrowsePage.setAdd_PostalCode(bean.getPostalCode());
+		ManufacturerInfoBrowsePage.setAdd_ContactPerson(bean.getContactPerson());
+		ManufacturerInfoBrowsePage.setAdd_ContactNumber(bean.getContactNumber());
+		ManufacturerInfoBrowsePage.setAdd_SaleServiceHotline(bean.getSaleServiceHotline());
+		ManufacturerInfoBrowsePage.selectAdd_CompanyNature(bean.getCompanyNature());
+		ManufacturerInfoBrowsePage.selectAdd_CompanyScale(bean.getCompanyScale());
+		ManufacturerInfoBrowsePage.setAdd_CompanyURL(bean.getCompanyURL());
+		ManufacturerInfoBrowsePage.setAdd_CompanyMail(bean.getCompanyMail());
+		ManufacturerInfoBrowsePage.setAdd_TipsInfo(bean.getTipsInfo());
+		
 		wait.waitFor(1000);
 
 //		ManufacturerInfoBrowsePage.clickAdd_Submit();
-//		System.out.println(ManufacturerInfoBrowsePage.getNotice());
-//		Reporter.log(ManufacturerInfoBrowsePage.getNotice());
 		ManufacturerInfoBrowsePage.clickAdd_Close();
 	}
 
-
 	public void doQueryForClickButton(MachineInfoManagement_ManufacturerInfoBrowseBean bean) {
-
 		ManufacturerInfoBrowsePage.clickQuery();
 		wait.waitFor(500);
 		ManufacturerInfoBrowsePage.clickRadio(bean.getRadio());

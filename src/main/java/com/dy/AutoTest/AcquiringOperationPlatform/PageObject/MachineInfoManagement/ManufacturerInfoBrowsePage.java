@@ -131,20 +131,12 @@ public class ManufacturerInfoBrowsePage extends SuperPage implements IQuery{
 		return du.what("Add_SaleServiceHotline").getAttribute("value");
 	}
 	//添加_公司性质
-	public void setAdd_CompanyNature(String value) {
-		du.what("Add_CompanyNature").clear();
-		du.what("Add_CompanyNature").sendKeys(value);
-	}
-	public String getAdd_CompanyNature() {
-		return du.what("Add_CompanyNature").getAttribute("value");
+	public void selectAdd_CompanyNature(String value) {
+		du.whatSelect("Add_CompanyNature").selectByValue(value);
 	}
 	//添加_公司规模
-	public void setAdd_CompanyScale(String value) {
-		du.what("Add_CompanyScale").clear();
-		du.what("Add_CompanyScale").sendKeys(value);
-	}
-	public String getAdd_CompanyScale() {
-		return du.what("Add_CompanyScale").getAttribute("value");
+	public void selectAdd_CompanyScale(String value) {
+		du.whatSelect("Add_CompanyScale").selectByValue(value);
 	}
 	//添加_公司网址
 	public void setAdd_CompanyURL(String value) {
@@ -219,20 +211,12 @@ public class ManufacturerInfoBrowsePage extends SuperPage implements IQuery{
 		return du.what("Update_SaleServiceHotline").getAttribute("value");
 	}
 	//修改_公司性质
-	public void setUpdate_CompanyNature(String value) {
-		du.what("Update_CompanyNature").clear();
-		du.what("Update_CompanyNature").sendKeys(value);
-	}
-	public String getUpdate_CompanyNature() {
-		return du.what("Update_CompanyNature").getAttribute("value");
+	public void selectUpdate_CompanyNature(String value) {
+		du.whatSelect("Update_CompanyNature").selectByValue(value);
 	}
 	//修改_公司规模
-	public void setUpdate_CompanyScale(String value) {
-		du.what("Update_CompanyScale").clear();
-		du.what("Update_CompanyScale").sendKeys(value);
-	}
-	public String getUpdate_CompanyScale() {
-		return du.what("Update_CompanyScale").getAttribute("value");
+	public void selectUpdate_CompanyScale(String value) {
+		du.whatSelect("Update_CompanyScale").selectByValue(value);
 	}
 	//修改_公司网址
 	public void setUpdate_CompanyURL(String value) {

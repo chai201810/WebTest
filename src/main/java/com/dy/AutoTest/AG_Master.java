@@ -66,28 +66,28 @@ public class AG_Master {
 	public void release() {
 		ig.release();
 	}
-	@Test
-	public void generatePageObject(){
-		ig=new POGenerator();
-	}
-	@Test
-	public void generatePOJO(){
-		ig=new POJOGenerator();
-	}
-	@Test
-	public void generatePageTest(){
-		ig=new PTGenerator();
-	}
-	@Test
-	public void generateTestngXML(){
-		ig=new TestngXMLGenerator();
-	}
-	@Test
-	public void generateSQL(){
-		ig=new SQLGenerator();
-	}
-	@Test
-	public void generateDataBusiness(){
-		ig=new DataBusinessGenerator();
-	}
+//	@Test
+//	public void generatePageObject(){
+//		ig=new POGenerator();
+//	}
+//	@Test
+//	public void generatePOJO(){
+//		ig=new POJOGenerator();
+//	}
+//	@Test
+//	public void generatePageTest(){
+//		ig=new PTGenerator();
+//	}
+//	@Test
+//	public void generateTestngXML(){
+//		ig=new TestngXMLGenerator();
+//	}
+//	@Test
+//	public void generateSQL(){
+//		ig=new SQLGenerator();
+//	}
+//	@Test
+//	public void generateDataBusiness(){
+//		ig=new DataBusinessGenerator();
+//	}
 }
