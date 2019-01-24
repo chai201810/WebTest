@@ -93,18 +93,37 @@ public class TypeBrowsePageTest extends SuperTest{
 	public void testAdd(MachineInfoManagement_TypeBrowseBean bean) {
 		TypeBrowsePage.navigateTo(URL);
 		wait.waitFor(500);
-//		add需要先判断必输项的测试数据是否为空
-
-//			System.out.println("验证方式字段为必输项，不能为空");
-//			Reporter.log("验证方式字段为必输项，不能为空");
-//			assertTrue(false);
-
+		
 		TypeBrowsePage.clickAdd();
 		wait.waitFor(1000);
-
+		
+		TypeBrowsePage.selectAdd_ManufactureName(bean.getManufactureName());
+		TypeBrowsePage.setAdd_TypeNO(bean.getTypeNO());
+		TypeBrowsePage.setAdd_TypeName(bean.getTypeName());
+		TypeBrowsePage.selectAdd_TerminalType(bean.getTerminalType());
+		TypeBrowsePage.setAdd_CPUandFrequency(bean.getCPUandFrequency());
+		TypeBrowsePage.setAdd_RAMCapacity(bean.getRAMCapacity());
+		TypeBrowsePage.selectAdd_MagneticTrackEncryptionSign(bean.getMagneticTrackEncryptionSign());
+		TypeBrowsePage.setAdd_Resolution(bean.getResolution());
+		TypeBrowsePage.selectAdd_PrintWay(bean.getPrintWay());
+		TypeBrowsePage.setAdd_PrintSpeed(bean.getPrintSpeed());
+		TypeBrowsePage.selectAdd_CommunicationWay(bean.getCommunicationWay());
+		TypeBrowsePage.selectAdd_CardRead(bean.getCardRead());
+		TypeBrowsePage.setAdd_PSAMCardRead(bean.getPSAMCardRead());
+		TypeBrowsePage.setAdd_AuthenticationPass(bean.getAuthenticationPass());
+		TypeBrowsePage.setAdd_WarrantyPeriod(bean.getWarrantyPeriod());
+		TypeBrowsePage.selectAdd_DevelopmentPlateform(bean.getDevelopmentPlateform());
+		TypeBrowsePage.selectAdd_VoltageType(bean.getVoltageType());
+		TypeBrowsePage.setAdd_EquipmentVolume(bean.getEquipmentVolume());
+		TypeBrowsePage.setAdd_EquipmentWeight(bean.getEquipmentWeight());
+		TypeBrowsePage.setAdd_WorkingTemp(bean.getWorkingTemp());
+		TypeBrowsePage.setAdd_WorkingHumidity(bean.getWorkingHumidity());
+		TypeBrowsePage.setAdd_GuidingPrice(bean.getGuidingPrice());
+		TypeBrowsePage.selectAdd_PasswordKeybroad(bean.getPasswordKeybroad());
+		TypeBrowsePage.setAdd_Tips(bean.getTips());
+		TypeBrowsePage.selectAdd_ProgramUpdateWay(bean.getProgramUpdateWay());
+		
 //		TypeBrowsePage.clickAdd_Submit();
-//		System.out.println(TypeBrowsePage.getNotice());
-//		Reporter.log(TypeBrowsePage.getNotice());
 		TypeBrowsePage.clickAdd_Close();
 	}
 

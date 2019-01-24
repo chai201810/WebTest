@@ -27,7 +27,7 @@
 					<include name="testCheck" />
 					<!-- <include name="testDelete" /> -->
 					<!-- <include name="testUpdate" /> -->
-					<!-- <include name="testAdd" /> -->
+					<include name="testAdd" />
 				</methods>
 			</class> 
 		</classes>
