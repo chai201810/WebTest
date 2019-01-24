@@ -25,8 +25,8 @@ public class AG_Master {
 		ig=new SQLGenerator();
 	}
 
-	public static final String caseName="MachineInfoManagement_ManufacturerInfoBrowse";
-	public static final String caseNameAlias="ManufacturerInfoBrowse";
+	public static final String caseName="MachineInfoManagement_TypeBrowse";
+	public static final String caseNameAlias="TypeBrowse";
 	public static final String url="aop_"+caseName;
 	public static final String locatorName="AOP_Loc_"+caseName;
 	public static final String dataName="AOP_Data_"+caseName;
