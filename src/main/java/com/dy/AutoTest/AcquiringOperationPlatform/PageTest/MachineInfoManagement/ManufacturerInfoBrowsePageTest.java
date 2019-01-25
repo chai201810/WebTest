@@ -63,8 +63,8 @@ public class ManufacturerInfoBrowsePageTest extends SuperTest{
 		doQueryForClickButton(bean);
 		ManufacturerInfoBrowsePage.clickDelete();
 		wait.waitFor(1000);
-//		ManufacturerInfoBrowsePage.clickDelete_Confirm();
-		ManufacturerInfoBrowsePage.clickDelete_Close();
+		ManufacturerInfoBrowsePage.clickDelete_Confirm();
+//		ManufacturerInfoBrowsePage.clickDelete_Close();
 	}
 	
 	@Test(dataProvider="MachineInfoManagement_ManufacturerInfoBrowseByCaseNO")
@@ -91,8 +91,8 @@ public class ManufacturerInfoBrowsePageTest extends SuperTest{
 		ManufacturerInfoBrowsePage.setUpdate_TipsInfo(bean.getTipsInfo());
 		
 		wait.waitFor(1000);
-//		ManufacturerInfoBrowsePage.clickUpdate_Submit();
-		ManufacturerInfoBrowsePage.clickUpdate_Close();
+		ManufacturerInfoBrowsePage.clickUpdate_Submit();
+//		ManufacturerInfoBrowsePage.clickUpdate_Close();
 	}
 	
 	@Test(dataProvider="MachineInfoManagement_ManufacturerInfoBrowseByCaseNO")
@@ -117,8 +117,8 @@ public class ManufacturerInfoBrowsePageTest extends SuperTest{
 		
 		wait.waitFor(1000);
 
-//		ManufacturerInfoBrowsePage.clickAdd_Submit();
-		ManufacturerInfoBrowsePage.clickAdd_Close();
+		ManufacturerInfoBrowsePage.clickAdd_Submit();
+//		ManufacturerInfoBrowsePage.clickAdd_Close();
 	}
 
 	public void doQueryForClickButton(MachineInfoManagement_ManufacturerInfoBrowseBean bean) {

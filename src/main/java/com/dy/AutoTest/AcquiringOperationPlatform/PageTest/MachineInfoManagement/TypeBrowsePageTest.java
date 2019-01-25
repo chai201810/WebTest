@@ -73,8 +73,8 @@ public class TypeBrowsePageTest extends SuperTest{
 		doQueryForClickButton(bean);
 		TypeBrowsePage.clickDelete();
 		wait.waitFor(1000);
-//		TypeBrowsePage.clickDelete_Confirm();
-		TypeBrowsePage.clickDelete_Close();
+		TypeBrowsePage.clickDelete_Confirm();
+//		TypeBrowsePage.clickDelete_Close();
 	}
 	@Test(dataProvider="MachineInfoManagement_TypeBrowseByCaseNO")
 	public void testUpdate(MachineInfoManagement_TypeBrowseBean bean) {
@@ -113,8 +113,8 @@ public class TypeBrowsePageTest extends SuperTest{
 		TypeBrowsePage.selectUpdate_ProgramUpdateWay(bean.getProgramUpdateWay());
 		
 		wait.waitFor(1000);
-//		TypeBrowsePage.clickUpdate_Submit();
-		TypeBrowsePage.clickUpdate_Close();
+		TypeBrowsePage.clickUpdate_Submit();
+//		TypeBrowsePage.clickUpdate_Close();
 	}
 	@Test(dataProvider="MachineInfoManagement_TypeBrowseByCaseNO")
 	public void testAdd(MachineInfoManagement_TypeBrowseBean bean) {
@@ -150,8 +150,8 @@ public class TypeBrowsePageTest extends SuperTest{
 		TypeBrowsePage.setAdd_Tips(bean.getTips());
 		TypeBrowsePage.selectAdd_ProgramUpdateWay(bean.getProgramUpdateWay());
 		
-//		TypeBrowsePage.clickAdd_Submit();
-		TypeBrowsePage.clickAdd_Close();
+		TypeBrowsePage.clickAdd_Submit();
+//		TypeBrowsePage.clickAdd_Close();
 	}
 
 
