@@ -74,8 +74,6 @@ public class TypeBrowsePageTest extends SuperTest{
 		TypeBrowsePage.clickDelete();
 		wait.waitFor(1000);
 //		TypeBrowsePage.clickDelete_Confirm();
-//		System.out.println(TypeBrowsePage.getNotice());
-//		Reporter.log(TypeBrowsePage.getNotice());
 		TypeBrowsePage.clickDelete_Close();
 	}
 	@Test(dataProvider="MachineInfoManagement_TypeBrowseByCaseNO")
