@@ -66,6 +66,10 @@ public class TypeBrowsePageTest extends SuperTest{
 	public void testDelete(MachineInfoManagement_TypeBrowseBean bean) {
 		TypeBrowsePage.navigateTo(URL);
 		wait.waitFor(500);
+		
+		TypeBrowsePage.setManufactureNO(bean.getManufactureName());
+		TypeBrowsePage.setTypeNO(bean.getTypeNO());
+		
 		doQueryForClickButton(bean);
 		TypeBrowsePage.clickDelete();
 		wait.waitFor(1000);
@@ -78,15 +82,40 @@ public class TypeBrowsePageTest extends SuperTest{
 	public void testUpdate(MachineInfoManagement_TypeBrowseBean bean) {
 		TypeBrowsePage.navigateTo(URL);
 		wait.waitFor(500);
+		
+		TypeBrowsePage.setManufactureNO(bean.getManufactureName());
+		TypeBrowsePage.setTypeNO(bean.getTypeNO());
+		
 		doQueryForClickButton(bean);
 		TypeBrowsePage.clickUpdate();
 		wait.waitFor(1000);
-//		判断update字段是否为空
-
+		
+		TypeBrowsePage.setUpdate_TypeName(bean.getTypeName());
+		TypeBrowsePage.selectUpdate_TerminalType(bean.getTerminalType());
+		TypeBrowsePage.setUpdate_CPUandFrequency(bean.getCPUandFrequency());
+		TypeBrowsePage.setUpdate_RAMCapacity(bean.getRAMCapacity());
+		TypeBrowsePage.selectUpdate_MagneticTrackEncryptionSign(bean.getMagneticTrackEncryptionSign());
+		TypeBrowsePage.setUpdate_Resolution(bean.getResolution());
+		TypeBrowsePage.selectUpdate_PrintWay(bean.getPrintWay());
+		TypeBrowsePage.setUpdate_PrintSpeed(bean.getPrintSpeed());
+		TypeBrowsePage.selectUpdate_CommunicationWay(bean.getCommunicationWay());
+		TypeBrowsePage.selectUpdate_CardRead(bean.getCardRead());
+		TypeBrowsePage.setUpdate_PSAMCardRead(bean.getPSAMCardRead());
+		TypeBrowsePage.setUpdate_AuthenticationPass(bean.getAuthenticationPass());
+		TypeBrowsePage.setUpdate_WarrantyPeriod(bean.getWarrantyPeriod());
+		TypeBrowsePage.selectUpdate_DevelopmentPlateform(bean.getDevelopmentPlateform());
+		TypeBrowsePage.selectUpdate_VoltageType(bean.getVoltageType());
+		TypeBrowsePage.setUpdate_EquipmentVolume(bean.getEquipmentVolume());
+		TypeBrowsePage.setUpdate_EquipmentWeight(bean.getEquipmentWeight());
+		TypeBrowsePage.setUpdate_WorkingTemp(bean.getWorkingTemp());
+		TypeBrowsePage.setUpdate_WorkingHumidity(bean.getWorkingHumidity());
+		TypeBrowsePage.setUpdate_GuidingPrice(bean.getGuidingPrice());
+		TypeBrowsePage.selectUpdate_PasswordKeybroad(bean.getPasswordKeybroad());
+		TypeBrowsePage.setUpdate_Tips(bean.getTips());
+		TypeBrowsePage.selectUpdate_ProgramUpdateWay(bean.getProgramUpdateWay());
+		
 		wait.waitFor(1000);
 //		TypeBrowsePage.clickUpdate_Submit();
-//		System.out.println(TypeBrowsePage.getNotice());
-//		Reporter.log(TypeBrowsePage.getNotice());
 		TypeBrowsePage.clickUpdate_Close();
 	}
 	@Test(dataProvider="MachineInfoManagement_TypeBrowseByCaseNO")
