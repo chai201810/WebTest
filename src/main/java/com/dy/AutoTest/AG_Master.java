@@ -25,22 +25,22 @@ public class AG_Master {
 		ig=new SQLGenerator();
 	}
 
-	public static final String caseName="MachineInfoManagement_TypeBrowse";
-	public static final String caseNameAlias="TypeBrowse";
+	public static final String caseName="TerminalInventoryManagement_HostInventoryManagement";
+	public static final String caseNameAlias="HostInventoryManagement";
 	public static final String url="aop_"+caseName;
 	public static final String locatorName="AOP_Loc_"+caseName;
 	public static final String dataName="AOP_Data_"+caseName;
 
-	public static final String directoryPO="src/main/java/com/dy/AutoTest/AcquiringOperationPlatform/PageObject/MachineInfoManagement/";
-	public static final String packageNamePO="com.dy.AutoTest.AcquiringOperationPlatform.PageObject.MachineInfoManagement";
+	public static final String directoryPO="src/main/java/com/dy/AutoTest/AcquiringOperationPlatform/PageObject/TerminalInventoryManagement/";
+	public static final String packageNamePO="com.dy.AutoTest.AcquiringOperationPlatform.PageObject.TerminalInventoryManagement";
 	
 	public static final String directoryPOJO="src/main/java/com/dy/AutoTest/AcquiringOperationPlatform/POJO/";
 	public static final String packageNamePOJO="com.dy.AutoTest.AcquiringOperationPlatform.POJO";
 	
-	public static final String directoryPT="src/main/java/com/dy/AutoTest/AcquiringOperationPlatform/PageTest/MachineInfoManagement/";
-	public static final String packageNamePT="com.dy.AutoTest.AcquiringOperationPlatform.PageTest.MachineInfoManagement";
+	public static final String directoryPT="src/main/java/com/dy/AutoTest/AcquiringOperationPlatform/PageTest/TerminalInventoryManagement/";
+	public static final String packageNamePT="com.dy.AutoTest.AcquiringOperationPlatform.PageTest.TerminalInventoryManagement";
 	
-	public static final String directoryXML="src/main/java/com/dy/AutoTest/AcquiringOperationPlatform/PageTest/MachineInfoManagement/";
+	public static final String directoryXML="src/main/java/com/dy/AutoTest/AcquiringOperationPlatform/PageTest/TerminalInventoryManagement/";
 //	public static final String directoryDataBusiness="src/main/java/com/dy/AutoTest/";
 	public static final String directorySQL="C:\\Users\\Think\\Documents\\Navicat\\SQLite\\servers\\WebTest\\main\\";
 	
