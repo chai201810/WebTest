@@ -52,6 +52,7 @@ public class TerminalRightManagementPageTest extends SuperTest{
 	@Test(dataProvider="TerminalRightManagement_TerminalRightManagementByCaseNO")
 	public void testCheck(TerminalRightManagement_TerminalRightManagementBean bean) {
 		TerminalRightManagementPage.navigateTo(URL);
+		wait.waitFor(500);
 		
 		TerminalRightManagementPage.setMerchantNO(bean.getMerchantNO());
 		TerminalRightManagementPage.setTerminalNO(bean.getTerminalNO());
@@ -68,46 +69,51 @@ public class TerminalRightManagementPageTest extends SuperTest{
 	public void testDelete(TerminalRightManagement_TerminalRightManagementBean bean) {
 		TerminalRightManagementPage.navigateTo(URL);
 		wait.waitFor(500);
+		
+		TerminalRightManagementPage.setMerchantNO(bean.getMerchantNO());
+		TerminalRightManagementPage.setTerminalNO(bean.getTerminalNO());
+		wait.waitFor(500);
+		
 		doQueryForClickButton(bean);
 		TerminalRightManagementPage.clickDelete();
 		wait.waitFor(1000);
 //		TerminalRightManagementPage.clickDelete_Confirm();
-//		System.out.println(TerminalRightManagementPage.getNotice());
-//		Reporter.log(TerminalRightManagementPage.getNotice());
 		TerminalRightManagementPage.clickDelete_Close();
 	}
 	@Test(dataProvider="TerminalRightManagement_TerminalRightManagementByCaseNO")
 	public void testUpdate(TerminalRightManagement_TerminalRightManagementBean bean) {
 		TerminalRightManagementPage.navigateTo(URL);
 		wait.waitFor(500);
+		
+		TerminalRightManagementPage.setTerminalNO(bean.getTerminalNO());
+		wait.waitFor(500);
+		
 		doQueryForClickButton(bean);
+		
 		TerminalRightManagementPage.clickUpdate();
 		wait.waitFor(1000);
 //		判断update字段是否为空
 
+		TerminalRightManagementPage.clickUpdate_CharacterRadio(bean.getUpdate_CharacterRadio());
 		wait.waitFor(1000);
 //		TerminalRightManagementPage.clickUpdate_Submit();
-//		System.out.println(TerminalRightManagementPage.getNotice());
-//		Reporter.log(TerminalRightManagementPage.getNotice());
 		TerminalRightManagementPage.clickUpdate_Close();
 	}
 	@Test(dataProvider="TerminalRightManagement_TerminalRightManagementByCaseNO")
 	public void testAdd(TerminalRightManagement_TerminalRightManagementBean bean) {
 		TerminalRightManagementPage.navigateTo(URL);
 		wait.waitFor(500);
-//		add需要先判断必输项的测试数据是否为空
-
-//			System.out.println("验证方式字段为必输项，不能为空");
-//			Reporter.log("验证方式字段为必输项，不能为空");
-//			assertTrue(false);
 
 		TerminalRightManagementPage.clickAdd();
 		wait.waitFor(1000);
 
+		TerminalRightManagementPage.setAdd_TerminalNO(bean.getAdd_TerminalNO());
+		TerminalRightManagementPage.setAdd_CharacterID(bean.getAdd_CharacterID());
+		wait.waitFor(500);
+		
 //		TerminalRightManagementPage.clickAdd_Submit();
-//		System.out.println(TerminalRightManagementPage.getNotice());
-//		Reporter.log(TerminalRightManagementPage.getNotice());
 		TerminalRightManagementPage.clickAdd_Close();
+		wait.waitFor(500);
 	}
 
 
