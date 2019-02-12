@@ -68,54 +68,206 @@ public class HostInventoryManagementPageTest extends SuperTest{
 		wait.waitFor(2000);
 		HostInventoryManagementPage.clickCheck_Close();
 	}
+
 	@Test(dataProvider="TerminalInventoryManagement_HostInventoryManagementByCaseNO")
-	public void testDelete(TerminalInventoryManagement_HostInventoryManagementBean bean) {
+	public void testTerminalStore(TerminalInventoryManagement_HostInventoryManagementBean bean) {
 		HostInventoryManagementPage.navigateTo(URL);
+		wait.waitFor(500);
+
+		HostInventoryManagementPage.clickTerminalEnterStorage();
+		wait.waitFor(1000);
+
+		HostInventoryManagementPage.selectTerminalEnterStorage_Manufacture(bean.getManufactureName());
+		HostInventoryManagementPage.selectTerminalEnterStorage_TerminalType(bean.getTerminalType());
+		HostInventoryManagementPage.setTerminalEnterStorage_InitialSerialNO1(bean.getInitialSerialNO1());
+		HostInventoryManagementPage.setTerminalEnterStorage_InitialSerialNO2(bean.getInitialSerialNO2());
+		HostInventoryManagementPage.setTerminalEnterStorage_FinalSerialNO(bean.getFinalSerialNO());
+		HostInventoryManagementPage.selectTerminalEnterStorage_PropertyRightCharacteristics(bean.getPropertyRightCharacteristics());
+		HostInventoryManagementPage.setTerminalEnterStorage_EnterStorageTime(bean.getEnterStorageTime());
+		HostInventoryManagementPage.setTerminalEnterStorage_EnterStorageSource(bean.getEnterStorageSource());
+		HostInventoryManagementPage.setTerminalEnterStorage_EnterStorageBatchNO(bean.getEnterStorageBatchNO());
+		HostInventoryManagementPage.setTerminalEnterStorage_PurchasePrice(bean.getPurchasePrice());
+		wait.waitFor(1000);
+		
+		HostInventoryManagementPage.clickTerminalEnterStorage_Close();
+		wait.waitFor(3000);
+	}
+	@Test(dataProvider="TerminalInventoryManagement_HostInventoryManagementByCaseNO")
+	public void testTerminalDeliver(TerminalInventoryManagement_HostInventoryManagementBean bean) {
+		HostInventoryManagementPage.navigateTo(URL);
+		wait.waitFor(500);
+
+		HostInventoryManagementPage.setTerminalSerialNO(bean.getTerminalSerialNO());
 		wait.waitFor(500);
 		doQueryForClickButton(bean);
-//		HostInventoryManagementPage.clickDelete();
+		
+		HostInventoryManagementPage.clickOutStorage();
 		wait.waitFor(1000);
-//		HostInventoryManagementPage.clickDelete_Confirm();
-//		System.out.println(HostInventoryManagementPage.getNotice());
-//		Reporter.log(HostInventoryManagementPage.getNotice());
-//		HostInventoryManagementPage.clickDelete_Close();
+
+		HostInventoryManagementPage.setOutStorage_OutStorageTime(bean.getOutStorageTime());
+		HostInventoryManagementPage.selectOutStorage_OutStorageStatus(bean.getOutStorageStatus());
+		HostInventoryManagementPage.setOutStorage_OutStorageDirection(bean.getOutStorageDirection());
+		HostInventoryManagementPage.setOutStorage_ReciveSection(bean.getReciveSection());
+		HostInventoryManagementPage.setOutStorage_Reciver(bean.getReciver());
+		wait.waitFor(1000);
+		
+		HostInventoryManagementPage.clickOutStorage_Confirm();
+		wait.waitFor(3000);
+		
 	}
 	@Test(dataProvider="TerminalInventoryManagement_HostInventoryManagementByCaseNO")
-	public void testUpdate(TerminalInventoryManagement_HostInventoryManagementBean bean) {
+	public void testTerminalRegister(TerminalInventoryManagement_HostInventoryManagementBean bean) {
 		HostInventoryManagementPage.navigateTo(URL);
+		wait.waitFor(500);
+
+		HostInventoryManagementPage.setTerminalSerialNO(bean.getTerminalSerialNO());
 		wait.waitFor(500);
 		doQueryForClickButton(bean);
-//		HostInventoryManagementPage.clickUpdate();
+		
+		HostInventoryManagementPage.clickRegist();
 		wait.waitFor(1000);
-//		判断update字段是否为空
 
+//		HostInventoryManagementPage.setRegist_TerminalBelongMerchantNO(bean.getTerminalBelongMerchantNO());
+//		HostInventoryManagementPage.setRegist_StoreName(bean.getStoreName());
+		
+		HostInventoryManagementPage.clickRegist_SearchMerchant();
+		HostInventoryManagementPage.setRegist_SearchMerchant_MerchantNO(bean.getTerminalBelongMerchantNO());
+		HostInventoryManagementPage.clickRegist_SearchMerchant_Confirm();
 		wait.waitFor(1000);
-//		HostInventoryManagementPage.clickUpdate_Submit();
-//		System.out.println(HostInventoryManagementPage.getNotice());
-//		Reporter.log(HostInventoryManagementPage.getNotice());
-//		HostInventoryManagementPage.clickUpdate_Close();
+		HostInventoryManagementPage.clickRegist_SearchMerchant_MerchantRadio(bean.getRadio());
+		HostInventoryManagementPage.clickRegist_SearchMerchant_Submit();
+		
+		HostInventoryManagementPage.clickRegist_SearchStore();
+		HostInventoryManagementPage.setRegist_SearchStore_StoreName(bean.getStoreName());
+		HostInventoryManagementPage.clickRegist_SearchStore_Query();
+		wait.waitFor(1000);
+		HostInventoryManagementPage.clickRegist_SearchStore_StoreRadio(bean.getRadio());
+		HostInventoryManagementPage.clickRegist_SearchStore_Submit();
+		
+		HostInventoryManagementPage.setRegist_RegistDate(bean.getRegistDate());
+		HostInventoryManagementPage.setRegist_UnionStandardDistantRegionCode(bean.getUnionStandardDistantRegionCode());
+		HostInventoryManagementPage.setRegist_CheckCycle(bean.getCheckCycle());
+		HostInventoryManagementPage.setRegist_MaintainManager(bean.getMaintainManager());
+		HostInventoryManagementPage.setRegist_InstallAddress(bean.getInstallAddress());
+		HostInventoryManagementPage.setRegist_InstallContantPerson(bean.getInstallContantPerson());
+		HostInventoryManagementPage.setRegist_InstallContantPersonPhoneNO(bean.getInstallContantPersonPhoneNO());
+		HostInventoryManagementPage.setRegist_TelephoneNO(bean.getTelephoneNO());
+		HostInventoryManagementPage.setRegist_SIMCardNO(bean.getSIMCardNO());
+		
+		wait.waitFor(1000);
+		
+		HostInventoryManagementPage.clickRegist_Regist();
+		wait.waitFor(3000);
+		
 	}
 	@Test(dataProvider="TerminalInventoryManagement_HostInventoryManagementByCaseNO")
-	public void testAdd(TerminalInventoryManagement_HostInventoryManagementBean bean) {
+	public void testTerminalSpecialStore(TerminalInventoryManagement_HostInventoryManagementBean bean) {
 		HostInventoryManagementPage.navigateTo(URL);
 		wait.waitFor(500);
-//		add需要先判断必输项的测试数据是否为空
 
-//			System.out.println("验证方式字段为必输项，不能为空");
-//			Reporter.log("验证方式字段为必输项，不能为空");
-//			assertTrue(false);
+		HostInventoryManagementPage.setTerminalSerialNO(bean.getTerminalSerialNO());
+		wait.waitFor(500);
+		doQueryForClickButton(bean);
 
-//		HostInventoryManagementPage.clickAdd();
+		HostInventoryManagementPage.clickSpecialEnterStorage();
+		wait.waitFor(1000);
+		
+		HostInventoryManagementPage.setSpecialEnterStorage_EnterStorageTime(bean.getEnterStorageTime());
+		HostInventoryManagementPage.setSpecialEnterStorage_EnterStorageSource(bean.getEnterStorageSource());
+		
+		HostInventoryManagementPage.clickSpecialEnterStorage_SpecialEnterStorage();
+		wait.waitFor(3000);
+	}
+	@Test(dataProvider="TerminalInventoryManagement_HostInventoryManagementByCaseNO")
+	public void testTerminalRepair(TerminalInventoryManagement_HostInventoryManagementBean bean) {
+		HostInventoryManagementPage.navigateTo(URL);
+		wait.waitFor(500);
+
+		HostInventoryManagementPage.setTerminalSerialNO(bean.getTerminalSerialNO());
+		wait.waitFor(500);
+		doQueryForClickButton(bean);
+		
+		HostInventoryManagementPage.clickReportFix();
 		wait.waitFor(1000);
 
-//		HostInventoryManagementPage.clickAdd_Submit();
-//		System.out.println(HostInventoryManagementPage.getNotice());
-//		Reporter.log(HostInventoryManagementPage.getNotice());
-//		HostInventoryManagementPage.clickAdd_Close();
+		HostInventoryManagementPage.clickReportFix_Confirm();
+		wait.waitFor(3000);
 	}
+	@Test(dataProvider="TerminalInventoryManagement_HostInventoryManagementByCaseNO")
+	public void testTerminalScrap(TerminalInventoryManagement_HostInventoryManagementBean bean) {
+		HostInventoryManagementPage.navigateTo(URL);
+		wait.waitFor(500);
 
+		HostInventoryManagementPage.setTerminalSerialNO(bean.getTerminalSerialNO());
+		wait.waitFor(500);
+		doQueryForClickButton(bean);
 
-	public void doQueryForClickButton(TerminalInventoryManagement_HostInventoryManagementBean bean) {
+		HostInventoryManagementPage.clickScrap();
+		wait.waitFor(1000);
+
+		HostInventoryManagementPage.clickScrap_Close();
+		wait.waitFor(3000);
+	}
+	@Test(dataProvider="TerminalInventoryManagement_HostInventoryManagementByCaseNO")
+	public void testTerminalAllocatoin(TerminalInventoryManagement_HostInventoryManagementBean bean) {
+		HostInventoryManagementPage.navigateTo(URL);
+		wait.waitFor(500);
+
+		HostInventoryManagementPage.setTerminalSerialNO(bean.getTerminalSerialNO());
+		wait.waitFor(500);
+		doQueryForClickButton(bean);
+		
+		HostInventoryManagementPage.clickAllot();
+		wait.waitFor(1000);
+
+		HostInventoryManagementPage.setAllot_AllotTime(bean.getAllotTime());
+		HostInventoryManagementPage.selectAllot_AllotOrgnization(bean.getAllotOrgnization());
+		HostInventoryManagementPage.setAllot_AllotSection(bean.getAllotSection());
+		HostInventoryManagementPage.setAllot_Alloter(bean.getAlloter());
+		
+		HostInventoryManagementPage.clickAllot_Confirm();
+		wait.waitFor(3000);
+	}
+	@Test(dataProvider="TerminalInventoryManagement_HostInventoryManagementByCaseNO")
+	public void testStoreUpdate(TerminalInventoryManagement_HostInventoryManagementBean bean) {
+		HostInventoryManagementPage.navigateTo(URL);
+		wait.waitFor(500);
+
+		HostInventoryManagementPage.setTerminalSerialNO(bean.getTerminalSerialNO());
+		wait.waitFor(500);
+		doQueryForClickButton(bean);
+
+		HostInventoryManagementPage.clickEnteredStroageUpdate();
+		wait.waitFor(1000);
+
+		HostInventoryManagementPage.setEnteredStorageUpdate_EnteredStorageSource(bean.getEnterStorageSource());
+		HostInventoryManagementPage.setEnteredStorageUpdate_StorageBatchNO(bean.getEnterStorageBatchNO());
+		HostInventoryManagementPage.setEnteredStorageUpdate_PurchusePrice(bean.getPurchasePrice());
+		
+		HostInventoryManagementPage.clickEnteredStorageUpdate_Confirm();
+		wait.waitFor(3000);
+	}
+	@Test(dataProvider="TerminalInventoryManagement_HostInventoryManagementByCaseNO")
+	public void testDeliverUpdate(TerminalInventoryManagement_HostInventoryManagementBean bean) {
+		HostInventoryManagementPage.navigateTo(URL);
+		wait.waitFor(500);
+
+		HostInventoryManagementPage.setTerminalSerialNO(bean.getTerminalSerialNO());
+		wait.waitFor(500);
+		doQueryForClickButton(bean);
+
+		HostInventoryManagementPage.clickOutStroageUpdate();
+		wait.waitFor(1000);
+
+		HostInventoryManagementPage.setOutStroageUpdate_OutStorageDirection(bean.getOutStorageDirection());
+		HostInventoryManagementPage.setOutStroageUpdate_ReciveSection(bean.getReciveSection());
+		HostInventoryManagementPage.setOutStroageUpdate_Reciver(bean.getReciver());
+		
+		HostInventoryManagementPage.clickOutStroageUpdate_Confirm();
+		wait.waitFor(3000);
+	}
+	
+	private void doQueryForClickButton(TerminalInventoryManagement_HostInventoryManagementBean bean) {
 
 		HostInventoryManagementPage.clickQuery();
 		wait.waitFor(500);

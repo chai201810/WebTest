@@ -23,11 +23,16 @@
 			<class
 				name="com.dy.AutoTest.AcquiringOperationPlatform.PageTest.TerminalInventoryManagement.HostInventoryManagementPageTest">
 				<methods>
-					<!-- <include name="testQuery" /> -->
 					<include name="testCheck" />
-					<!-- <include name="testDelete" /> -->
-					<!-- <include name="testUpdate" /> -->
-					<!-- <include name="testAdd" /> -->
+					<include name="testTerminalStore" />
+					<include name="testTerminalRepair" />
+					<include name="testTerminalSpecialStore" />
+					<include name="testTerminalAllocatoin" />
+					<include name="testStoreUpdate" />
+					<include name="testTerminalDeliver" />
+					<include name="testDeliverUpdate" />
+					<include name="testTerminalRegister" />
+					<include name="testTerminalScrap" />
 				</methods>
 			</class> 
 		</classes>
